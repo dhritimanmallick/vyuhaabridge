@@ -9,6 +9,9 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   useEffect(() => {
+    // Set page title for medical focus
+    document.title = "Vyuhaa Med Data | AI-Driven Healthcare Solutions";
+    
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -27,6 +30,9 @@ const Index = () => {
           top: offsetPosition,
           behavior: 'smooth'
         });
+        
+        // Track navigation events (for future analytics integration)
+        console.log(`Navigation to: ${href}`);
       });
     });
     

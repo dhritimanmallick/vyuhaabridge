@@ -2,57 +2,57 @@
 import { useState } from 'react';
 import AnimatedText from './AnimatedText';
 import { 
-  BarChart3, 
-  PieChart, 
-  LineChart, 
+  Microscope, 
   Brain, 
-  Database, 
-  Settings 
+  Map, 
+  Building, 
+  Shield, 
+  Globe 
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const features = [
   {
-    id: 'dataAnalytics',
-    icon: <BarChart3 size={32} className="text-vyuhaa-500" />,
-    title: 'Data Analytics',
-    description: 'Transform raw data into meaningful insights with our advanced analytics platform.',
-    benefits: ['Real-time reporting', 'Interactive dashboards', 'Custom metrics']
+    id: 'cerviAI',
+    icon: <Microscope size={32} className="text-vyuhaa-500" />,
+    title: 'CerviAI Platform',
+    description: 'AI-powered EDGE-based digital cytology and pathology platform for real-time cervical cancer screening.',
+    benefits: ['Real-time results', 'Reduced specialist dependency', 'Cost-effective screening']
   },
   {
-    id: 'businessIntelligence',
-    icon: <PieChart size={32} className="text-vyuhaa-500" />,
-    title: 'Business Intelligence',
-    description: 'Make data-driven decisions with comprehensive business intelligence tools.',
-    benefits: ['Trend identification', 'Competitive analysis', 'Performance tracking']
+    id: 'ruralHealthcare',
+    icon: <Map size={32} className="text-vyuhaa-500" />,
+    title: 'Rural Outreach',
+    description: 'Bringing AI-driven digital cytology directly to underserved communities through screening camps.',
+    benefits: ['Remote area accessibility', 'Integration with PMJAY', 'Mass screening capabilities']
   },
   {
-    id: 'predictiveAnalytics',
+    id: 'multiDisease',
     icon: <Brain size={32} className="text-vyuhaa-500" />,
-    title: 'AI & Machine Learning',
-    description: 'Leverage AI to predict trends and automate complex data analysis tasks.',
-    benefits: ['Predictive modeling', 'Pattern recognition', 'Anomaly detection']
+    title: 'Multi-Disease Screening',
+    description: 'Extended capabilities for tuberculosis, leprosy, and histopathology-based diagnostics.',
+    benefits: ['Versatile applications', 'Comprehensive diagnostics', 'Adaptable AI models']
   },
   {
-    id: 'dataIntegration',
-    icon: <Database size={32} className="text-vyuhaa-500" />,
-    title: 'Data Integration',
-    description: 'Seamlessly connect multiple data sources into a unified, accessible format.',
-    benefits: ['Cloud integration', 'API connections', 'ETL processing']
+    id: 'edgeTechnology',
+    icon: <Building size={32} className="text-vyuhaa-500" />,
+    title: 'EDGE-Based Technology',
+    description: 'Cloud-independent processing for low-resource and remote healthcare settings.',
+    benefits: ['No internet dependency', 'Faster processing', 'Resource-efficient']
   },
   {
-    id: 'dataVisualization',
-    icon: <LineChart size={32} className="text-vyuhaa-500" />,
-    title: 'Data Visualization',
-    description: 'Present complex data in intuitive, interactive visual formats.',
-    benefits: ['Custom charts', 'Interactive reports', 'Real-time updates']
+    id: 'clinicalValidation',
+    icon: <Shield size={32} className="text-vyuhaa-500" />,
+    title: 'Clinical Validation',
+    description: 'Undergoing validation with ICMR for CDSCO approvals for large-scale implementation.',
+    benefits: ['Regulatory compliance', 'Evidence-based approach', 'Quality assurance']
   },
   {
-    id: 'customSolutions',
-    icon: <Settings size={32} className="text-vyuhaa-500" />,
-    title: 'Custom Solutions',
-    description: 'Tailored data solutions designed to address your specific business challenges.',
-    benefits: ['Industry-specific models', 'Dedicated expert support', 'Scalable architecture']
+    id: 'globalPartnerships',
+    icon: <Globe size={32} className="text-vyuhaa-500" />,
+    title: 'Strategic Partnerships',
+    description: 'Collaborations with global health organizations, policymakers, and investors.',
+    benefits: ['Expanded reach', 'Public health integration', 'Sustainable impact']
   }
 ];
 
@@ -65,17 +65,17 @@ const FeaturesSection = () => {
         <div className="text-center mb-16">
           <AnimatedText
             as="span"
-            text="Our Services"
+            text="Our Solutions"
             className="text-vyuhaa-600 font-semibold mb-3 inline-block"
           />
           <AnimatedText
             as="h2"
-            text="Transforming Data Challenges Into Opportunities"
+            text="Transforming Healthcare Through AI-Driven Innovation"
             className="text-3xl md:text-4xl font-bold mb-6"
             delay={100}
           />
           <AnimatedText
-            text="Our comprehensive suite of data services helps businesses of all sizes harness the full potential of their data."
+            text="Our comprehensive suite of AI-powered healthcare solutions addresses critical gaps in medical diagnostics and early disease detection."
             className="text-gray-600 max-w-2xl mx-auto"
             delay={200}
           />

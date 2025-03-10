@@ -47,30 +47,30 @@ const HeroSection = () => {
         <div className="w-full md:w-1/2 md:pr-10 mb-12 md:mb-0">
           <div className="inline-block mb-2">
             <span className="text-xs md:text-sm font-semibold px-3 py-1 rounded-full bg-vyuhaa-100 text-vyuhaa-800 animate-fade-in">
-              Data Transformation Solutions
+              AI-Powered Healthcare
             </span>
           </div>
           
           <AnimatedText
             as="h1"
-            text="Transform Your Data Into Actionable Insights"
+            text="Making Early Disease Detection Accessible, Affordable, and Scalable"
             className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
             delay={100}
           />
           
           <AnimatedText
-            text="Vyuhaa Data helps businesses make sense of complex data through advanced analytics, AI-powered solutions, and intuitive visualization tools."
+            text="Vyuhaa Med Data's CerviAI platform brings AI-driven digital cytology to underserved communities, revolutionizing cervical cancer screening and multi-disease detection."
             className="text-gray-600 text-lg mb-8"
             delay={200}
           />
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in opacity-0" style={{ animationDelay: '300ms' }}>
             <a href="#contact" className="button-primary flex items-center justify-center">
-              Get Started 
+              Learn More
               <ArrowRight size={16} className="ml-2" />
             </a>
             <a href="#features" className="button-outline flex items-center justify-center">
-              Learn More
+              Our Solutions
             </a>
           </div>
         </div>
@@ -78,8 +78,8 @@ const HeroSection = () => {
         <div className="w-full md:w-1/2 relative">
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl animate-fade-in opacity-0" style={{ animationDelay: '400ms' }}>
             <BlurImage 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-              alt="Data Analytics Dashboard"
+              src="https://images.unsplash.com/photo-1576671353558-8c0e16d63c45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="AI-Powered Medical Diagnostics"
               className="w-full h-auto rounded-2xl"
             />
           </div>

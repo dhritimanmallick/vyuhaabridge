@@ -12,6 +12,7 @@ interface BlurImageProps {
 
 const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const img = new Image();
@@ -19,21 +20,31 @@ const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
     img.onload = () => {
       setIsLoaded(true);
     };
+    img.onerror = () => {
+      setError(true);
+      console.error(`Failed to load image: ${src}`);
+    };
   }, [src]);
 
   return (
     <div className="overflow-hidden relative">
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={cn(
-          "blur-image", 
-          isLoaded && "loaded", 
-          className
-        )}
-      />
+      {error ? (
+        <div className="flex items-center justify-center bg-gray-100 w-full h-64 rounded-lg">
+          <p className="text-gray-500">Image could not be loaded</p>
+        </div>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className={cn(
+            "blur-image transition-all duration-500", 
+            isLoaded ? "loaded filter-none" : "blur-md scale-105", 
+            className
+          )}
+        />
+      )}
     </div>
   );
 };

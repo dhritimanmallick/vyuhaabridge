@@ -5,11 +5,11 @@ import { CheckCircle } from 'lucide-react';
 
 const AboutSection = () => {
   const benefits = [
-    'Industry-leading data expertise',
-    'Custom solutions for unique challenges',
-    'Cutting-edge technology and methodologies',
-    'Dedicated support and training',
-    'Secure and compliant data handling'
+    'AI-driven efficiency in disease detection',
+    'Rural healthcare access through mobile screening camps',
+    'Multi-disease screening capabilities',
+    'EDGE-based technology for low-resource settings',
+    'Clinical validation with leading healthcare institutions'
   ];
 
   return (
@@ -24,17 +24,17 @@ const AboutSection = () => {
             />
             <AnimatedText
               as="h2"
-              text="Pioneers in Data Transformation & Analytics"
+              text="Pioneers in AI-Driven Healthcare Innovation"
               className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
               delay={100}
             />
             <AnimatedText
-              text="At Vyuhaa Data, we're passionate about helping businesses harness the power of their data. Our team of expert data scientists, engineers, and consultants work collaboratively to deliver tailored solutions that address your specific challenges."
+              text="Vyuhaa Med Data is an AI-driven healthcare startup dedicated to making early disease detection accessible, affordable, and scalable. Our flagship product, CerviAI, is revolutionizing cervical cancer screening in underserved communities."
               className="text-gray-600 mb-6"
               delay={200}
             />
             <AnimatedText
-              text="With decades of combined experience across industries, we've developed a deep understanding of how to extract meaningful insights from complex datasets and translate them into actionable business strategies."
+              text="We are actively conducting women's health screening camps in rural India, addressing gaps in cervical cancer detection by bringing AI-driven digital cytology directly to those who need it most. By integrating with public health initiatives, we ensure high-quality, low-cost diagnostics for mass screening programs."
               className="text-gray-600 mb-6"
               delay={300}
             />
@@ -56,8 +56,8 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl animate-fade-in opacity-0" style={{ animationDelay: '300ms' }}>
               <BlurImage 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Vyuhaa Data Team"
+                src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Vyuhaa Med Data Team"
                 className="w-full h-auto rounded-2xl"
               />
             </div>

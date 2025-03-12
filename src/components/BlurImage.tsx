@@ -24,6 +24,11 @@ const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
       setError(true);
       console.error(`Failed to load image: ${src}`);
     };
+    
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [src]);
 
   return (
@@ -43,6 +48,7 @@ const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
             isLoaded ? "loaded filter-none" : "blur-md scale-105", 
             className
           )}
+          onError={() => setError(true)}
         />
       )}
     </div>

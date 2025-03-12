@@ -58,9 +58,11 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
         <a href="#home" className="flex items-center">
-          <span className="text-2xl font-bold text-vyuhaa-800">
-            Vyuhaa<span className="text-vyuhaa-500">Data</span>
-          </span>
+          <img 
+            src="/lovable-uploads/1eb4c2e4-4529-4152-86cd-3815897a9374.png" 
+            alt="Vyuhaa Med Data Logo" 
+            className="h-10 md:h-12"
+          />
         </a>
 
         {/* Desktop navigation */}
@@ -69,7 +71,7 @@ const Navbar = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-vyuhaa-600 font-medium link-hover"
+              className="text-gray-700 hover:text-blue-600 font-medium link-hover"
             >
               {link.name}
             </a>
@@ -84,7 +86,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-700 hover:text-vyuhaa-600"
+          className="md:hidden text-gray-700 hover:text-blue-600"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -100,9 +102,11 @@ const Navbar = () => {
         )}
       >
         <div className="flex justify-between items-center p-6 border-b">
-          <span className="text-2xl font-bold text-vyuhaa-800">
-            Vyuhaa<span className="text-vyuhaa-500">Data</span>
-          </span>
+          <img 
+            src="/lovable-uploads/1eb4c2e4-4529-4152-86cd-3815897a9374.png" 
+            alt="Vyuhaa Med Data Logo" 
+            className="h-8"
+          />
           <button 
             onClick={toggleMenu}
             aria-label="Close menu"
@@ -115,7 +119,7 @@ const Navbar = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-vyuhaa-600 py-2 text-lg font-medium"
+              className="text-gray-700 hover:text-blue-600 py-2 text-lg font-medium"
               onClick={toggleMenu}
             >
               {link.name}

@@ -10,7 +10,13 @@ import Footer from '../components/Footer';
 const Index = () => {
   useEffect(() => {
     // Set page title for medical focus
-    document.title = "Vyuhaa Med Data | AI-Driven Healthcare Solutions";
+    document.title = "Vyuhaa Med Data | AI-Powered Cervical Cancer Screening for OB-GYNs & Hospitals";
+    
+    // Add meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Vyuhaa Med Data provides AI-powered cervical cancer screening solutions for OB-GYNs and mid-sized hospitals with our innovative LBC Kit and CerviAI platform.');
+    }
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

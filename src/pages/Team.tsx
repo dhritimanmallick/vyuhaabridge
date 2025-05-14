@@ -1,6 +1,7 @@
 
 import AnimatedText from '../components/AnimatedText';
 import { Users } from 'lucide-react';
+import LogoCloud from '../components/LogoCloud';
 
 const team = [
   {

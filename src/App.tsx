@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,6 +6,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import CerviAIPlatform from "./pages/CerviAIPlatform";
+import Products from "./pages/Products";
+import Impact from "./pages/Impact";
+import Team from "./pages/Team";
+import News from "./pages/News";
+import PartnerContact from "./pages/PartnerContact";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +23,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/cerviai-platform" element={<CerviAIPlatform />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/impact" element={<Impact />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/partner-contact" element={<PartnerContact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

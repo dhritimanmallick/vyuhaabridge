@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import NavLink from './NavLink';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,10 +41,13 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Features', href: '#features' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', to: '/' },
+    { name: 'CerviAI Platform', to: '/cerviai-platform' },
+    { name: 'Products', to: '/products' },
+    { name: 'Impact', to: '/impact' },
+    { name: 'Team', to: '/team' },
+    { name: 'News', to: '/news' },
+    { name: 'Partner/Contact', to: '/partner-contact' },
   ];
 
   return (
@@ -57,7 +60,7 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-        <a href="#home" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img 
             src="/lovable-uploads/1eb4c2e4-4529-4152-86cd-3815897a9374.png" 
             alt="Vyuhaa Med Data Logo" 
@@ -66,22 +69,16 @@ const Navbar = () => {
         </a>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <a 
+            <NavLink 
               key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-blue-600 font-medium link-hover"
+              to={link.to}
+              className="px-2"
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a 
-            href="#contact" 
-            className="button-primary ml-4"
-          >
-            Get Started
-          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -116,22 +113,15 @@ const Navbar = () => {
         </div>
         <nav className="flex flex-col space-y-4 p-6">
           {navLinks.map((link) => (
-            <a 
+            <NavLink 
               key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-blue-600 py-2 text-lg font-medium"
+              to={link.to}
+              className="py-2 text-lg"
               onClick={toggleMenu}
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a 
-            href="#contact" 
-            className="button-primary mt-4 text-center"
-            onClick={toggleMenu}
-          >
-            Get Started
-          </a>
         </nav>
       </div>
     </header>

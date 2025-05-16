@@ -21,7 +21,7 @@ const team = [
   {
     name: "Krishna Mohan Reddy",
     title: "Co-Founder & CTO",
-    image: "https://vyuhaa-logos.s3.amazonaws.com/krishna.jpg",
+    image: "/lovable-uploads/41ef9c5e-a8ff-4079-91d2-0250162289a4.png",
   }
 ];
 
@@ -46,3 +46,4 @@ const TeamPreview = () => (
   </section>
 );
 export default TeamPreview;
+

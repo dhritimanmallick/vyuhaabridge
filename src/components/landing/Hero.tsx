@@ -8,11 +8,11 @@ const Hero = () => (
   <section className="relative min-h-[80vh] flex flex-col justify-center section-padding pt-24 md:pt-40 mb-8 bg-gradient-to-b from-white to-vyuhaa-50">
     <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10">
       <div className="w-full lg:w-1/2">
-        <div className="flex mb-6">
+        <div className="flex mb-8 justify-center"> 
           <img
-            src="https://vyuhaa-logos.s3.amazonaws.com/vyuhaa-logo.png"
-            alt="Vyuhaa Logo"
-            className="h-20 md:h-28 w-auto mx-auto mb-2"
+            src="/lovable-uploads/36150526-a73d-4d5a-adc9-242bc1a883c4.png"
+            alt="Vyuhaa Med Data Logo"
+            className="h-32 md:h-44 w-auto mx-auto mb-2 drop-shadow-lg"
           />
         </div>
         <AnimatedText

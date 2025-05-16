@@ -8,14 +8,14 @@ const ContactSection = () => {
     {
       icon: <Mail className="text-vyuhaa-500" size={24} />,
       title: 'Email',
-      content: 'info@vyuhaadata.com',
-      link: 'mailto:info@vyuhaadata.com'
+      content: 'admin@vyuhaadata.com',
+      link: 'mailto:admin@vyuhaadata.com'
     },
     {
       icon: <Phone className="text-vyuhaa-500" size={24} />,
       title: 'Phone',
-      content: '+1 (123) 456-7890',
-      link: 'tel:+11234567890'
+      content: '+91-9840582365',
+      link: 'tel:+919840582365'
     },
     {
       icon: <MapPin className="text-vyuhaa-500" size={24} />,

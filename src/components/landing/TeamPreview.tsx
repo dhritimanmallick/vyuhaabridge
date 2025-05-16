@@ -1,6 +1,30 @@
 
 import AnimatedText from "@/components/AnimatedText";
 import BlurImage from "@/components/BlurImage";
+
+const team = [
+  {
+    name: "Dhritiman Mallick",
+    title: "Founder & Operations",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/dhritiman.jpg",
+  },
+  {
+    name: "Dr. CP Ranjani",
+    title: "Lead Pathologist",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/ranjani.jpg",
+  },
+  {
+    name: "CP Madhusudan",
+    title: "BD Head and Non Profit Ventures",
+    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Krishna Mohan Reddy",
+    title: "Co-Founder & CTO",
+    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=400&q=80",
+  }
+];
+
 const TeamPreview = () => (
   <section className="section-padding bg-vyuhaa-50" id="team">
     <div className="max-w-5xl mx-auto">
@@ -10,16 +34,13 @@ const TeamPreview = () => (
         className="text-2xl md:text-3xl font-bold mb-8 text-center"
       />
       <div className="flex flex-wrap gap-8 justify-center">
-        <div className="flex flex-col items-center">
-          <BlurImage src="https://vyuhaa-logos.s3.amazonaws.com/dhritiman.jpg" alt="Dhritiman Mallick" className="w-24 h-24 rounded-full mb-2"/>
-          <span className="font-bold text-vyuhaa-800">Dhritiman Mallick</span>
-          <span className="text-gray-500 text-sm">Founder &amp; Operations</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <BlurImage src="https://vyuhaa-logos.s3.amazonaws.com/ranjani.jpg" alt="Dr. CP Ranjani" className="w-24 h-24 rounded-full mb-2"/>
-          <span className="font-bold text-vyuhaa-800">Dr. CP Ranjani</span>
-          <span className="text-gray-500 text-sm">Lead Pathologist</span>
-        </div>
+        {team.map(member => (
+          <div key={member.name} className="flex flex-col items-center">
+            <BlurImage src={member.image} alt={member.name} className="w-24 h-24 rounded-full mb-2"/>
+            <span className="font-bold text-vyuhaa-800">{member.name}</span>
+            <span className="text-gray-500 text-sm">{member.title}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>

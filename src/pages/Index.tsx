@@ -1,7 +1,9 @@
+
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/landing/Hero";
+import Clients from "../components/landing/Clients";
 import Marquee from "../components/landing/Marquee";
 import AboutVyuhaa from "../components/landing/AboutVyuhaa";
 import ImpactHighlights from "../components/landing/ImpactHighlights";
@@ -24,6 +26,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Clients />
         <Marquee />
         <AboutVyuhaa />
         <ImpactHighlights />

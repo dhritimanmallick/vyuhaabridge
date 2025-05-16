@@ -6,7 +6,7 @@ const team = [
   {
     name: "Dhritiman Mallick",
     title: "Founder & Operations",
-    image: "https://vyuhaa-logos.s3.amazonaws.com/dhritiman.jpg",
+    image: "/lovable-uploads/82cad346-abe3-414a-b274-253d6632262c.png",
   },
   {
     name: "Dr. CP Ranjani",

@@ -7,7 +7,7 @@ const team = [
   {
     name: "Dhritiman Mallick",
     title: "Co-Founder & CEO",
-    image: "https://vyuhaa-logos.s3.amazonaws.com/dhritiman.jpg",
+    image: "/lovable-uploads/82cad346-abe3-414a-b274-253d6632262c.png",
     linkedin: "https://www.linkedin.com/in/dhritimanmallick/"
   },
   {

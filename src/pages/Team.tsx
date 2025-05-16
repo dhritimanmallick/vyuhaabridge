@@ -19,7 +19,7 @@ const team = [
   {
     name: "CP Madhusudan",
     title: "BD Head and Non Profit Ventures",
-    image: "https://vyuhaa-logos.s3.amazonaws.com/madhusudan.jpg",
+    image: "/lovable-uploads/d4c177a4-f2b2-44f2-a9ff-03b03ba02c10.png",
     linkedin: "https://www.linkedin.com/in/madhusudancp/"
   },
   {

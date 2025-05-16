@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -31,6 +30,54 @@ const logos = [
   },
 ];
 
+// Placeholder for client/customer logos
+const clientLogos = [
+  {
+    name: "Fernandez Hospitals",
+    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=220&q=80",
+  },
+  {
+    name: "Sudha Hospitals",
+    src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=220&q=80",
+  },
+  {
+    name: "CPath Labs",
+    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=220&q=80",
+  },
+];
+
+const Marquee = () => (
+  <div className="w-full overflow-x-hidden py-5 bg-white border-y border-gray-100">
+    <div className="flex gap-12 animate-marquee whitespace-nowrap">
+      {clientLogos.map(({ name, src }) => (
+        <div key={name} className="flex flex-col items-center mx-4 min-w-[140px]">
+          <img src={src} alt={name} className="h-14 w-36 object-contain grayscale hover:grayscale-0 transition" />
+          <span className="mt-1 text-xs text-gray-500">{name}</span>
+        </div>
+      ))}
+      {/* Duplicate for seamless loop */}
+      {clientLogos.map(({ name, src }) => (
+        <div key={name + "-dupe"} className="flex flex-col items-center mx-4 min-w-[140px]">
+          <img src={src} alt={name} className="h-14 w-36 object-contain grayscale hover:grayscale-0 transition" />
+          <span className="mt-1 text-xs text-gray-500">{name}</span>
+        </div>
+      ))}
+    </div>
+    <style>
+      {`
+        @keyframes marquee {
+          0%   { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+          display: flex;
+        }
+      `}
+    </style>
+  </div>
+);
+
 // --- COMPONENTS ---
 
 const Hero = () => (
@@ -43,7 +90,7 @@ const Hero = () => (
           className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
         />
         <AnimatedText
-          text="CerviAI™ by Vyuhaa Med Data enables scalable, assistive digital pathology for cervical cancer and beyond — from edge to cloud."
+          text="CerviAI™ by Vyuhaa Med Data is our AI-powered platform for scalable, assistive cervical cancer screening. For other cancer diagnostics and foundational models, explore our VyuPath platform."
           className="text-lg text-gray-600 mb-6"
           delay={100}
         />
@@ -65,13 +112,12 @@ const Hero = () => (
       <div className="w-full lg:w-1/2 relative">
         <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl max-w-xl mx-auto animate-fade-in">
           <BlurImage
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-            alt="Pathologist using CerviAI and EDGE device"
+            // Laboratory/diagnostics photo
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+            alt="Clinical diagnostics laboratory"
             className="w-full h-72 object-cover"
           />
-          {/* Could add a WSI heatmap overlay illustration here in final build */}
         </div>
-        {/* Subtle accent shape */}
         <div className="absolute -top-8 -right-8 w-40 h-40 bg-vyuhaa-100 rounded-full blur-2xl pointer-events-none animate-pulse-glow"></div>
       </div>
     </div>
@@ -145,11 +191,11 @@ const CerviAIPlatform = () => (
       <div>
         <AnimatedText
           as="h2"
-          text="CerviAI™ – Your Digital Cytology Companion"
+          text="CerviAI™ – Screening Cervical Cancer with AI"
           className="text-2xl md:text-3xl font-bold mb-5"
         />
         <AnimatedText
-          text="CerviAI is a deep learning-powered platform designed for automated cervical cytology screening. Trained on diverse, real-world datasets, it assists pathologists in identifying high-risk cases faster, with precision."
+          text="CerviAI is a deep learning-powered solution dedicated for automated cervical cytology screening. For other cancer diagnostics – breast, GI, lung, oral and more – explore our VyuPath platform and modular foundational models for digital pathology."
           className="mb-5 text-gray-700"
           delay={100}
         />
@@ -158,7 +204,7 @@ const CerviAIPlatform = () => (
           <li>• Trained on over 2,800 cases in NABL-accredited labs</li>
           <li>• EDGE device with cloud sync for low-resource settings</li>
           <li>• Works with Hamamatsu, Grundium, and KFBio scanners</li>
-          <li>• Modular AI models tailored to sub-specialties</li>
+          <li>• Modular AI models: CerviAI, VyuPath and more</li>
         </ul>
         <a href="#request-demo">
           <Button size="lg">Request Edge Device Demo</Button>
@@ -167,7 +213,7 @@ const CerviAIPlatform = () => (
       <div className="flex flex-col items-center space-y-6">
         <BlurImage
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80"
-          alt="CerviAI Edge Device"
+          alt="CerviAI Edge Device in diagnostics lab"
           className="w-full h-64 object-cover rounded-xl"
         />
       </div>
@@ -302,6 +348,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <AboutVyuhaa />
         <ImpactHighlights />
         <CerviAIPlatform />

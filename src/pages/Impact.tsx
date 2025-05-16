@@ -2,9 +2,10 @@
 import AnimatedText from '../components/AnimatedText';
 import LogoCloud from '../components/LogoCloud';
 import { BarChart2 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const impactStats = [
-  { value: "5,000+", label: "Women Screened" },
+  { value: 11254, label: "Women Screened", animated: true },
   { value: "3", label: "States Deployed" },
   { value: "60%", label: "Reduction in Pathologist Workload" },
   { value: "2,800+", label: "Cases in Double-Blind Studies" },
@@ -23,6 +24,29 @@ const stories = [
   },
 ];
 
+function AnimatedCounter({ target, duration = 1800 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = target / (duration / 30);
+    ref.current = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        if (ref.current) clearInterval(ref.current);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 30);
+    return () => {
+      if (ref.current) clearInterval(ref.current);
+    };
+  }, [target, duration]);
+  return <span className="text-2xl font-bold text-vyuhaa-600">{count.toLocaleString()}</span>;
+}
+
 const Impact = () => (
   <section className="section-padding min-h-screen bg-white">
     <div className="max-w-5xl mx-auto text-center">
@@ -34,7 +58,11 @@ const Impact = () => (
         {impactStats.map(stat => (
           <div key={stat.label} className="p-4 bg-vyuhaa-50 rounded-xl flex flex-col items-center shadow">
             <BarChart2 className="mb-2 text-vyuhaa-500" size={28} />
-            <span className="text-2xl font-bold text-vyuhaa-600">{stat.value}</span>
+            {stat.animated ? (
+              <AnimatedCounter target={stat.value as number} />
+            ) : (
+              <span className="text-2xl font-bold text-vyuhaa-600">{stat.value}</span>
+            )}
             <span className="text-xs text-gray-500">{stat.label}</span>
           </div>
         ))}
@@ -55,4 +83,3 @@ const Impact = () => (
 );
 
 export default Impact;
-

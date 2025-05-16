@@ -26,7 +26,9 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Clients />
+        <div className="max-w-5xl mx-auto text-center py-6">
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-700">Our Clients</h3>
+        </div>
         <Marquee />
         <AboutVyuhaa />
         <ImpactHighlights />

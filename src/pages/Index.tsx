@@ -46,6 +46,29 @@ const clientLogos = [
   },
 ];
 
+const impactPartnerLogos = [
+  {
+    name: "IIT Hyderabad",
+    src: "https://vyuhaa-logos.s3.amazonaws.com/cfhe.png",
+  },
+  {
+    name: "NVIDIA Inception",
+    src: "https://vyuhaa-logos.s3.amazonaws.com/nvidia.png",
+  },
+  {
+    name: "Hamamatsu Photonics",
+    src: "https://vyuhaa-logos.s3.amazonaws.com/hamamatsu.png",
+  },
+  {
+    name: "CCAMP",
+    src: "https://vyuhaa-logos.s3.amazonaws.com/ccamp.png",
+  },
+  {
+    name: "MEITY",
+    src: "https://vyuhaa-logos.s3.amazonaws.com/meity.png",
+  }
+];
+
 const Marquee = () => (
   <div className="w-full overflow-x-hidden py-5 bg-white border-y border-gray-100">
     <div className="flex gap-12 animate-marquee whitespace-nowrap">
@@ -84,6 +107,14 @@ const Hero = () => (
   <section className="relative min-h-[80vh] flex flex-col justify-center section-padding pt-24 md:pt-40 mb-8 bg-gradient-to-b from-white to-vyuhaa-50">
     <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10">
       <div className="w-full lg:w-1/2">
+        {/* Increase Vyuhaa Logo size and display it at the top of Hero */}
+        <div className="flex mb-6">
+          <img
+            src="https://vyuhaa-logos.s3.amazonaws.com/vyuhaa-logo.png"
+            alt="Vyuhaa Logo"
+            className="h-20 md:h-28 w-auto mx-auto mb-2"
+          />
+        </div>
         <AnimatedText
           as="h1"
           text="AI-Powered Cancer Screening. Built for the Real World."
@@ -169,14 +200,15 @@ const ImpactHighlights = () => (
           </div>
         </div>
         <div className="text-sm text-gray-600 mb-2">Deployed in 3 states + 1 international pilot.</div>
+        {/* Replaced logos with `impactPartnerLogos` */}
         <div className="flex flex-wrap justify-center items-center gap-6 mt-2">
-          <span className="text-gray-500 mr-2 font-semibold">Trusted by:</span>
-          {logos.map(({ name, src }) => (
+          <span className="text-gray-500 mr-2 font-semibold">Supported by:</span>
+          {impactPartnerLogos.map(({ name, src }) => (
             <img
               key={name}
               src={src}
               alt={name}
-              className="h-8 w-auto object-contain grayscale hover:grayscale-0 transition"
+              className="h-10 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition"
             />
           ))}
         </div>

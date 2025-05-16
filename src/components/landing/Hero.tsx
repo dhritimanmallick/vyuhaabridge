@@ -1,4 +1,3 @@
-
 import AnimatedText from "@/components/AnimatedText";
 import BlurImage from "@/components/BlurImage";
 import { Button } from "@/components/ui/button";

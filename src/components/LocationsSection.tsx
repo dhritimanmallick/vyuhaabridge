@@ -21,6 +21,11 @@ const locations = [
     First floor, I-Hub, Siddeswaram,
     Nadupuru Reserve Forest,
     Visakhapatnam, Andhra Pradesh 530032`
+  },
+  {
+    city: "Hyderabad",
+    address: `C/O CPath Labs 5th Floor, Plot No, KK Plaza, 450 & 476, 100 Feet Rd,
+    Ayyappa Society, Chanda Naik Nagar, Madhapur, Hyderabad, Telangana 500081`
   }
 ];
 

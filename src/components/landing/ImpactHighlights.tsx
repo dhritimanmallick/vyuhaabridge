@@ -20,7 +20,7 @@ const ImpactHighlights = () => (
         />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
           <div className="flex flex-col items-center">
-            <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">5,000+</span>
+            <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">10,000+</span>
             <span className="text-gray-700 text-sm text-center">Women Screened</span>
           </div>
           <div className="flex flex-col items-center">

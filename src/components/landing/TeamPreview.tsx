@@ -16,12 +16,12 @@ const team = [
   {
     name: "CP Madhusudan",
     title: "BD Head and Non Profit Ventures",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/madhusudan.jpg",
   },
   {
     name: "Krishna Mohan Reddy",
     title: "Co-Founder & CTO",
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/krishna.jpg",
   }
 ];
 

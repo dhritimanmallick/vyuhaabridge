@@ -7,25 +7,25 @@ const team = [
   {
     name: "Dhritiman Mallick",
     title: "Co-Founder & CEO",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/dhritiman.jpg",
     linkedin: "https://www.linkedin.com/in/dhritimanmallick/"
   },
   {
     name: "Krishna Mohan Reddy",
     title: "Co-Founder & CTO",
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/krishna.jpg",
     linkedin: "https://www.linkedin.com/in/krishna-mohan-reddy-70b9511/"
   },
   {
     name: "CP Madhusudan",
     title: "BD Head and Non Profit Ventures",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/madhusudan.jpg",
     linkedin: "https://www.linkedin.com/in/madhusudancp/"
   },
   {
     name: "Dr. CP Ranjani",
     title: "Clinical Director",
-    image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=400&q=80",
+    image: "https://vyuhaa-logos.s3.amazonaws.com/ranjani.jpg",
     linkedin: "https://www.linkedin.com/in/dr-ranjani-chakravarthy-b078b319/"
   }
 ];

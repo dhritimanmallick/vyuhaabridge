@@ -64,7 +64,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/1eb4c2e4-4529-4152-86cd-3815897a9374.png" 
             alt="Vyuhaa Med Data Logo" 
-            className="h-10 md:h-12"
+            className="h-14 md:h-16"
           />
         </a>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/1eb4c2e4-4529-4152-86cd-3815897a9374.png" 
             alt="Vyuhaa Med Data Logo" 
-            className="h-8"
+            className="h-12"
           />
           <button 
             onClick={toggleMenu}

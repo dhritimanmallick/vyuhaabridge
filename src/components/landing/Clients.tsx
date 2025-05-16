@@ -20,20 +20,45 @@ const Clients = () => (
   <section className="py-8 bg-white border-y border-gray-100">
     <div className="max-w-5xl mx-auto text-center">
       <h3 className="text-lg font-semibold text-gray-700 mb-4">Our Clients</h3>
-      <div className="flex flex-wrap gap-8 justify-center items-center">
-        {clientLogos.map((logo) => (
-          <div key={logo.name} className="flex flex-col items-center min-w-[110px]">
-            <img
-              src={logo.src}
-              alt={logo.name}
-              className="h-12 w-28 object-contain grayscale hover:grayscale-0 transition bg-white rounded shadow"
-              style={{ maxWidth: 110 }}
-            />
-            <span className="text-xs text-gray-500 mt-1">{logo.name}</span>
-          </div>
-        ))}
+      <div className="relative w-full overflow-x-hidden py-2">
+        <div className="flex gap-12 animate-marquee whitespace-nowrap">
+          {clientLogos.map(({ name, src }) => (
+            <div key={name} className="flex flex-col items-center mx-4 min-w-[140px]">
+              <img
+                src={src}
+                alt={name}
+                className="h-14 w-36 object-contain grayscale hover:grayscale-0 transition bg-white rounded shadow"
+              />
+              <span className="mt-1 text-xs text-gray-500">{name}</span>
+            </div>
+          ))}
+          {/* Duplicate logos for seamless loop */}
+          {clientLogos.map(({ name, src }) => (
+            <div key={name + "-dupe"} className="flex flex-col items-center mx-4 min-w-[140px]">
+              <img
+                src={src}
+                alt={name}
+                className="h-14 w-36 object-contain grayscale hover:grayscale-0 transition bg-white rounded shadow"
+              />
+              <span className="mt-1 text-xs text-gray-500">{name}</span>
+            </div>
+          ))}
+        </div>
+        <style>
+          {`
+            @keyframes marquee {
+              0%   { transform: translateX(0%); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+              animation: marquee 30s linear infinite;
+              display: flex;
+            }
+          `}
+        </style>
       </div>
     </div>
   </section>
 );
+
 export default Clients;

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,6 +10,7 @@ import CerviAIPlatform from "../components/landing/CerviAIPlatform";
 import HowItWorks from "../components/landing/HowItWorks";
 import ProductsSection from "../components/landing/ProductsSection";
 import TeamPreview from "../components/landing/TeamPreview";
+import LocationsSection from "../components/LocationsSection";
 
 const Index = () => {
   useEffect(() => {
@@ -36,6 +36,7 @@ const Index = () => {
         <HowItWorks />
         <ProductsSection />
         <TeamPreview />
+        <LocationsSection />
       </main>
       <Footer />
     </div>

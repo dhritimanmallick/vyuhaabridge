@@ -1,11 +1,20 @@
 
 import AnimatedText from '../components/AnimatedText';
-import LogoCloud from '../components/LogoCloud';
+// import LogoCloud from '../components/LogoCloud'; // Removed as per instruction
 import { Video, Youtube, Linkedin } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CerviAIPlatform = () => (
   <section className="section-padding min-h-screen bg-white">
     <div className="max-w-5xl mx-auto text-center">
+      <div className="mb-4 flex">
+        <Link to="/" className="ml-auto">
+          <Button variant="outline" size="sm">
+            Home
+          </Button>
+        </Link>
+      </div>
       <AnimatedText as="h1" text="CerviAI™ – Your Digital Cytology Companion" className="text-3xl md:text-5xl font-bold mb-6" />
       <div className="flex flex-col md:flex-row gap-8 mb-10 items-center justify-center">
         <div className="flex-1">
@@ -82,6 +91,31 @@ const CerviAIPlatform = () => (
         </div>
       </div>
 
+      {/* Collection Kit Video Section */}
+      <div className="bg-vyuhaa-50 rounded-xl p-6 mt-12 shadow flex flex-col md:flex-row md:items-center md:justify-between gap-8 border border-vyuhaa-100">
+        <div className="flex-1 mb-6 md:mb-0 md:mr-8">
+          <AnimatedText
+            as="h2"
+            text="CerviAI Collection Kit Demo"
+            className="text-2xl md:text-3xl font-bold mb-4 text-left"
+          />
+          <p className="text-base md:text-lg text-gray-700 mb-3 text-left">
+            Take a look at our CerviAI Collection Kit in action, designed to streamline cervical cytology sample collection and ensure sample integrity for optimal diagnostic results.
+          </p>
+        </div>
+        <div className="flex-1">
+          <div className="relative rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/bzYKezOjx9I?si=2OHqtCZEhOYoiEpR"
+              title="CerviAI Collection Kit Demo"
+              className="w-full aspect-video rounded-xl border"
+              allow="autoplay; encrypted-media"
+            ></iframe>
+            <span className="absolute top-2 right-2 inline-flex items-center bg-white bg-opacity-70 rounded px-2 py-1 text-xs font-semibold"><Video size={16} className="mr-1" />Collection Kit Demo</span>
+          </div>
+        </div>
+      </div>
+
       {/* Social Links Section */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-16 mb-6">
         <a
@@ -101,10 +135,10 @@ const CerviAIPlatform = () => (
           <Linkedin className="text-blue-700" size={22} /> LinkedIn
         </a>
       </div>
-
-      <LogoCloud />
+      {/* Removed <LogoCloud /> */}
     </div>
   </section>
 );
 
 export default CerviAIPlatform;
+

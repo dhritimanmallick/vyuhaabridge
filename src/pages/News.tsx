@@ -1,7 +1,9 @@
 
 import AnimatedText from '../components/AnimatedText';
 import LogoCloud from '../components/LogoCloud';
-import { Award, FileText } from "lucide-react";
+import { Award, FileText, Video } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const news = [
   {
@@ -27,6 +29,13 @@ const news = [
 const News = () => (
   <section className="section-padding min-h-screen bg-white">
     <div className="max-w-4xl mx-auto text-center">
+      <div className="mb-4 flex">
+        <Link to="/" className="ml-auto">
+          <Button variant="outline" size="sm">
+            Home
+          </Button>
+        </Link>
+      </div>
       <AnimatedText as="h1" text="News & Publications" className="text-3xl md:text-5xl font-bold mb-10" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-10">
         {news.map((item) => (
@@ -38,6 +47,18 @@ const News = () => (
             </div>
           </div>
         ))}
+      </div>
+      {/* Camp Video */}
+      <div className="mb-10">
+        <h2 className="text-xl font-semibold mb-2 flex items-center justify-center"><Video className="text-vyuhaa-500 mr-2" size={20}/>Camp Highlight Video</h2>
+        <div className="relative rounded-xl overflow-hidden shadow-lg max-w-2xl mx-auto">
+          <iframe
+            src="https://www.youtube.com/embed/mNJdPBQZeEM?si=9fSVUDE0KzV83_Jb"
+            title="Camp Highlight Video"
+            className="w-full aspect-video rounded-xl border"
+            allow="autoplay; encrypted-media"
+          ></iframe>
+        </div>
       </div>
       <LogoCloud />
       <div className="mt-8 text-gray-500 text-sm">More publications and demo videos coming soon.</div>

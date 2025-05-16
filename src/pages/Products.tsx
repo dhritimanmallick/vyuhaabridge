@@ -1,54 +1,83 @@
-
 import AnimatedText from '../components/AnimatedText';
-import { FileText, BarChart2 } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import LogoCloud from '../components/LogoCloud';
+import { Microscope, Dna, Cpu, Syringe } from 'lucide-react';
 
 const products = [
   {
-    name: "CerviAI (Cervical Cytology)",
-    description: "AI-enabled cervical cancer screening, deployed and validated in public health programs. Regulatory path ongoing.",
-    status: "Available",
-    icon: <BarChart2 className="text-vyuhaa-500" size={32} />,
+    title: "CerviAI Platform",
+    description: "AI-powered cervical cytology screening platform with cloud and edge deployment options.",
+    icon: <Cpu className="text-blue-500" size={24} />,
+    link: "/cerviai-platform"
   },
   {
-    name: "Breast Cancer AI",
-    description: "Coming soon — An AI model for triage and prioritization of FNA/biopsy images.",
-    status: "Coming Soon",
-    icon: <FileText className="text-blue-500" size={32} />,
+    title: "Digital Cytology Scanner",
+    description: "High-throughput whole slide imaging system optimized for cytology specimens.",
+    icon: <Microscope className="text-green-500" size={24} />,
+    link: "#scanner"
   },
   {
-    name: "Histopathology AI Modules",
-    description: "Modular AI for GI, Lung, and Oral pathology. Under development.",
-    status: "In Development",
-    icon: <FileText className="text-blue-400" size={32} />,
+    title: "LBC Collection Kits",
+    description: "Liquid-based cytology collection kits for optimal sample preservation.",
+    icon: <Syringe className="text-red-500" size={24} />,
+    link: "#kits"
   },
   {
-    name: "Annotation Toolkits",
-    description: "Custom training/validation environments for partner labs and pathologists.",
-    status: "Available",
-    icon: <BarChart2 className="text-vyuhaa-400" size={32} />,
-  },
+    title: "HPV DNA Testing",
+    description: "Integrated HPV DNA testing workflow with AI-based risk stratification.",
+    icon: <Dna className="text-purple-500" size={24} />,
+    link: "#hpv"
+  }
 ];
 
 const Products = () => (
-  <section className="section-padding min-h-screen bg-gray-50">
+  <section className="section-padding min-h-screen bg-white">
     <div className="max-w-5xl mx-auto text-center">
-      <AnimatedText as="h1" text="Modular AI for Diagnostic Pathology" className="text-3xl md:text-5xl font-bold mb-6" />
-      <p className="text-lg text-gray-600 mb-10">
-        Each model we build addresses a specific clinical bottleneck.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {products.map(product => (
-          <div key={product.name} className="glass-card p-7 flex flex-col items-center shadow-lg hover-scale">
-            <div className="mb-4">{product.icon}</div>
-            <h2 className="text-xl font-semibold text-vyuhaa-600">{product.name}</h2>
-            <p className="text-gray-600 mb-3">{product.description}</p>
-            <span className="text-xs rounded-full px-3 py-1 bg-blue-100 text-blue-700 font-semibold">{product.status}</span>
+      <div className="mb-4 flex">
+        <Link to="/" className="ml-auto">
+          <Button variant="outline" size="sm">
+            Home
+          </Button>
+        </Link>
+      </div>
+      <AnimatedText as="h1" text="Products" className="text-3xl md:text-5xl font-bold mb-10" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {products.map((product) => (
+          <div key={product.title} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+            <div className="flex items-center mb-4">
+              <div className="p-3 bg-gray-50 rounded-full mr-4">
+                {product.icon}
+              </div>
+              <h3 className="text-xl font-bold">{product.title}</h3>
+            </div>
+            <p className="text-gray-600 mb-4">{product.description}</p>
+            <a 
+              href={product.link} 
+              className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+            >
+              Learn more →
+            </a>
           </div>
         ))}
       </div>
+      
+      <div className="bg-vyuhaa-50 rounded-xl p-8 mb-12">
+        <h2 className="text-2xl font-bold mb-4">Complete Cervical Cancer Screening Solution</h2>
+        <p className="text-gray-700 mb-6">
+          Our integrated product ecosystem provides end-to-end cervical cancer screening capabilities, 
+          from sample collection to AI-assisted diagnosis and reporting.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a href="#contact" className="button-primary">Request Pricing</a>
+          <a href="#demo" className="button-outline">Schedule Demo</a>
+        </div>
+      </div>
+      
+      <LogoCloud title="Trusted By Leading Healthcare Providers" />
     </div>
   </section>
 );
 
 export default Products;
-

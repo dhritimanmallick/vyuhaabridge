@@ -32,17 +32,6 @@ const Clients = () => (
               <span className="mt-1 text-xs text-gray-500">{name}</span>
             </div>
           ))}
-          {/* Duplicate logos for seamless loop */}
-          {clientLogos.map(({ name, src }) => (
-            <div key={name + "-dupe"} className="flex flex-col items-center mx-4 min-w-[140px]">
-              <img
-                src={src}
-                alt={name}
-                className="h-14 w-36 object-contain grayscale hover:grayscale-0 transition bg-white rounded shadow"
-              />
-              <span className="mt-1 text-xs text-gray-500">{name}</span>
-            </div>
-          ))}
         </div>
         <style>
           {`
@@ -62,3 +51,4 @@ const Clients = () => (
 );
 
 export default Clients;
+

@@ -7,6 +7,8 @@ const impactPartnerLogos = [
   { name: "Hamamatsu Photonics", src: "https://vyuhaa-logos.s3.amazonaws.com/hamamatsu.png" },
   { name: "CCAMP", src: "https://vyuhaa-logos.s3.amazonaws.com/ccamp.png" },
   { name: "MEITY", src: "https://vyuhaa-logos.s3.amazonaws.com/meity.png" },
+  // Insert local NVIDIA Inception logo as additional logo for clarity and visibility
+  { name: "NVIDIA Inception Program (uploaded)", src: "/lovable-uploads/f65a56e2-2263-42ca-ac9e-d27fe4115027.png" },
 ];
 
 const ImpactHighlights = () => (
@@ -44,7 +46,7 @@ const ImpactHighlights = () => (
               key={name}
               src={src}
               alt={name}
-              className="h-10 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition"
+              className="h-10 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition bg-white py-2 px-3 rounded"
             />
           ))}
         </div>
@@ -53,3 +55,4 @@ const ImpactHighlights = () => (
   </section>
 );
 export default ImpactHighlights;
+

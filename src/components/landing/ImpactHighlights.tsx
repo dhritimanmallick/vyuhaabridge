@@ -6,6 +6,7 @@ const impactPartnerLogos = [
   { name: "MEITY (uploaded)", src: "/lovable-uploads/3c711f73-fe4a-48a2-84ea-52210a03e396.png" },
   { name: "NVIDIA Inception Program (uploaded)", src: "/lovable-uploads/f65a56e2-2263-42ca-ac9e-d27fe4115027.png" },
   { name: "ICMR (uploaded)", src: "/lovable-uploads/d6183d61-0d71-4b2f-b057-629ae3ff3573.png" },
+  { name: "AMTZ", src: "/lovable-uploads/b624d886-09ac-4229-91a6-66d8f7af11c5.png" }, // NEW AMTZ LOGO
 ];
 
 const ImpactHighlights = () => (
@@ -52,4 +53,3 @@ const ImpactHighlights = () => (
   </section>
 );
 export default ImpactHighlights;
-

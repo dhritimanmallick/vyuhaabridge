@@ -1,3 +1,4 @@
+
 import AnimatedText from "@/components/AnimatedText";
 import BlurImage from "@/components/BlurImage";
 import { Button } from "@/components/ui/button";
@@ -7,11 +8,13 @@ const Hero = () => (
   <section className="relative min-h-[80vh] flex flex-col justify-center section-padding pt-24 md:pt-40 mb-8 bg-gradient-to-b from-white to-vyuhaa-50">
     <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10">
       <div className="w-full lg:w-1/2">
+        {/* Fernandez Hospitals Logo */}
         <div className="flex mb-8 justify-center"> 
           <img
-            src="/lovable-uploads/36150526-a73d-4d5a-adc9-242bc1a883c4.png"
-            alt="Vyuhaa Med Data Logo"
-            className="h-32 md:h-44 w-auto mx-auto mb-2 drop-shadow-lg"
+            src="/lovable-uploads/0ff30faf-e814-4de4-b567-f38890647108.png"
+            alt="Fernandez Hospitals Logo"
+            className="h-28 md:h-36 w-auto mx-auto mb-2 drop-shadow-lg rounded-xl bg-white/80 p-3"
+            style={{ maxWidth: 220 }}
           />
         </div>
         <AnimatedText
@@ -53,3 +56,4 @@ const Hero = () => (
   </section>
 );
 export default Hero;
+

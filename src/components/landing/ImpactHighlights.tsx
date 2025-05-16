@@ -1,13 +1,13 @@
-
 import AnimatedText from "@/components/AnimatedText";
 
 const impactPartnerLogos = [
   { name: "IIT Hyderabad", src: "https://vyuhaa-logos.s3.amazonaws.com/cfhe.png" },
   { name: "NVIDIA Inception", src: "https://vyuhaa-logos.s3.amazonaws.com/nvidia.png" },
+  { name: "Hamamatsu Photonics (uploaded)", src: "/lovable-uploads/d949f539-88bf-494c-ade6-8151d837cfdd.png" },
   { name: "Hamamatsu Photonics", src: "https://vyuhaa-logos.s3.amazonaws.com/hamamatsu.png" },
   { name: "CCAMP", src: "https://vyuhaa-logos.s3.amazonaws.com/ccamp.png" },
   { name: "MEITY", src: "https://vyuhaa-logos.s3.amazonaws.com/meity.png" },
-  // Insert local NVIDIA Inception logo as additional logo for clarity and visibility
+  // NVIDIA logo (previous upload)
   { name: "NVIDIA Inception Program (uploaded)", src: "/lovable-uploads/f65a56e2-2263-42ca-ac9e-d27fe4115027.png" },
 ];
 
@@ -55,4 +55,3 @@ const ImpactHighlights = () => (
   </section>
 );
 export default ImpactHighlights;
-

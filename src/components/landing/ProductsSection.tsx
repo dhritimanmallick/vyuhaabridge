@@ -43,8 +43,31 @@ const ProductsSection = () => (
             Liquid Based Cytology screening and triaging with HPV DNA Testing for efficient risk stratification.
           </div>
         </div>
+        <div className="glass-card p-6 flex flex-col items-center">
+          <BlurImage
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&q=80"
+            alt="Co-Testing"
+            className="w-20 h-20 mb-4 rounded-full"
+          />
+          <div className="font-bold text-vyuhaa-500 mb-1">Co-Testing (HPV DNA + LBC CerviAI)</div>
+          <div className="text-sm text-gray-700 text-center">
+            HPV DNA and LBC CerviAI run simultaneously for best screening outcomes. Supporting integrated diagnostics.
+          </div>
+        </div>
+        <div className="glass-card p-6 flex flex-col items-center">
+          <BlurImage
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80"
+            alt="2nd Opinion"
+            className="w-20 h-20 mb-4 rounded-full"
+          />
+          <div className="font-bold text-vyuhaa-600 mb-1">2nd Opinion (Cancer/Tumour/Biopsies)</div>
+          <div className="text-sm text-gray-700 text-center">
+            Rapid and expert review for cancer, tumour and biopsy cases. Access subspecialty pathologists via our digital platform.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 );
 export default ProductsSection;
+

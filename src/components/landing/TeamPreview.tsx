@@ -1,16 +1,17 @@
+
 import AnimatedText from "@/components/AnimatedText";
 import BlurImage from "@/components/BlurImage";
 
 const team = [
   {
     name: "Dhritiman Mallick",
-    title: "Founder & Operations",
+    title: "Chief Executive Officer",
     image: "/lovable-uploads/82cad346-abe3-414a-b274-253d6632262c.png",
   },
   {
     name: "Dr. CP Ranjani",
     title: "Lead Pathologist",
-    image: "https://vyuhaa-logos.s3.amazonaws.com/ranjani.jpg",
+    image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
   },
   {
     name: "CP Madhusudan",
@@ -19,7 +20,7 @@ const team = [
   },
   {
     name: "Krishna Mohan Reddy",
-    title: "Co-Founder & CTO",
+    title: "Chief Technology Officer",
     image: "/lovable-uploads/41ef9c5e-a8ff-4079-91d2-0250162289a4.png",
   }
 ];

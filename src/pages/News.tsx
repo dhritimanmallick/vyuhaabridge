@@ -1,7 +1,7 @@
 
 import AnimatedText from '../components/AnimatedText';
 import LogoCloud from '../components/LogoCloud';
-import { Award, FileText, Video } from "lucide-react";
+import { Award, FileText, Video, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -23,6 +23,31 @@ const news = [
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
     desc: "Peer-reviewed results and conference presentations forthcoming.",
     icon: <FileText className="text-blue-500" size={22} />,
+  },
+  // Newly added news entries
+  {
+    title: "Recognized by ICMR as a National Health priority project",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80",
+    desc: "Selected as a National Health priority by the Indian Council of Medical Research.",
+    icon: <Trophy className="text-vyuhaa-500" size={22} />,
+  },
+  {
+    title: "Top 3 Start-ups from India at NVIDIA GTC San Jose, 2024",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+    desc: "Showcased in the Top 3 Indian start-ups at the NVIDIA GTC global event 2024.",
+    icon: <Award className="text-blue-500" size={22} />,
+  },
+  {
+    title: "Champions at Eureka 2024",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=400&q=80",
+    desc: "Emerged as champions at Asia’s largest business case competition, Eureka 2024.",
+    icon: <Trophy className="text-vyuhaa-500" size={22} />,
+  },
+  {
+    title: "Winners, AWS Challenge award for public sector",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
+    desc: "Awarded as winners of the AWS Challenge for outstanding work in the public sector.",
+    icon: <Award className="text-blue-500" size={22} />,
   },
 ];
 
@@ -67,4 +92,3 @@ const News = () => (
 );
 
 export default News;
-

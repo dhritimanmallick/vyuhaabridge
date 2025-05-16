@@ -1,3 +1,4 @@
+
 import AnimatedText from "@/components/AnimatedText";
 import BlurImage from "@/components/BlurImage";
 const ProductsSection = () => (
@@ -36,7 +37,7 @@ const ProductsSection = () => (
           <div className="text-sm text-gray-700 text-center">Custom training/validation environments for labs</div>
         </div>
         <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage src="https://images.unsplash.com/photo-1519060825752-c48361be9c87?auto=format&fit=crop&w=300&q=80" alt="Sequential Testing" className="w-20 h-20 mb-4 rounded-full"/>
+          <BlurImage src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="Sequential Testing" className="w-20 h-20 mb-4 rounded-full"/>
           <div className="font-bold text-vyuhaa-700 mb-1">Sequential Testing</div>
           <div className="text-sm text-gray-700 text-center">
             Liquid Based Cytology screening and triaging with HPV DNA Testing for efficient risk stratification.

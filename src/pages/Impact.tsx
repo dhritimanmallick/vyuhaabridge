@@ -2,6 +2,7 @@
 import AnimatedText from '../components/AnimatedText';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Counter from '../components/Counter';
 
 const impactPartnerLogos = [
   { name: "Hamamatsu Photonics", src: "/lovable-uploads/d949f539-88bf-494c-ade6-8151d837cfdd.png" },
@@ -25,7 +26,10 @@ const Impact = () => (
       <AnimatedText as="h1" text="Our Impact" className="text-3xl md:text-5xl font-bold mb-10" />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
         <div className="flex flex-col items-center">
-          <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">10,000+</span>
+          <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">
+            <Counter to={10000} duration={1800} />
+            +
+          </span>
           <span className="text-gray-700 text-sm text-center">Women Screened</span>
         </div>
         <div className="flex flex-col items-center">
@@ -58,4 +62,3 @@ const Impact = () => (
 );
 
 export default Impact;
-

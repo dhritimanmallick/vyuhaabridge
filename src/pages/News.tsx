@@ -1,7 +1,7 @@
 
 import AnimatedText from '../components/AnimatedText';
 import LogoCloud from '../components/LogoCloud';
-import { Award, FileText, Video, Trophy } from "lucide-react";
+import { Award, FileText, Video, Trophy, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,14 @@ const news = [
     desc: "Peer-reviewed results and conference presentations forthcoming.",
     icon: <FileText className="text-blue-500" size={22} />,
   },
-  // Newly added news entries
+  {
+    title: "Published at MIT Solve",
+    image: "https://solve-mit-uploads.s3.amazonaws.com/team/fdc5af11be774b1a8cf4adae1ac7aab8/NFT1BzknNI_solution_Screen_Shot_2024-03-19_at_10.18.06_AM.png",
+    desc: "Vyuhaa's solution is published by Massachusetts Institute of Technology's Solve program.",
+    icon: <ExternalLink className="text-blue-500" size={22} />,
+    link: "https://solve.mit.edu/solutions/86062",
+    external: true,
+  },
   {
     title: "Recognized by ICMR as a National Health priority project",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80",
@@ -64,18 +71,39 @@ const News = () => (
       <AnimatedText as="h1" text="News & Publications" className="text-3xl md:text-5xl font-bold mb-10" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-10">
         {news.map((item) => (
-          <div key={item.title} className="glass-card p-6 flex gap-4 items-center shadow hover-scale">
-            <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded-lg mr-3" />
-            <div className="flex-1 text-left">
-              <div className="flex items-center mb-2">{item.icon}<span className="ml-2 font-bold">{item.title}</span></div>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
+          item.link && item.external ? (
+            <a
+              href={item.link}
+              key={item.title}
+              className="glass-card p-6 flex gap-4 items-center shadow hover-scale transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View more about ${item.title}`}
+            >
+              <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded-lg mr-3" />
+              <div className="flex-1 text-left">
+                <div className="flex items-center mb-2">
+                  {item.icon}
+                  <span className="ml-2 font-bold underline transition-colors hover:text-blue-700">{item.title}</span>
+                </div>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            </a>
+          ) : (
+            <div key={item.title} className="glass-card p-6 flex gap-4 items-center shadow hover-scale">
+              <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded-lg mr-3" />
+              <div className="flex-1 text-left">
+                <div className="flex items-center mb-2">{item.icon}<span className="ml-2 font-bold">{item.title}</span></div>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       {/* Camp Video */}
       <div className="mb-10">
-        <h2 className="text-xl font-semibold mb-2 flex items-center justify-center"><Video className="text-vyuhaa-500 mr-2" size={20}/>Camp Highlight Video</h2>
+        <h2 className="text-xl font-semibold mb-2 flex items-center justify-center">
+          <Video className="text-vyuhaa-500 mr-2" size={20}/>Camp Highlight Video</h2>
         <div className="relative rounded-xl overflow-hidden shadow-lg max-w-2xl mx-auto">
           <iframe
             src="https://www.youtube.com/embed/mNJdPBQZeEM?si=9fSVUDE0KzV83_Jb"

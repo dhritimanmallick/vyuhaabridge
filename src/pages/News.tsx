@@ -7,6 +7,14 @@ import { Link } from "react-router-dom";
 
 const news = [
   {
+    title: "India's AI market poised for rapid growth, transforming retail, sustainability and more by 2027",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
+    desc: "Recent reports highlight that India now accounts for 16% of the global AI talent pool, second only to the United States. The domestic AI workforce, currently estimated at 600,000, is expected to double by 2027.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://www.financialexpress.com/business/start-ups/indias-ai-market-poised-for-rapid-growth-transforming-retail-sustainability-and-more-by-2027/3905939/",
+    external: true,
+  },
+  {
     title: "Awarded by NVIDIA Inception",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
     desc: "Recognized for AI leadership and innovation in healthcare technology at global stage.",

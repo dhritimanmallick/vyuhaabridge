@@ -57,6 +57,40 @@ const Impact = () => (
           />
         ))}
       </div>
+
+      {/* News Section */}
+      <div className="mt-12 max-w-4xl mx-auto">
+        <h3 className="text-xl md:text-2xl font-bold text-center mb-6">In the News</h3>
+        <div className="bg-gray-50 rounded-lg p-6 border">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 bg-vyuhaa-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">FE</span>
+              </div>
+            </div>
+            <div className="flex-1">
+              <h4 className="font-semibold text-lg mb-2">
+                <a 
+                  href="https://www.financialexpress.com/business/start-ups/indias-ai-market-poised-for-rapid-growth-transforming-retail-sustainability-and-more-by-2027/3905939/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-vyuhaa-600 hover:text-vyuhaa-700 transition-colors"
+                >
+                  India's AI market poised for rapid growth, transforming retail, sustainability and more by 2027
+                </a>
+              </h4>
+              <p className="text-gray-600 text-sm mb-3">
+                Recent reports highlight that India now accounts for 16% of the global AI talent pool, second only to the United States. The domestic AI workforce, currently estimated at 600,000, is expected to double by 2027.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-gray-500">
+                <span>Financial Express</span>
+                <span>•</span>
+                <span>July 7, 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 );

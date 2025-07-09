@@ -7,22 +7,6 @@ import { Link } from "react-router-dom";
 
 const news = [
   {
-    title: "India's AI market poised for rapid growth, transforming retail, sustainability and more by 2027",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
-    desc: "Recent reports highlight that India now accounts for 16% of the global AI talent pool, second only to the United States. The domestic AI workforce, currently estimated at 600,000, is expected to double by 2027.",
-    icon: <FileText className="text-blue-500" size={22} />,
-    link: "https://www.financialexpress.com/business/start-ups/indias-ai-market-poised-for-rapid-growth-transforming-retail-sustainability-and-more-by-2027/3905939/",
-    external: true,
-  },
-  {
-    title: "100 words, 10 minutes, a shot at funding: Founders pitch their ideas at IIT Madras's Sangam 2025",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
-    desc: "Startups get a platform to pitch their innovative ideas to investors and industry experts at IIT Madras's premier entrepreneurship event.",
-    icon: <FileText className="text-blue-500" size={22} />,
-    link: "https://theprint.in/science/100-words-10-minutes-a-shot-at-funding-founders-pitch-their-ideas-at-iit-madrass-sangam-2025/2680080/",
-    external: true,
-  },
-  {
     title: "Awarded by NVIDIA Inception",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
     desc: "Recognized for AI leadership and innovation in healthcare technology at global stage.",
@@ -71,6 +55,22 @@ const news = [
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
     desc: "Awarded as winners of the AWS Challenge for outstanding work in the public sector.",
     icon: <Award className="text-blue-500" size={22} />,
+  },
+  {
+    title: "India's AI market poised for rapid growth, transforming retail, sustainability and more by 2027",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
+    desc: "Recent reports highlight that India now accounts for 16% of the global AI talent pool, second only to the United States. The domestic AI workforce, currently estimated at 600,000, is expected to double by 2027.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://www.financialexpress.com/business/start-ups/indias-ai-market-poised-for-rapid-growth-transforming-retail-sustainability-and-more-by-2027/3905939/",
+    external: true,
+  },
+  {
+    title: "100 words, 10 minutes, a shot at funding: Founders pitch their ideas at IIT Madras's Sangam 2025",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
+    desc: "Startups get a platform to pitch their innovative ideas to investors and industry experts at IIT Madras's premier entrepreneurship event.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://theprint.in/science/100-words-10-minutes-a-shot-at-funding-founders-pitch-their-ideas-at-iit-madrass-sangam-2025/2680080/",
+    external: true,
   },
 ];
 

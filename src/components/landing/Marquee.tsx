@@ -2,15 +2,15 @@
 const clientLogos = [
   {
     name: "Fernandez Hospitals",
-    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=220&q=80",
-  },
-  {
-    name: "Sudha Hospitals",
-    src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=220&q=80",
+    src: "/lovable-uploads/437b36d6-112f-46ce-87c5-fd23d15d87da.png",
   },
   {
     name: "CPath Labs",
-    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=220&q=80",
+    src: "/lovable-uploads/da2a01e1-db46-45a2-ac32-0ca58df76db0.png",
+  },
+  {
+    name: "FPAI India",
+    src: "/lovable-uploads/1a5cbed5-cf05-47db-9485-40ed3aa61d3d.png",
   },
 ];
 const Marquee = () => (

@@ -10,7 +10,10 @@ const impactPartnerLogos = [
   { name: "NVIDIA Inception Program", src: "/lovable-uploads/f65a56e2-2263-42ca-ac9e-d27fe4115027.png" },
   { name: "ICMR", src: "/lovable-uploads/d6183d61-0d71-4b2f-b057-629ae3ff3573.png" },
   { name: "AMTZ", src: "/lovable-uploads/b624d886-09ac-4229-91a6-66d8f7af11c5.png" },
-  { name: "Nasscom", src: "/lovable-uploads/9b5890ce-28a1-4d29-820d-604f1dbfd5ea.png" }, // NEW Nasscom LOGO
+  { name: "Nasscom", src: "/lovable-uploads/9b5890ce-28a1-4d29-820d-604f1dbfd5ea.png" },
+  { name: "Fernandez Hospitals", src: "/lovable-uploads/437b36d6-112f-46ce-87c5-fd23d15d87da.png" },
+  { name: "CPath Labs", src: "/lovable-uploads/da2a01e1-db46-45a2-ac32-0ca58df76db0.png" },
+  { name: "FPAI India", src: "/lovable-uploads/1a5cbed5-cf05-47db-9485-40ed3aa61d3d.png" },
 ];
 
 const Impact = () => (

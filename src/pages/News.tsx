@@ -80,7 +80,7 @@ const News = () => (
     <main>
       <section className="section-padding min-h-screen bg-white">
         <div className="max-w-4xl mx-auto text-center">
-      <AnimatedText as="h1" text="News & Publications" className="text-3xl md:text-5xl font-bold mb-10" />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-10">
         {news.map((item) => (
           item.link && item.external ? (

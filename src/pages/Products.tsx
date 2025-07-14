@@ -55,7 +55,7 @@ const Products = () => (
     <main>
       <section className="section-padding min-h-screen bg-white">
         <div className="max-w-5xl mx-auto text-center">
-      <AnimatedText as="h1" text="Products" className="text-3xl md:text-5xl font-bold mb-10" />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {products.map((product) => (
           <div key={product.title} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">

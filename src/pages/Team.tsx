@@ -38,7 +38,7 @@ const Team = () => (
     <main>
       <section className="section-padding min-h-screen bg-white">
         <div className="max-w-5xl mx-auto text-center">
-      <AnimatedText as="h1" text="Meet the Team" className="text-3xl md:text-5xl font-bold mb-10" />
+      
 
       <div className="flex flex-wrap gap-8 justify-center mb-16">
         {teamMembers.map(member => (

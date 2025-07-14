@@ -11,7 +11,7 @@ const CerviAIPlatform = () => (
     <main>
       <section className="section-padding min-h-screen bg-white">
         <div className="max-w-5xl mx-auto text-center">
-      <AnimatedText as="h1" text="CerviAI™ – Your Digital Cytology Companion" className="text-3xl md:text-5xl font-bold mb-6" />
+      
       <div className="flex flex-col md:flex-row gap-8 mb-10 items-center justify-center">
         <div className="flex-1">
           <div className="relative rounded-xl overflow-hidden shadow-lg">

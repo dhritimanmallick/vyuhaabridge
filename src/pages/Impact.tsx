@@ -24,7 +24,7 @@ const Impact = () => (
     <main>
       <section className="section-padding min-h-screen bg-white">
         <div className="max-w-5xl mx-auto text-center">
-      <AnimatedText as="h1" text="Our Impact" className="text-3xl md:text-5xl font-bold mb-10" />
+      
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
         <div className="flex flex-col items-center">
           <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">

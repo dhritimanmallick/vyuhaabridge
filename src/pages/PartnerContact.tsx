@@ -13,11 +13,6 @@ const PartnerContact = () => (
       <section className="section-padding min-h-screen bg-gradient-to-br from-vyuhaa-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <AnimatedText 
-              as="h1" 
-              text="Partner & Contact" 
-              className="text-4xl md:text-6xl font-bold mb-6 text-vyuhaa-900" 
-            />
             <p className="text-xl text-vyuhaa-700 max-w-3xl mx-auto leading-relaxed">
               Ready to transform healthcare through AI? Connect with our team to explore partnership opportunities and learn how CerviAI can enhance your diagnostic capabilities.
             </p>

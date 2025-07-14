@@ -78,7 +78,7 @@ const News = () => (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Navbar />
     <main>
-      <section className="section-padding pt-24 min-h-screen bg-white">
+      <section className="section-padding pt-32 min-h-screen bg-white">
         <div className="max-w-4xl mx-auto text-center">
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-10">

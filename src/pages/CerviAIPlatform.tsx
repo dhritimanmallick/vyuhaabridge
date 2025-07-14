@@ -1,20 +1,16 @@
 
 import AnimatedText from '../components/AnimatedText';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 // import LogoCloud from '../components/LogoCloud'; // Removed as per instruction
 import { Video, Youtube, Linkedin } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const CerviAIPlatform = () => (
-  <section className="section-padding min-h-screen bg-white">
-    <div className="max-w-5xl mx-auto text-center">
-      <div className="mb-4 flex">
-        <Link to="/" className="ml-auto">
-          <Button variant="outline" size="sm">
-            Home
-          </Button>
-        </Link>
-      </div>
+  <div className="flex flex-col min-h-screen overflow-hidden">
+    <Navbar />
+    <main>
+      <section className="section-padding min-h-screen bg-white">
+        <div className="max-w-5xl mx-auto text-center">
       <AnimatedText as="h1" text="CerviAI™ – Your Digital Cytology Companion" className="text-3xl md:text-5xl font-bold mb-6" />
       <div className="flex flex-col md:flex-row gap-8 mb-10 items-center justify-center">
         <div className="flex-1">
@@ -134,10 +130,13 @@ const CerviAIPlatform = () => (
         >
           <Linkedin className="text-blue-700" size={22} /> LinkedIn
         </a>
+        </div>
+        {/* Removed <LogoCloud /> */}
       </div>
-      {/* Removed <LogoCloud /> */}
-    </div>
-  </section>
+    </section>
+    </main>
+    <Footer />
+  </div>
 );
 
 export default CerviAIPlatform;

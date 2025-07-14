@@ -1,9 +1,9 @@
 
 import AnimatedText from '../components/AnimatedText';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import LogoCloud from '../components/LogoCloud';
 import { Award, FileText, Video, Trophy, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const news = [
   {
@@ -75,15 +75,11 @@ const news = [
 ];
 
 const News = () => (
-  <section className="section-padding min-h-screen bg-white">
-    <div className="max-w-4xl mx-auto text-center">
-      <div className="mb-4 flex">
-        <Link to="/" className="ml-auto">
-          <Button variant="outline" size="sm">
-            Home
-          </Button>
-        </Link>
-      </div>
+  <div className="flex flex-col min-h-screen overflow-hidden">
+    <Navbar />
+    <main>
+      <section className="section-padding min-h-screen bg-white">
+        <div className="max-w-4xl mx-auto text-center">
       <AnimatedText as="h1" text="News & Publications" className="text-3xl md:text-5xl font-bold mb-10" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 mb-10">
         {news.map((item) => (
@@ -128,11 +124,14 @@ const News = () => (
             allow="autoplay; encrypted-media"
           ></iframe>
         </div>
+        </div>
+        <LogoCloud />
+        <div className="mt-8 text-gray-500 text-sm">More publications and demo videos coming soon.</div>
       </div>
-      <LogoCloud />
-      <div className="mt-8 text-gray-500 text-sm">More publications and demo videos coming soon.</div>
-    </div>
-  </section>
+    </section>
+    </main>
+    <Footer />
+  </div>
 );
 
 export default News;

@@ -1,7 +1,7 @@
 
 import AnimatedText from '../components/AnimatedText';
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Counter from '../components/Counter';
 
 const impactPartnerLogos = [
@@ -19,15 +19,11 @@ const impactPartnerLogos = [
 ];
 
 const Impact = () => (
-  <section className="section-padding min-h-screen bg-white">
-    <div className="max-w-5xl mx-auto text-center">
-      <div className="mb-4 flex">
-        <Link to="/" className="ml-auto">
-          <Button variant="outline" size="sm">
-            Home
-          </Button>
-        </Link>
-      </div>
+  <div className="flex flex-col min-h-screen overflow-hidden">
+    <Navbar />
+    <main>
+      <section className="section-padding min-h-screen bg-white">
+        <div className="max-w-5xl mx-auto text-center">
       <AnimatedText as="h1" text="Our Impact" className="text-3xl md:text-5xl font-bold mb-10" />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
         <div className="flex flex-col items-center">
@@ -61,10 +57,13 @@ const Impact = () => (
             className="h-10 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition bg-white py-2 px-3 rounded"
           />
         ))}
-      </div>
+        </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+    </main>
+    <Footer />
+  </div>
 );
 
 export default Impact;

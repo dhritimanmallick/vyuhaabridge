@@ -10,7 +10,7 @@ const PartnerContact = () => (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Navbar />
     <main>
-      <section className="section-padding min-h-screen bg-gradient-to-br from-vyuhaa-50 to-white">
+      <section className="section-padding pt-24 min-h-screen bg-gradient-to-br from-vyuhaa-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-xl text-vyuhaa-700 max-w-3xl mx-auto leading-relaxed">

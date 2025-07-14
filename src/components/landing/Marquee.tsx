@@ -12,6 +12,14 @@ const clientLogos = [
     name: "FPAI India",
     src: "/lovable-uploads/1a5cbed5-cf05-47db-9485-40ed3aa61d3d.png",
   },
+  {
+    name: "ASHWINI Gudalur Hospitals",
+    src: "/lovable-uploads/3186371e-c856-40ba-a5da-7c06683a32e8.png",
+  },
+  {
+    name: "Sudha Hospitals",
+    src: "/lovable-uploads/cc70310d-d85e-4631-88d1-518b0d21df65.png",
+  },
 ];
 const Marquee = () => (
   <div className="w-full overflow-x-hidden py-5 bg-white border-y border-gray-100">

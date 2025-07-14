@@ -14,6 +14,8 @@ const impactPartnerLogos = [
   { name: "Fernandez Hospitals", src: "/lovable-uploads/437b36d6-112f-46ce-87c5-fd23d15d87da.png" },
   { name: "CPath Labs", src: "/lovable-uploads/da2a01e1-db46-45a2-ac32-0ca58df76db0.png" },
   { name: "FPAI India", src: "/lovable-uploads/1a5cbed5-cf05-47db-9485-40ed3aa61d3d.png" },
+  { name: "ASHWINI Gudalur Hospitals", src: "/lovable-uploads/3186371e-c856-40ba-a5da-7c06683a32e8.png" },
+  { name: "Sudha Hospitals", src: "/lovable-uploads/cc70310d-d85e-4631-88d1-518b0d21df65.png" },
 ];
 
 const Impact = () => (

@@ -170,6 +170,11 @@ const FlexureChallenge = () => {
                   <div className="bg-destructive text-white p-3 rounded text-center font-bold text-sm mb-4">
                     Submission Deadline: 30th September 2025
                   </div>
+                  <div className="bg-sky-100 p-3 rounded text-sm text-sky-800 mb-4">
+                    <strong>Submission Instructions:</strong> Email your 4-page proposal document to{" "}
+                    <span className="font-semibold">admin@vyuhaadata.com</span> with the subject line:{" "}
+                    <span className="font-semibold">"Flexure Design Competition"</span>
+                  </div>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3 text-sm text-green-900">
                       <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />

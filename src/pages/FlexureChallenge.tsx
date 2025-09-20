@@ -18,25 +18,25 @@ const FlexureChallenge = () => {
         <section 
           className="section-padding pt-32 min-h-screen relative overflow-hidden"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${engineeringBackground})`,
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 248, 255, 0.9)), url(${engineeringBackground})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white rounded-2xl p-8 mb-8 shadow-2xl">
-                <div className="text-lg font-semibold opacity-90 mb-2 flex items-center justify-center gap-2">
+              <div className="bg-white/90 backdrop-blur-sm border border-primary/20 text-foreground rounded-2xl p-8 mb-8 shadow-2xl">
+                <div className="text-lg font-semibold text-primary mb-2 flex items-center justify-center gap-2">
                   <Zap className="w-5 h-5" />
                   VYUHAA
                 </div>
-                <h1 className="text-3xl md:text-5xl font-bold mb-3 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-5xl font-bold mb-3 leading-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   SINGLE-AXIS FLEXURE<br />DESIGN CHALLENGE
                 </h1>
-                <p className="text-lg opacity-90 font-medium">Precision Z-Axis Positioning Stage Design</p>
+                <p className="text-lg text-muted-foreground font-medium">Precision Z-Axis Positioning Stage Design</p>
               </div>
               
               <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-6 rounded-xl mb-8 font-bold text-xl shadow-xl transform hover:scale-105 transition-transform">
@@ -52,16 +52,16 @@ const FlexureChallenge = () => {
                 <img 
                   src={studentsEngineering} 
                   alt="Engineering students collaborating on design projects" 
-                  className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-white/20"
+                  className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-primary/20"
                 />
               </div>
             </div>
 
             {/* Challenge Description */}
-            <Card className="mb-8 border-2 border-white/30 bg-white/10 backdrop-blur-sm">
+            <Card className="mb-8 border-2 border-primary/30 bg-white/90 backdrop-blur-sm shadow-xl">
               <CardContent className="p-8">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center justify-center gap-3">
+                  <h2 className="text-2xl font-bold text-primary mb-6 flex items-center justify-center gap-3">
                     <Target className="w-6 h-6" />
                     Design Challenge
                   </h2>
@@ -71,20 +71,20 @@ const FlexureChallenge = () => {
                     <img 
                       src={flexureMechanism} 
                       alt="Precision flexure mechanism for Z-axis positioning" 
-                      className="w-full max-w-lg mx-auto rounded-xl shadow-lg border border-white/20"
+                      className="w-full max-w-lg mx-auto rounded-xl shadow-lg border border-primary/20"
                     />
                   </div>
                   
-                  <p className="text-white/90 mb-6 leading-relaxed text-lg">
+                  <p className="text-foreground mb-6 leading-relaxed text-lg">
                     Design a flexure-based Z-axis positioning stage achieving sub-micron precision 
                     for semiconductor and aerospace applications.
                   </p>
                   
                   <div className="flex flex-wrap gap-4 justify-center">
-                    <Badge className="bg-yellow-500/20 text-yellow-200 border-yellow-400/50 px-6 py-3 font-semibold text-sm">
+                    <Badge className="bg-yellow-500/10 text-yellow-700 border-yellow-400/50 px-6 py-3 font-semibold text-sm">
                       Focus: Single Z-Axis Translation Movement
                     </Badge>
-                    <Badge className="bg-blue-500/20 text-blue-200 border-blue-400/50 px-6 py-3 font-semibold text-sm">
+                    <Badge className="bg-blue-500/10 text-blue-700 border-blue-400/50 px-6 py-3 font-semibold text-sm">
                       <Users className="w-4 h-4 mr-2" />
                       Collaborative Team Project
                     </Badge>
@@ -95,41 +95,41 @@ const FlexureChallenge = () => {
 
             {/* Target Specifications */}
             <div className="mb-8">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-white">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-primary">
                 <Settings className="w-6 h-6" />
                 Target Specifications
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="border-l-4 border-l-yellow-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                <Card className="border-l-4 border-l-yellow-400 bg-white/90 backdrop-blur-sm border border-primary/20 hover:bg-white transition-colors shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-xs text-yellow-200 font-medium uppercase tracking-wide mb-2">
+                    <div className="text-xs text-yellow-700 font-medium uppercase tracking-wide mb-2">
                       Positioning Accuracy
                     </div>
-                    <div className="text-2xl font-bold text-white">≤ 0.01 μm</div>
+                    <div className="text-2xl font-bold text-foreground">≤ 0.01 μm</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-blue-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                <Card className="border-l-4 border-l-blue-400 bg-white/90 backdrop-blur-sm border border-primary/20 hover:bg-white transition-colors shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-xs text-blue-200 font-medium uppercase tracking-wide mb-2">
+                    <div className="text-xs text-blue-700 font-medium uppercase tracking-wide mb-2">
                       Repeatability
                     </div>
-                    <div className="text-2xl font-bold text-white">≤ 0.1 μm (3σ)</div>
+                    <div className="text-2xl font-bold text-foreground">≤ 0.1 μm (3σ)</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-green-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                <Card className="border-l-4 border-l-green-400 bg-white/90 backdrop-blur-sm border border-primary/20 hover:bg-white transition-colors shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-xs text-green-200 font-medium uppercase tracking-wide mb-2">
+                    <div className="text-xs text-green-700 font-medium uppercase tracking-wide mb-2">
                       Travel Range
                     </div>
-                    <div className="text-2xl font-bold text-white">≥ 2 mm</div>
+                    <div className="text-2xl font-bold text-foreground">≥ 2 mm</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-purple-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                <Card className="border-l-4 border-l-purple-400 bg-white/90 backdrop-blur-sm border border-primary/20 hover:bg-white transition-colors shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-xs text-purple-200 font-medium uppercase tracking-wide mb-2">
+                    <div className="text-xs text-purple-700 font-medium uppercase tracking-wide mb-2">
                       Resolution
                     </div>
-                    <div className="text-2xl font-bold text-white">≤ 20 nm</div>
+                    <div className="text-2xl font-bold text-foreground">≤ 20 nm</div>
                   </CardContent>
                 </Card>
               </div>

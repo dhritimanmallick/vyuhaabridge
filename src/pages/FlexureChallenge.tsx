@@ -4,88 +4,132 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Mail, Calendar, Award, Target, Lightbulb, FileText, Settings, Clock } from 'lucide-react';
+import { CheckCircle, Mail, Calendar, Award, Target, Lightbulb, FileText, Settings, Clock, Users, Zap } from 'lucide-react';
+import engineeringBackground from '@/assets/engineering-background.jpg';
+import flexureMechanism from '@/assets/flexure-mechanism.jpg';
+import studentsEngineering from '@/assets/students-engineering.jpg';
 
 const FlexureChallenge = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Navbar />
       <main>
-        <section className="section-padding pt-32 min-h-screen bg-gradient-to-br from-primary/5 to-background">
-          <div className="max-w-4xl mx-auto">
+        {/* Hero Section with Background */}
+        <section 
+          className="section-padding pt-32 min-h-screen relative overflow-hidden"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${engineeringBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+          <div className="max-w-4xl mx-auto relative z-10">
             
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="bg-gradient-to-r from-primary to-primary/80 text-white rounded-2xl p-8 mb-8">
-                <div className="text-lg font-semibold opacity-90 mb-2">VYUHAA</div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+              <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white rounded-2xl p-8 mb-8 shadow-2xl">
+                <div className="text-lg font-semibold opacity-90 mb-2 flex items-center justify-center gap-2">
+                  <Zap className="w-5 h-5" />
+                  VYUHAA
+                </div>
+                <h1 className="text-3xl md:text-5xl font-bold mb-3 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   SINGLE-AXIS FLEXURE<br />DESIGN CHALLENGE
                 </h1>
-                <p className="text-sm opacity-90 font-medium">Precision Z-Axis Positioning Stage Design</p>
+                <p className="text-lg opacity-90 font-medium">Precision Z-Axis Positioning Stage Design</p>
               </div>
               
-              <div className="bg-gradient-to-r from-destructive to-destructive/80 text-white p-4 rounded-lg mb-8 font-bold text-lg">
-                <Award className="inline-block w-5 h-5 mr-2" />
+              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-6 rounded-xl mb-8 font-bold text-xl shadow-xl transform hover:scale-105 transition-transform">
+                <Award className="inline-block w-6 h-6 mr-3" />
                 ₹25,000 Prize + Industry Recognition
+                <div className="text-sm font-normal mt-2 opacity-90">
+                  Open to all engineering students • Teams of 2-4 members
+                </div>
+              </div>
+
+              {/* Students Illustration */}
+              <div className="mb-8">
+                <img 
+                  src={studentsEngineering} 
+                  alt="Engineering students collaborating on design projects" 
+                  className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-white/20"
+                />
               </div>
             </div>
 
             {/* Challenge Description */}
-            <Card className="mb-8 border-2 border-primary/20">
-              <CardContent className="p-6">
+            <Card className="mb-8 border-2 border-white/30 bg-white/10 backdrop-blur-sm">
+              <CardContent className="p-8">
                 <div className="text-center">
-                  <h2 className="text-xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
-                    <Target className="w-5 h-5" />
+                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center justify-center gap-3">
+                    <Target className="w-6 h-6" />
                     Design Challenge
                   </h2>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  
+                  {/* Flexure Mechanism Illustration */}
+                  <div className="mb-6">
+                    <img 
+                      src={flexureMechanism} 
+                      alt="Precision flexure mechanism for Z-axis positioning" 
+                      className="w-full max-w-lg mx-auto rounded-xl shadow-lg border border-white/20"
+                    />
+                  </div>
+                  
+                  <p className="text-white/90 mb-6 leading-relaxed text-lg">
                     Design a flexure-based Z-axis positioning stage achieving sub-micron precision 
                     for semiconductor and aerospace applications.
                   </p>
-                  <Badge variant="outline" className="bg-amber-50 text-amber-800 border-amber-300 px-4 py-2 font-semibold">
-                    Focus: Single Z-Axis Translation Movement
-                  </Badge>
+                  
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <Badge className="bg-yellow-500/20 text-yellow-200 border-yellow-400/50 px-6 py-3 font-semibold text-sm">
+                      Focus: Single Z-Axis Translation Movement
+                    </Badge>
+                    <Badge className="bg-blue-500/20 text-blue-200 border-blue-400/50 px-6 py-3 font-semibold text-sm">
+                      <Users className="w-4 h-4 mr-2" />
+                      Collaborative Team Project
+                    </Badge>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Target Specifications */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                <Settings className="w-5 h-5 text-primary" />
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-3 text-white">
+                <Settings className="w-6 h-6" />
                 Target Specifications
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card className="border-l-4 border-l-primary">
-                  <CardContent className="p-4">
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="border-l-4 border-l-yellow-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="text-xs text-yellow-200 font-medium uppercase tracking-wide mb-2">
                       Positioning Accuracy
                     </div>
-                    <div className="text-lg font-bold">≤ 0.01 μm</div>
+                    <div className="text-2xl font-bold text-white">≤ 0.01 μm</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-primary">
-                  <CardContent className="p-4">
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">
+                <Card className="border-l-4 border-l-blue-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="text-xs text-blue-200 font-medium uppercase tracking-wide mb-2">
                       Repeatability
                     </div>
-                    <div className="text-lg font-bold">≤ 0.1 μm (3σ)</div>
+                    <div className="text-2xl font-bold text-white">≤ 0.1 μm (3σ)</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-primary">
-                  <CardContent className="p-4">
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">
+                <Card className="border-l-4 border-l-green-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="text-xs text-green-200 font-medium uppercase tracking-wide mb-2">
                       Travel Range
                     </div>
-                    <div className="text-lg font-bold">≥ 2 mm</div>
+                    <div className="text-2xl font-bold text-white">≥ 2 mm</div>
                   </CardContent>
                 </Card>
-                <Card className="border-l-4 border-l-primary">
-                  <CardContent className="p-4">
-                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">
+                <Card className="border-l-4 border-l-purple-400 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="text-xs text-purple-200 font-medium uppercase tracking-wide mb-2">
                       Resolution
                     </div>
-                    <div className="text-lg font-bold">≤ 20 nm</div>
+                    <div className="text-2xl font-bold text-white">≤ 20 nm</div>
                   </CardContent>
                 </Card>
               </div>
@@ -282,6 +326,40 @@ const FlexureChallenge = () => {
                 <div className="text-xs text-muted-foreground leading-relaxed">
                   Teams of 2-4 students • All engineering disciplines welcome<br />
                   <strong>Complete mentorship and technical support provided</strong>
+                </div>
+              </CardContent>
+            </Card>
+
+          </div>
+        </section>
+
+        {/* Additional Sections with White Background */}
+        <section className="section-padding bg-gradient-to-br from-background to-primary/5">
+          <div className="max-w-4xl mx-auto">
+            
+            {/* Why Participate Section */}
+            <Card className="mb-8 border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-white shadow-xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-center mb-6 text-primary flex items-center justify-center gap-3">
+                  <Lightbulb className="w-6 h-6" />
+                  Why Participate?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center p-4 rounded-lg bg-white/50 hover:bg-white/70 transition-colors">
+                    <Award className="w-8 h-8 text-yellow-600 mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-2">Industry Recognition</h4>
+                    <p className="text-sm text-muted-foreground">Get noticed by precision engineering companies</p>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-white/50 hover:bg-white/70 transition-colors">
+                    <Users className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-2">Team Collaboration</h4>
+                    <p className="text-sm text-muted-foreground">Work with talented peers on real-world challenges</p>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-white/50 hover:bg-white/70 transition-colors">
+                    <Target className="w-8 h-8 text-green-600 mx-auto mb-3" />
+                    <h4 className="font-bold text-primary mb-2">Skill Development</h4>
+                    <p className="text-sm text-muted-foreground">Master precision engineering and CAD design</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

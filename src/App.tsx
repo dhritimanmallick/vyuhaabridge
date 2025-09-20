@@ -12,6 +12,7 @@ import Impact from "./pages/Impact";
 import Team from "./pages/Team";
 import News from "./pages/News";
 import PartnerContact from "./pages/PartnerContact";
+import FlexureChallenge from "./pages/FlexureChallenge";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/news" element={<News />} />
           <Route path="/partner-contact" element={<PartnerContact />} />
+          <Route path="/flexure-challenge" element={<FlexureChallenge />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -7,6 +7,30 @@ import { Award, FileText, Video, Trophy, ExternalLink } from "lucide-react";
 
 const news = [
   {
+    title: "From vision to impact: 10 startups powering India's transformation",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80",
+    desc: "Vyuhaa featured in Tribune India as one of the 10 startups powering India's transformation with innovative solutions.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://www.tribuneindia.com/news/business/from-vision-to-impact-10-startups-powering-indias-transformation/",
+    external: true,
+  },
+  {
+    title: "From vision to impact: 10 startups powering India's transformation",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80",
+    desc: "ANI News highlights Vyuhaa among 10 pioneering startups driving India's transformation across sectors.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://aninews.in/news/business/from-vision-to-impact-10-startups-powering-indias-transformation20251003133046/",
+    external: true,
+  },
+  {
+    title: "From vision to impact: 10 startups powering India's transformation",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80",
+    desc: "Lokmat Times features Vyuhaa as one of 10 innovative startups leading India's business transformation.",
+    icon: <FileText className="text-blue-500" size={22} />,
+    link: "https://www.lokmattimes.com/business/from-vision-to-impact-10-startups-powering-indias-transformation/amp/",
+    external: true,
+  },
+  {
     title: "Awarded by NVIDIA Inception",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
     desc: "Recognized for AI leadership and innovation in healthcare technology at global stage.",

@@ -1,4 +1,5 @@
 import AnimatedText from "@/components/AnimatedText";
+import BlurImage from "@/components/BlurImage";
 import edgePipelineImg from "@/assets/edge-pipeline.png";
 
 const PipelineSection = () => (
@@ -17,12 +18,15 @@ const PipelineSection = () => (
         />
       </div>
 
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-        <img 
-          src={edgePipelineImg} 
-          alt="EDGE Pipeline - Advanced AI-powered image analysis pipeline and biomarker analysis workflow"
-          className="w-full"
-        />
+      <div className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl shadow-2xl overflow-hidden border border-blue-200 p-4 md:p-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5" />
+        <div className="relative bg-white rounded-xl shadow-inner overflow-hidden">
+          <BlurImage 
+            src={edgePipelineImg} 
+            alt="EDGE Pipeline - Advanced AI-powered image analysis pipeline and biomarker analysis workflow"
+            className="w-full"
+          />
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 mt-12">

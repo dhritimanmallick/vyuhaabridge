@@ -9,11 +9,11 @@ const Hero = () => (
       <div className="w-full lg:w-1/2">
         <AnimatedText
           as="h1"
-          text="AI-Powered Cancer Screening. Built for the Real World."
+          text="The AI-Powered Digital Pathology Platform for Next-Level Cancer Screening"
           className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
         />
         <AnimatedText
-          text="CerviAI™ by Vyuhaa Med Data is our AI-powered platform for scalable, assistive cervical cancer screening. For other cancer diagnostics and foundational models, explore our VyuPath platform."
+          text="Vyuhaa Med Data delivers a cloud-native AI platform built to transform digital histopathology workflows in clinical and screening settings. From whole-slide image analysis to deep phenotyping, our EDGE-based system combines best-in-class cell segmentation, feature extraction, and end-to-end automation – no coding or IT setup required."
           className="text-lg text-gray-600 mb-6"
           delay={100}
         />

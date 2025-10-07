@@ -9,20 +9,21 @@ const CerviAIPlatform = () => (
       <div>
         <AnimatedText
           as="h2"
-          text="CerviAI™ – Screening Cervical Cancer with AI"
+          text="CerviAI™ – AI-Driven Cervical Cancer Screening"
           className="text-2xl md:text-3xl font-bold mb-5"
         />
         <AnimatedText
-          text="CerviAI is a deep learning-powered solution dedicated for automated cervical cytology screening. For other cancer diagnostics – breast, GI, lung, oral and more – explore our VyuPath platform and modular foundational models for digital pathology."
+          text="CerviAI is our flagship deep learning platform for automated cervical cytology screening and biomarker analysis. Built for clinical laboratories and pathology workflows, it delivers faster, more accurate precision oncology diagnostics."
           className="mb-5 text-gray-700"
           delay={100}
         />
         <ul className="space-y-2 mb-5 text-gray-700 text-sm md:text-base">
-          <li>• AI-based triage and anomaly detection for cervical cytology</li>
-          <li>• Trained on over 2,800 cases in NABL-accredited labs</li>
-          <li>• EDGE device with cloud sync for low-resource settings</li>
-          <li>• Works with Hamamatsu, Grundium, and KFBio scanners</li>
-          <li>• Modular AI models: CerviAI, VyuPath and more</li>
+          <li>• <strong>Browser-based slide viewer:</strong> Visualize whole-slide images online with zero installation</li>
+          <li>• <strong>Accurate biomarker quantification:</strong> Detect, classify, and score according to clinical guidelines</li>
+          <li>• <strong>AI-powered segmentation:</strong> Extract nuclei, cell shapes, and marker intensities automatically</li>
+          <li>• <strong>EDGE device:</strong> Cloud-sync capability for low-resource settings and field deployment</li>
+          <li>• <strong>Seamless integration:</strong> Works with Hamamatsu, Grundium, and KFBio scanners</li>
+          <li>• <strong>Trained on 2,800+ cases:</strong> Validated in NABL-accredited clinical laboratories</li>
         </ul>
         <a href="#request-demo">
           <Button size="lg">Request Edge Device Demo</Button>

@@ -13,7 +13,7 @@ const CerviAIPlatform = () => (
           className="text-2xl md:text-3xl font-bold mb-5"
         />
         <AnimatedText
-          text="CerviAI is our flagship deep learning platform for automated cervical cytology screening and biomarker analysis. Built for clinical laboratories and pathology workflows, it delivers faster, more accurate precision oncology diagnostics."
+          text="CerviAI is our flagship deep learning platform for automated cervical cytology screening and biomarker analysis. Built for clinical laboratories and pathology workflows, it delivers faster, more accurate precision oncology diagnostics with cutting-edge technology integration."
           className="mb-5 text-gray-700"
           delay={100}
         />
@@ -21,7 +21,8 @@ const CerviAIPlatform = () => (
           <li>• <strong>Browser-based slide viewer:</strong> Visualize whole-slide images online with zero installation</li>
           <li>• <strong>Accurate biomarker quantification:</strong> Detect, classify, and score according to clinical guidelines</li>
           <li>• <strong>AI-powered segmentation:</strong> Extract nuclei, cell shapes, and marker intensities automatically</li>
-          <li>• <strong>EDGE device:</strong> Cloud-sync capability for low-resource settings and field deployment</li>
+          <li>• <strong>EDGE device:</strong> On-device AI analysis without browser dependency – ideal for low-resource settings and field deployment</li>
+          <li>• <strong>Droplet microfluidics integration:</strong> Advanced micro-fluidics technology for enhanced cancer screening workflows</li>
           <li>• <strong>Seamless integration:</strong> Works with Hamamatsu, Grundium, and KFBio scanners</li>
           <li>• <strong>Trained on 2,800+ cases:</strong> Validated in NABL-accredited clinical laboratories</li>
         </ul>

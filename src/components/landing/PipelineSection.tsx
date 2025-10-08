@@ -12,7 +12,7 @@ const PipelineSection = () => (
           className="text-2xl md:text-4xl font-bold mb-4"
         />
         <AnimatedText
-          text="Our EDGE platform combines cutting-edge AI algorithms for comprehensive tissue analysis and biomarker quantification"
+          text="Our VyuPath platform combines cutting-edge AI algorithms for comprehensive tissue analysis and biomarker quantification"
           className="text-gray-600 max-w-3xl mx-auto"
           delay={100}
         />
@@ -23,7 +23,7 @@ const PipelineSection = () => (
         <div className="relative bg-white rounded-xl shadow-inner overflow-hidden">
           <BlurImage 
             src={edgePipelineImg} 
-            alt="EDGE Pipeline - Advanced AI-powered image analysis pipeline and biomarker analysis workflow"
+            alt="VyuPath Pipeline - Advanced AI-powered image analysis pipeline and biomarker analysis workflow"
             className="w-full"
           />
         </div>
@@ -31,7 +31,7 @@ const PipelineSection = () => (
 
       <div className="grid md:grid-cols-2 gap-8 mt-12">
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
-          <h3 className="text-xl font-bold mb-4 text-blue-900">Edge Pipeline</h3>
+          <h3 className="text-xl font-bold mb-4 text-blue-900">VyuPath Pipeline</h3>
           <p className="text-gray-700 mb-4">Advanced AI-powered image analysis pipeline</p>
           <ul className="space-y-2 text-gray-700 text-sm">
             <li><strong className="text-orange-600">Hi-plex image:</strong> Multi-channel whole-slide imaging input</li>

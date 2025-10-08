@@ -13,7 +13,7 @@ const CerviAIPlatform = () => (
           className="text-2xl md:text-3xl font-bold mb-5"
         />
         <AnimatedText
-          text="CerviAI is our flagship deep learning platform for automated cervical cytology screening and biomarker analysis. Built for clinical laboratories and pathology workflows, it delivers faster, more accurate precision oncology diagnostics with cutting-edge technology integration."
+          text="CerviAI is the first AI module of our VyuPath platform, specializing in automated cervical cytology screening and biomarker analysis. Built for clinical laboratories and pathology workflows, it delivers faster, more accurate precision oncology diagnostics with cutting-edge technology integration."
           className="mb-5 text-gray-700"
           delay={100}
         />

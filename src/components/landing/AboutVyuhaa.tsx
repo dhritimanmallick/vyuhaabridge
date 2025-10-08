@@ -11,7 +11,7 @@ const AboutVyuhaa = () => (
           className="text-2xl md:text-4xl font-bold mb-4"
         />
         <AnimatedText
-          text="Vyuhaa Med Data's AI platform transforms how pathology labs and clinical scientists work with digital histopathology. Designed for translational and clinical research, our EDGE-based system delivers intuitive, browser-based analysis with cutting-edge AI."
+          text="Vyuhaa Med Data's AI platform transforms how pathology labs and clinical scientists work with digital histopathology. Designed for translational and clinical research, our VyuPath platform delivers intuitive, browser-based analysis with cutting-edge AI modules."
           className="text-gray-600 mb-5 max-w-4xl mx-auto"
           delay={100}
         />
@@ -45,9 +45,9 @@ const AboutVyuhaa = () => (
       </div>
 
       <div className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
-        <h3 className="text-2xl font-bold mb-4 text-center">Our Solution: EDGE Platform</h3>
+        <h3 className="text-2xl font-bold mb-4 text-center">Our Solution: VyuPath Platform</h3>
         <p className="text-center text-gray-700 mb-6 max-w-3xl mx-auto">
-          Vyuhaa's EDGE system simplifies digital pathology analysis with AI-powered image segmentation, quantification, and a fast, intuitive cloud platform for visualization directly in your browser.
+          VyuPath is our modular AI platform that simplifies digital pathology analysis with AI-powered image segmentation, quantification, and a fast, intuitive cloud system for visualization directly in your browser. CerviAI is our first module, with more AI capabilities expanding soon.
         </p>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <div className="text-center">

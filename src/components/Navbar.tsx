@@ -71,12 +71,12 @@ const Navbar = () => {
         </a>
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-4">
           {navLinks.map((link) => (
             <NavLink 
               key={link.name}
               to={link.to}
-              className="px-2"
+              className="px-1 text-sm"
             >
               {link.name}
             </NavLink>

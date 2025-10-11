@@ -2,9 +2,13 @@ import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AnimatedText from "../components/AnimatedText";
+import BlurImage from "../components/BlurImage";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Droplet, Microscope, Zap, TrendingUp, CheckCircle2 } from "lucide-react";
+import microfluidicChip from "@/assets/microfluidic-chip.jpg";
+import highSpeedCamera from "@/assets/high-speed-camera.jpg";
+import imagingTechnology from "@/assets/imaging-technology.jpg";
 
 const DropletDx = () => {
   useEffect(() => {
@@ -124,6 +128,15 @@ const DropletDx = () => {
               </p>
             </div>
 
+            {/* Microfluidic Chip Image */}
+            <div className="mb-12 rounded-xl overflow-hidden shadow-2xl">
+              <BlurImage 
+                src={microfluidicChip} 
+                alt="Microfluidic chip with visible channels for droplet-based HPV detection"
+                className="w-full h-auto"
+              />
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-bold mb-6">Key Innovations</h3>
@@ -199,34 +212,55 @@ const DropletDx = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
-                <div className="text-center mb-4">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+                <div className="h-48 overflow-hidden">
+                  <BlurImage 
+                    src={microfluidicChip} 
+                    alt="Microfluidic droplet production for single-cell analysis"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
                   <div className="inline-block bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">1</div>
+                  <h3 className="text-xl font-bold mb-3">Droplet Production</h3>
+                  <p className="text-gray-700">
+                    Generates single-cell droplets for precise analysis
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Droplet Production</h3>
-                <p className="text-gray-700 text-center">
-                  Generates single-cell droplets for precise analysis
-                </p>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border border-purple-100">
-                <div className="text-center mb-4">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+                <div className="h-48 overflow-hidden">
+                  <BlurImage 
+                    src={imagingTechnology} 
+                    alt="VyuPath high-resolution optical imaging system"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
                   <div className="inline-block bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">2</div>
+                  <h3 className="text-xl font-bold mb-3">Detection</h3>
+                  <p className="text-gray-700">
+                    High-resolution optical detection powered by VyuPath imaging systems
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Detection</h3>
-                <p className="text-gray-700 text-center">
-                  High-resolution optical detection powered by VyuPath imaging systems
-                </p>
               </div>
 
-              <div className="bg-gradient-to-br from-pink-50 to-blue-50 p-8 rounded-xl border border-pink-100">
-                <div className="text-center mb-4">
-                  <div className="inline-block bg-pink-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">3</div>
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+                <div className="h-48 overflow-hidden">
+                  <BlurImage 
+                    src={highSpeedCamera} 
+                    alt="High-speed camera for AI-powered image analysis"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">AI Processing</h3>
-                <p className="text-gray-700 text-center">
-                  AI-driven image analysis and data interpretation for rapid diagnosis
-                </p>
+                <div className="p-6">
+                  <div className="inline-block bg-pink-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mb-4">3</div>
+                  <h3 className="text-xl font-bold mb-3">AI Processing</h3>
+                  <p className="text-gray-700">
+                    AI-driven image analysis and data interpretation for rapid diagnosis
+                  </p>
+                </div>
               </div>
             </div>
           </div>

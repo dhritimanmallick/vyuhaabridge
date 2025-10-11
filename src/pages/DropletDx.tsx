@@ -137,6 +137,22 @@ const DropletDx = () => {
               />
             </div>
 
+            {/* Video Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-center">See Droplet Microfluidics in Action</h3>
+              <div className="rounded-xl overflow-hidden shadow-2xl aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/EjyM8sNplm4"
+                  title="Droplet-based Microfluidics Technology"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-bold mb-6">Key Innovations</h3>

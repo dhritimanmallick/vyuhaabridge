@@ -43,6 +43,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'CerviAI Platform', to: '/cerviai-platform' },
+    { name: 'DropletDx', to: '/dropletdx' },
     { name: 'Products', to: '/products' },
     { name: 'Impact', to: '/impact' },
     { name: 'Team', to: '/team' },

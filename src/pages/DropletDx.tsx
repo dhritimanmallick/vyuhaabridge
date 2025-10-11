@@ -6,7 +6,7 @@ import BlurImage from "../components/BlurImage";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Droplet, Microscope, Zap, TrendingUp, CheckCircle2 } from "lucide-react";
-import microfluidicChip from "@/assets/microfluidic-chip.jpg";
+import microfluidicChip from "@/assets/microfluidic-chip-real.jpg";
 import highSpeedCamera from "@/assets/high-speed-camera.jpg";
 import imagingTechnology from "@/assets/imaging-technology.jpg";
 

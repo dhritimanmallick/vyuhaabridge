@@ -9,7 +9,6 @@ import ImpactHighlights from "../components/landing/ImpactHighlights";
 import CerviAIPlatform from "../components/landing/CerviAIPlatform";
 import HowItWorks from "../components/landing/HowItWorks";
 import ProductsSection from "../components/landing/ProductsSection";
-import PipelineSection from "../components/landing/PipelineSection";
 import TeamPreview from "../components/landing/TeamPreview";
 import LocationsSection from "../components/LocationsSection";
 
@@ -34,7 +33,6 @@ const Index = () => {
         <AboutVyuhaa />
         <ImpactHighlights />
         <CerviAIPlatform />
-        <PipelineSection />
         <HowItWorks />
         <ProductsSection />
         <TeamPreview />

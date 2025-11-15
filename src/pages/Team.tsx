@@ -32,6 +32,27 @@ const teamMembers = [
   }
 ];
 
+const histopathologists = [
+  {
+    name: "Dr. Manideep Robbi",
+    title: "Histopathologist",
+    image: "/lovable-uploads/dr-manideep-robbi.png",
+    linkedin: "#",
+  },
+  {
+    name: "Dr. CP Ranjani",
+    title: "Histopathologist",
+    image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
+    linkedin: "https://www.linkedin.com/in/cp-ranjani/",
+  },
+  {
+    name: "Dr. Sunita Kolekar Samleti",
+    title: "Histopathologist",
+    image: "/lovable-uploads/dr-sunita-kolekar.jpg",
+    linkedin: "#",
+  }
+];
+
 const Team = () => (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Navbar />
@@ -42,6 +63,34 @@ const Team = () => (
 
       <div className="flex flex-wrap gap-8 justify-center mb-16">
         {teamMembers.map(member => (
+          <div key={member.name} className="flex flex-col items-center glass-card p-6 text-center hover-scale">
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-4"
+              aria-label={`View ${member.name}'s LinkedIn`}
+            >
+              <BlurImage src={member.image} alt={member.name} className="w-28 h-28 rounded-full hover:scale-105 transition" />
+            </a>
+            <h3 className="font-bold text-lg">{member.name}</h3>
+            <p className="text-vyuhaa-500 text-sm mb-2">{member.title}</p>
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} LinkedIn`}
+              className="text-vyuhaa-500 hover:text-vyuhaa-700"
+            >
+              <Linkedin size={24} />
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold mb-8 text-gray-800">Our Histopathologist Team</h2>
+      <div className="flex flex-wrap gap-8 justify-center mb-16">
+        {histopathologists.map(member => (
           <div key={member.name} className="flex flex-col items-center glass-card p-6 text-center hover-scale">
             <a
               href={member.linkedin}

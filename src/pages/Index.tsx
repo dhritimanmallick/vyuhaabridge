@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/landing/Hero";
-import Clients from "../components/landing/Clients";
 import Marquee from "../components/landing/Marquee";
 import AboutVyuhaa from "../components/landing/AboutVyuhaa";
 import ImpactHighlights from "../components/landing/ImpactHighlights";
@@ -11,13 +10,14 @@ import HowItWorks from "../components/landing/HowItWorks";
 import ProductsSection from "../components/landing/ProductsSection";
 import TeamPreview from "../components/landing/TeamPreview";
 import LocationsSection from "../components/LocationsSection";
+import CareersSection from "../components/landing/CareersSection";
 
 const Index = () => {
   useEffect(() => {
     document.title = "Vyuhaa Med Data | AI-Powered Cancer Screening For The Real World";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'CerviAI by Vyuhaa Med Data delivers scalable, assistive AI-powered digital pathology for multi-disease screening, trusted by leading labs and health partners.');
+      metaDescription.setAttribute('content', 'VyuPath EDGE by Vyuhaa Med Data delivers in-situ, AI-powered digital pathology for multi-disease screening at the point of care.');
     }
   }, []);
 
@@ -27,7 +27,7 @@ const Index = () => {
       <main>
         <Hero />
         <div className="max-w-5xl mx-auto text-center py-6">
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-700">Our Clients</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground">Our Clients</h3>
         </div>
         <Marquee />
         <AboutVyuhaa />
@@ -36,6 +36,7 @@ const Index = () => {
         <HowItWorks />
         <ProductsSection />
         <TeamPreview />
+        <CareersSection />
         <LocationsSection />
       </main>
       <Footer />

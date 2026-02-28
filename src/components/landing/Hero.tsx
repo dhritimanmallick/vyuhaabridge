@@ -8,7 +8,7 @@ const Hero = () => (
     <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10">
       <div className="w-full lg:w-1/2">
         <span className="inline-block px-3 py-1 rounded-full bg-vyuhaa-100 text-vyuhaa-700 text-sm font-semibold mb-4">
-          VyuPath EDGE
+          AI-Native Digital Pathology
         </span>
         <AnimatedText
           as="h1"

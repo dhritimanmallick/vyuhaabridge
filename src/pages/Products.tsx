@@ -301,6 +301,43 @@ const Products = () => (
             ))}
           </div>
 
+          {/* CerviAI SaaS LIMS Platform */}
+          <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-8 mb-16 border border-pink-100">
+            <div className="flex items-center gap-3 mb-4">
+              <Cpu className="text-vyuhaa-600" size={32} />
+              <h2 className="text-2xl font-bold">CerviAI SaaS — Digital Pathology LIMS</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-muted-foreground mb-4">
+                  End-to-end Laboratory Information Management System purpose-built for digital pathology. A cloud-native SaaS platform powering the complete diagnostic workflow — from sample accession to AI-assisted reporting.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  {["Sample Accession", "Case Management", "AI Screening", "Pathologist Review", "Report Generation", "Role-Based Access"].map((feature) => (
+                    <div key={feature} className="bg-white rounded-lg p-3 text-center border border-pink-100">
+                      <div className="text-xs font-medium">{feature}</div>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://vyupath.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-vyuhaa-600 font-semibold underline text-sm"
+                >
+                  Visit VyuPath Platform →
+                </a>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/vyupath-lims-screenshot.png"
+                  alt="VyuPath CerviAI LIMS Platform - Digital Pathology Information Management System"
+                  className="rounded-xl shadow-lg w-full object-contain border border-border"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* NeurOMx Section */}
           <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl p-8 mb-16 border border-blue-100">
             <div className="flex items-center gap-3 mb-4">

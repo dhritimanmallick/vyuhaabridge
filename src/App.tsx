@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import CerviAIPlatform from "./pages/CerviAIPlatform";
+
 import Products from "./pages/Products";
 import Impact from "./pages/Impact";
 import Team from "./pages/Team";
@@ -25,7 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/cerviai-platform" element={<CerviAIPlatform />} />
+          
           <Route path="/products" element={<Products />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/team" element={<Team />} />

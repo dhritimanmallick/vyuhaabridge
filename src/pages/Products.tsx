@@ -252,6 +252,58 @@ const Products = () => (
             </div>
           </div>
 
+          {/* KCT-13 */}
+          <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
+            <h2 className="text-2xl font-bold mb-2">KCT-13 Automatic Liquid Based Cytology Processor</h2>
+            <p className="text-muted-foreground mb-6">
+              3rd generation dual-filtration technology — microcomputer controlled with LCD touch screen. Combines membrane and sedimentation making technology in one integrated system.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
+              <div>
+                <h3 className="font-bold text-lg mb-3">Key Features</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Double-layer filtration: mesh cloth filters large impurities, filter membrane ensures even cell distribution</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Cells transferred to special negative charge slide — no cell overlap, no blank sheets, rich diagnostic components</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Integrated pressure, balance & photoelectric sensors — combines membrane and sedimentation technology</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Versatile: cervical, sputum, serous cavity effusion, urine, needle aspiration & other specimens</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> High-speed: 1–4 slides per cycle, up to 240 slides/hour</li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/kct-13-processor.png"
+                  alt="KCT-13 Automatic Liquid Based Cytology Processor"
+                  className="rounded-xl shadow-md max-h-72 object-contain"
+                />
+              </div>
+            </div>
+            <h3 className="font-bold text-lg mb-3">Technical Specifications</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2 pr-4 font-semibold">Parameter</th>
+                    <th className="text-left py-2 font-semibold">Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { item: "Production Speed", value: "Up to 240 slides/hour" },
+                    { item: "Slides Per Cycle", value: "1–4 slides" },
+                    { item: "Power Supply", value: "AC 220V ±10%, 50Hz ±1Hz" },
+                    { item: "Ambient Temperature", value: "Room temperature" },
+                    { item: "Ambient Humidity", value: "30%–80%" },
+                  ].map((s) => (
+                    <tr key={s.item} className="border-b border-border/50">
+                      <td className="py-2 pr-4 text-muted-foreground">{s.item}</td>
+                      <td className="py-2 font-medium">{s.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           {/* Adhesive Microscope Slides & Histopathology */}
           <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
             <div className="flex items-center gap-3 mb-2">

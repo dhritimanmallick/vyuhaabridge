@@ -35,19 +35,19 @@ const teamMembers = [
 const histopathologists = [
   {
     name: "Dr. Manideep Robbi",
-    title: "Histopathologist",
+    title: "Consultant Histopathologist",
     image: "/lovable-uploads/dr-manideep-robbi.png",
     linkedin: "#",
   },
   {
     name: "Dr. CP Ranjani",
-    title: "Histopathologist",
+    title: "Consultant Histopathologist",
     image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
     linkedin: "https://www.linkedin.com/in/cp-ranjani/",
   },
   {
     name: "Dr. Sunita Kolekar Samleti",
-    title: "Histopathologist",
+    title: "Consultant Histopathologist",
     image: "/lovable-uploads/dr-sunita-kolekar.jpg",
     linkedin: "#",
   }

@@ -2,13 +2,14 @@
 import AnimatedText from '../components/AnimatedText';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, ShieldCheck, Brain, ScanLine, Cog } from 'lucide-react';
+import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, ShieldCheck, Brain, ScanLine, Cog, Layers, FileImage } from 'lucide-react';
 
 const turnkeyFeatures = [
   {
     title: "LBC Collection Kits",
-    description: "Liquid-based cytology collection kits for optimal sample preservation and transport.",
+    description: "Liquid-based cytology collection kits for optimal sample preservation and transport. Includes 2× cell preservative solution (15ml) and 2× cytology brushes.",
     icon: <Syringe className="text-red-500" size={22} />,
+    image: "/lovable-uploads/cytology-collection-kit.jpeg",
   },
   {
     title: "KCT-11 Cytology Processor",
@@ -34,6 +35,24 @@ const turnkeyFeatures = [
     title: "CerviAI™ AI Platform",
     description: "AI-powered cervical cytology screening with EDGE and cloud deployment. Trained on 2,800+ cases.",
     icon: <Cpu className="text-vyuhaa-600" size={22} />,
+  },
+];
+
+const slidesProducts = [
+  {
+    title: "Positive Charged Slides (BNA01)",
+    description: "Color-Frosted(+) glass slides with permanent positive charge. Electrostatically attract frozen tissue sections and cytology preparations. 25.4 × 76.2mm, 1.0–1.2mm thick.",
+    pack: "50/72 pcs",
+  },
+  {
+    title: "Silane Slides (BNA02)",
+    description: "Prepared with Silane to enhance adhesion of histological and plastic sections to microscope slide. Ground edges, 90°/45° corners.",
+    pack: "50/72 pcs",
+  },
+  {
+    title: "Polysine Slides (BNA03)",
+    description: "Premium glass slides with frosted end, pre-coated with Polysine for improved tissue adhesion. Ideal for histopathology workflows.",
+    pack: "50/72 pcs",
   },
 ];
 
@@ -113,6 +132,39 @@ const Products = () => (
             </div>
           </div>
 
+          {/* Collection Kit Showcase */}
+          <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <Syringe className="text-red-500" size={28} />
+              <h2 className="text-2xl font-bold">CerviAI Cytology Collection Kits</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-muted-foreground mb-4">
+                  Complete liquid-based cytology collection kits for optimal sample preservation and transport. Each kit contains:
+                </p>
+                <ul className="space-y-2 text-sm mb-4">
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> 2× Cell Preservative Solution (15ml)</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> 2× Cytology Brushes / Specimen Collection Swabs</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Patient identification labels (BED, REF, DATE, HOUR)</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Lab processing by CPath Laboratories (NABL Accredited)</li>
+                </ul>
+              </div>
+              <div className="flex gap-4 justify-center">
+                <img
+                  src="/lovable-uploads/specimen-collection-swab.jpeg"
+                  alt="Specimen Collection Swab"
+                  className="rounded-lg shadow-md max-h-64 object-contain bg-white"
+                />
+                <img
+                  src="/lovable-uploads/cytology-collection-kit.jpeg"
+                  alt="Cytology Collection Kit"
+                  className="rounded-lg shadow-md max-h-64 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Turnkey Solution Grid */}
           <h2 className="text-2xl font-bold mb-6 text-center">Complete Screening Pipeline</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -148,6 +200,62 @@ const Products = () => (
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Adhesive Microscope Slides & Histopathology */}
+          <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
+            <div className="flex items-center gap-3 mb-2">
+              <Layers className="text-teal-600" size={28} />
+              <h2 className="text-2xl font-bold">Slides & Histopathology</h2>
+            </div>
+            <p className="text-muted-foreground mb-6 max-w-3xl">
+              From adhesive microscope slides to full-stack digital pathology with AI — we offer the complete histopathology workflow, starting from kits to AI-enabled diagnostic systems.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
+              <div>
+                <h3 className="font-bold text-lg mb-4">Adhesive Microscope Slides</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  BENOYlab® adhesive microscope slides, packaged in high quality plastic boxes and double cellophane wrapped to protect against moisture and foreign particles.
+                </p>
+                <div className="space-y-4">
+                  {slidesProducts.map((s) => (
+                    <div key={s.title} className="bg-muted/50 rounded-lg p-4">
+                      <div className="flex justify-between items-start mb-1">
+                        <h4 className="font-semibold text-sm">{s.title}</h4>
+                        <span className="text-xs bg-vyuhaa-100 text-vyuhaa-700 px-2 py-0.5 rounded">{s.pack}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{s.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/lovable-uploads/adhesive-microscope-slides.png"
+                  alt="Adhesive Microscope Slides - Positive Charged, Silane, Polysine"
+                  className="rounded-lg shadow-md w-full object-contain bg-white"
+                />
+              </div>
+            </div>
+
+            {/* Full-Stack Digital Pathology */}
+            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-6 border border-teal-100">
+              <h3 className="font-bold text-lg mb-3 flex items-center gap-2">
+                <FileImage className="text-teal-600" size={20} />
+                Full-Stack Digital Pathology with AI
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Our end-to-end histopathology pipeline covers every step — from specimen collection kits and high-quality adhesive slides, through automated slide scanning and whole-slide imaging, to AI-powered analysis and reporting.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {["Collection Kits", "Adhesive Slides", "Slide Scanning", "AI Diagnostics"].map((step, i) => (
+                  <div key={step} className="bg-white rounded-lg p-3 text-center border border-teal-100">
+                    <div className="text-lg font-bold text-teal-600 mb-1">{i + 1}</div>
+                    <div className="text-xs font-medium">{step}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

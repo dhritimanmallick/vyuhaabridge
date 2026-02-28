@@ -155,15 +155,36 @@ const Products = () => (
                   <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Lab processing by CPath Laboratories (NABL Accredited)</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Self-Testing HPV & PCR Kits */}
+          <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <Syringe className="text-orange-500" size={28} />
+              <h2 className="text-2xl font-bold">Self-Testing HPV & PCR Kits</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-muted-foreground mb-4">
+                  Pioneering self-collection HPV and PCR kits for cervical cancer screening — enabling accessible, at-home sample collection with lab-grade accuracy.
+                </p>
+                <ul className="space-y-2 text-sm mb-4">
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Specimen collection swabs for self-sampling</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Transport tubes with preservative solution</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Patient identification labels (BED, REF, DATE, HOUR)</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Lab-grade PCR analysis for HPV detection</li>
+                </ul>
+              </div>
               <div className="flex gap-4 justify-center">
                 <img
                   src="/lovable-uploads/specimen-collection-swab.jpeg"
-                  alt="Specimen Collection Swab"
+                  alt="HPV Self-Collection Swab"
                   className="rounded-lg shadow-md max-h-64 object-contain bg-white"
                 />
                 <img
                   src="/lovable-uploads/cytology-collection-kit.jpeg"
-                  alt="Cytology Collection Kit"
+                  alt="HPV Self-Collection Kit"
                   className="rounded-lg shadow-md max-h-64 object-contain"
                 />
               </div>

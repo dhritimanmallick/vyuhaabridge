@@ -183,16 +183,11 @@ const Products = () => (
                   <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Lab-grade PCR analysis for HPV detection</li>
                 </ul>
               </div>
-              <div className="flex gap-4 justify-center">
+              <div className="flex justify-center">
                 <img
-                  src="/lovable-uploads/specimen-collection-swab.jpeg"
-                  alt="HPV Self-Collection Swab"
-                  className="rounded-lg shadow-md max-h-64 object-contain bg-white"
-                />
-                <img
-                  src="/lovable-uploads/cytology-collection-kit.jpeg"
-                  alt="HPV Self-Collection Kit"
-                  className="rounded-lg shadow-md max-h-64 object-contain"
+                  src="/lovable-uploads/hpv-self-testing-kit.png"
+                  alt="CerviAI HPV Self-Testing Kit with swab and transport tube"
+                  className="rounded-xl shadow-md max-h-72 object-contain"
                 />
               </div>
             </div>

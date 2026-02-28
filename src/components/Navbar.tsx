@@ -42,9 +42,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    
-    { name: 'DropletDx', to: '/dropletdx' },
     { name: 'Products', to: '/products' },
+    { name: 'DropletDx', to: '/dropletdx' },
     { name: 'Impact', to: '/impact' },
     { name: 'Team', to: '/team' },
     { name: 'News', to: '/news' },

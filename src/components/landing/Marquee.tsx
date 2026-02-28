@@ -20,6 +20,14 @@ const clientLogos = [
     name: "Sudha Hospitals",
     src: "/lovable-uploads/cc70310d-d85e-4631-88d1-518b0d21df65.png",
   },
+  {
+    name: "King George Hospital",
+    src: "/lovable-uploads/king-george-hospital-logo.png",
+  },
+  {
+    name: "GMH Tirupathi",
+    src: "/lovable-uploads/gmh-tirupathi-logo.png",
+  },
 ];
 const Marquee = () => (
   <div className="w-full overflow-x-hidden py-5 bg-white border-y border-gray-100">

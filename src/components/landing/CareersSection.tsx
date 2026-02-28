@@ -4,6 +4,12 @@ import { Briefcase, MapPin, ArrowRight } from "lucide-react";
 
 const openings = [
   {
+    title: "Commercial Sales Manager",
+    location: "Hyderabad, India",
+    type: "Full-time",
+    description: "Drive commercial partnerships and sales strategy for VyuPath EDGE screening devices across healthcare networks.",
+  },
+  {
     title: "AI/ML Research Engineer",
     location: "Hyderabad, India",
     type: "Full-time",
@@ -22,7 +28,6 @@ const openings = [
     description: "Support annotation, validation, and clinical workflow integration for CerviAI.",
   },
 ];
-
 const CareersSection = () => (
   <section className="section-padding bg-white" id="careers">
     <div className="max-w-5xl mx-auto">
@@ -64,8 +69,8 @@ const CareersSection = () => (
       </div>
       <p className="text-center text-sm text-muted-foreground mt-8">
         Don't see a fit? Email us at{" "}
-        <a href="mailto:careers@vyuhaadata.com" className="text-vyuhaa-600 underline">
-          careers@vyuhaadata.com
+        <a href="mailto:admin@vyuhaadata.com" className="text-vyuhaa-600 underline">
+          admin@vyuhaadata.com
         </a>
       </p>
     </div>

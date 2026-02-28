@@ -12,7 +12,7 @@ const team = [
   },
   {
     name: "Dr. CP Ranjani",
-    title: "Clinical Director",
+    title: "Chief Medical Officer",
     image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
     linkedin: "https://www.linkedin.com/in/dr-ranjani-chakravarthy-b078b319/",
   },
@@ -36,12 +36,6 @@ const histopathologists = [
     title: "Consultant Histopathologist",
     image: "/lovable-uploads/dr-manideep-robbi.png",
     linkedin: "https://www.linkedin.com/in/manideep-robbi-912a60302/",
-  },
-  {
-    name: "Dr. CP Ranjani",
-    title: "Consultant Histopathologist",
-    image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
-    linkedin: "https://www.linkedin.com/in/dr-ranjani-chakravarthy-b078b319/",
   },
   {
     name: "Dr. Sunita Kolekar Samleti",

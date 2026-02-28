@@ -10,25 +10,25 @@ const teamMembers = [
     name: "Dhritiman Mallick",
     title: "Chief Executive Officer",
     image: "/lovable-uploads/82cad346-abe3-414a-b274-253d6632262c.png",
-    linkedin: "https://www.linkedin.com/in/dhritiman-mallick/",
+    linkedin: "https://www.linkedin.com/in/dhritimanmallick/",
   },
   {
     name: "Dr. CP Ranjani",
     title: "Clinical Director",
     image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
-    linkedin: "https://www.linkedin.com/in/cp-ranjani/",
+    linkedin: "https://www.linkedin.com/in/dr-ranjani-chakravarthy-b078b319/",
   },
   {
     name: "CP Madhusudan",
     title: "BD Head and Non Profit Ventures",
     image: "/lovable-uploads/d4c177a4-f2b2-44f2-a9ff-03b03ba02c10.png",
-    linkedin: "https://www.linkedin.com/in/cpmadhu/",
+    linkedin: "https://www.linkedin.com/in/madhusudancp/",
   },
   {
     name: "Krishna Mohan Reddy",
     title: "Chief Technology Officer",
     image: "/lovable-uploads/41ef9c5e-a8ff-4079-91d2-0250162289a4.png",
-    linkedin: "https://www.linkedin.com/in/krishnamohanreddyk/",
+    linkedin: "https://www.linkedin.com/in/krishna-mohan-reddy-70b9511/",
   }
 ];
 
@@ -37,19 +37,19 @@ const histopathologists = [
     name: "Dr. Manideep Robbi",
     title: "Consultant Histopathologist",
     image: "/lovable-uploads/dr-manideep-robbi.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/manideep-robbi-912a60302/",
   },
   {
     name: "Dr. CP Ranjani",
     title: "Consultant Histopathologist",
     image: "/lovable-uploads/60cd84f8-9b3b-445d-9793-996df499e478.png",
-    linkedin: "https://www.linkedin.com/in/cp-ranjani/",
+    linkedin: "https://www.linkedin.com/in/dr-ranjani-chakravarthy-b078b319/",
   },
   {
     name: "Dr. Sunita Kolekar Samleti",
     title: "Consultant Histopathologist",
     image: "/lovable-uploads/dr-sunita-kolekar.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/dr-sunita-kolekar-samleti-15551014/",
   }
 ];
 

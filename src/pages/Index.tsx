@@ -5,7 +5,6 @@ import Hero from "../components/landing/Hero";
 import Marquee from "../components/landing/Marquee";
 import AboutVyuhaa from "../components/landing/AboutVyuhaa";
 import ImpactHighlights from "../components/landing/ImpactHighlights";
-import CerviAIPlatform from "../components/landing/CerviAIPlatform";
 import HowItWorks from "../components/landing/HowItWorks";
 import ProductsSection from "../components/landing/ProductsSection";
 import TeamPreview from "../components/landing/TeamPreview";
@@ -26,13 +25,23 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        {/* Powered by NVIDIA */}
+        <div className="bg-black py-4">
+          <div className="max-w-5xl mx-auto flex items-center justify-center gap-3">
+            <span className="text-white/70 text-sm font-medium tracking-wide uppercase">Powered by</span>
+            <img
+              src="/lovable-uploads/nvidia-logo.png"
+              alt="NVIDIA"
+              className="h-8 object-contain"
+            />
+          </div>
+        </div>
         <div className="max-w-5xl mx-auto text-center py-6">
           <h3 className="text-xl md:text-2xl font-semibold text-muted-foreground">Our Clients</h3>
         </div>
         <Marquee />
         <AboutVyuhaa />
         <ImpactHighlights />
-        <CerviAIPlatform />
         <HowItWorks />
         <ProductsSection />
         <TeamPreview />

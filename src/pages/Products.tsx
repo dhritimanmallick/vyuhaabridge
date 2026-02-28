@@ -304,6 +304,36 @@ const Products = () => (
             </div>
           </div>
 
+          {/* KCT-16 */}
+          <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
+            <h2 className="text-2xl font-bold mb-2">KCT-16 Automated Cytology Processor</h2>
+            <p className="text-muted-foreground mb-6">
+              Natural cell sedimentation method with integrated production & staining — 24 slides per batch in ~30 minutes. Fully automated microcomputer-controlled operation.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
+              <div>
+                <h3 className="font-bold text-lg mb-3">Key Features</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Natural cell sedimentation — cells settle evenly on adhesive slides without overlap</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Production & staining integrated — 24 slides per batch in ~30 minutes</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Formaldehyde & xylene free — environmentally safe with excellent cell preservation, red blood cell lysis & sterilization</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> No dye pipelines, no air/solution pumps — eliminates cross-contamination & pipeline blockage failures</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Cell preservation bottle doubles as centrifuge tube — no extra tubes needed, simpler & more economical</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Single-drop staining technique — bright, clear cell structure without cross-contamination</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Static production table — no rotation ensures uniform cell tiling without deformation</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Automatic waste liquid disposal — dumps all waste from settling bin at once</li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/kct-16-processor.png"
+                  alt="KCT-16 Automated Cytology Processor"
+                  className="rounded-xl shadow-md max-h-72 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Adhesive Microscope Slides & Histopathology */}
           <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
             <div className="flex items-center gap-3 mb-2">

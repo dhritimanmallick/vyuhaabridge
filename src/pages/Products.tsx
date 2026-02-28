@@ -73,6 +73,11 @@ const additionalProducts = [
     icon: <Dna className="text-purple-500" size={22} />,
   },
   {
+    title: "Self-Testing HPV & PCR",
+    description: "Pioneering self-testing HPV and PCR kits for cervical cancer screening — enabling accessible, at-home sample collection with lab-grade accuracy.",
+    icon: <Syringe className="text-orange-500" size={22} />,
+  },
+  {
     title: "2nd Opinion (Cancer/Tumour/Biopsies)",
     description: "Rapid expert review for cancer, tumour and biopsy cases via our digital pathology platform.",
     icon: <FlaskConical className="text-vyuhaa-600" size={22} />,

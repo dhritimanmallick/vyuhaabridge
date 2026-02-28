@@ -1,73 +1,44 @@
 
 import AnimatedText from "@/components/AnimatedText";
-import BlurImage from "@/components/BlurImage";
+import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, Brain, ScanLine, Cog } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const highlights = [
+  { icon: <Syringe size={20} />, label: "LBC Collection Kits" },
+  { icon: <Cog size={20} />, label: "KCT Cytology Processors" },
+  { icon: <ScanLine size={20} />, label: "Slide Scanning Systems" },
+  { icon: <Cpu size={20} />, label: "CerviAI™ AI Platform" },
+  { icon: <TestTube size={20} />, label: "Sequential & Co-Testing" },
+  { icon: <FlaskConical size={20} />, label: "2nd Opinion Service" },
+  { icon: <Dna size={20} />, label: "HPV DNA Testing" },
+  { icon: <Brain size={20} />, label: "NeurOMx (Authorised Importer)" },
+];
+
 const ProductsSection = () => (
   <section className="section-padding bg-white" id="products">
     <div className="max-w-6xl mx-auto">
       <AnimatedText
         as="h2"
-        text="Modular AI for Diagnostic Pathology"
+        text="Turnkey Solution for Cervical Cytology"
         className="text-2xl md:text-3xl font-bold mb-2 text-center"
       />
       <AnimatedText
-        text="Each model we build addresses a specific clinical bottleneck."
-        className="mb-10 text-center text-gray-600"
+        text="End-to-end screening — from sample collection to AI-assisted diagnosis."
+        className="mb-10 text-center text-muted-foreground"
         delay={100}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80" alt="CerviAI" className="w-20 h-20 mb-4 rounded-full"/>
-          <div className="font-bold text-vyuhaa-600 mb-1">CerviAI (Cervical Cytology)</div>
-          <div className="text-sm text-gray-700 text-center">Deployed, validated, regulatory path ongoing</div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center opacity-60">
-          <BlurImage src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=300&q=80" alt="BreastAI" className="w-20 h-20 mb-4 rounded-full"/>
-          <div className="font-bold text-blue-600 mb-1">Breast Cancer AI</div>
-          <div className="text-xs italic text-gray-500 mb-1">(Coming Soon)</div>
-          <div className="text-sm text-gray-700 text-center">Focused on FNA/biopsy image triage</div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=300&q=80" alt="Histopathology AI" className="w-20 h-20 mb-4 rounded-full"/>
-          <div className="font-bold text-blue-500 mb-1">Histopathology AI Modules</div>
-          <div className="text-sm text-gray-700 text-center">GI, Lung, Oral — under development</div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=300&q=80" alt="Annotation Tools" className="w-20 h-20 mb-4 rounded-full"/>
-          <div className="font-bold text-black mb-1">Annotation Toolkits</div>
-          <div className="text-sm text-gray-700 text-center">Custom training/validation environments for labs</div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="Sequential Testing" className="w-20 h-20 mb-4 rounded-full"/>
-          <div className="font-bold text-vyuhaa-700 mb-1">Sequential Testing</div>
-          <div className="text-sm text-gray-700 text-center">
-            Liquid Based Cytology screening and triaging with HPV DNA Testing for efficient risk stratification.
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        {highlights.map((h) => (
+          <div key={h.label} className="glass-card p-4 flex flex-col items-center text-center gap-2">
+            <div className="p-2 bg-muted rounded-full text-vyuhaa-600">{h.icon}</div>
+            <span className="text-sm font-medium">{h.label}</span>
           </div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage
-            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&q=80"
-            alt="Co-Testing"
-            className="w-20 h-20 mb-4 rounded-full"
-          />
-          <div className="font-bold text-vyuhaa-500 mb-1">Co-Testing (HPV DNA + LBC CerviAI)</div>
-          <div className="text-sm text-gray-700 text-center">
-            HPV DNA and LBC CerviAI run simultaneously for best screening outcomes. Supporting integrated diagnostics.
-          </div>
-        </div>
-        <div className="glass-card p-6 flex flex-col items-center">
-          <BlurImage
-            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=300&q=80"
-            alt="2nd Opinion"
-            className="w-20 h-20 mb-4 rounded-full"
-          />
-          <div className="font-bold text-vyuhaa-600 mb-1">2nd Opinion (Cancer/Tumour/Biopsies)</div>
-          <div className="text-sm text-gray-700 text-center">
-            Rapid and expert review for cancer, tumour and biopsy cases. Access subspecialty pathologists via our digital platform.
-          </div>
-        </div>
+        ))}
+      </div>
+      <div className="text-center">
+        <Link to="/products" className="button-primary">View All Products & Services →</Link>
       </div>
     </div>
   </section>
 );
 export default ProductsSection;
-

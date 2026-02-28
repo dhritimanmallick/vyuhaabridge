@@ -48,7 +48,7 @@ const Navbar = () => {
     { name: 'Impact', to: '/impact' },
     { name: 'Team', to: '/team' },
     { name: 'News', to: '/news' },
-    { name: 'Flexure Challenge', to: '/flexure-challenge' },
+    { name: 'Careers', to: '/careers' },
     { name: 'Partner/Contact', to: '/partner-contact' },
   ];
 

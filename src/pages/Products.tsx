@@ -86,15 +86,12 @@ const additionalProducts = [
 
 const kctSpecs = [
   { item: "Maximum Speed", value: "4000 R/MIN" },
+  { item: "Speed Control Accuracy", value: "±50 R/MIN" },
+  { item: "Max Centrifugal Force", value: "2800 kg" },
   { item: "Production Speed", value: "6–12 specimens / 2 MIN" },
-  { item: "Timing Range", value: "1 MIN – 99 MIN" },
-  { item: "Noise Level", value: "< 55 dB" },
-  { item: "Maximum Capacity", value: "12 × 18 ml" },
-  { item: "Max Centrifugal Force", value: "4620 ×g" },
-  { item: "Voltage / Frequency", value: "220V / 50Hz" },
-  { item: "Power", value: "100W" },
-  { item: "Dimensions", value: "330 × 375 × 250 mm" },
-  { item: "Weight", value: "16 KGS" },
+  { item: "Continuous Working Time", value: "> 8 hours" },
+  { item: "Timing Range", value: "0–99 MIN" },
+  { item: "Net Weight", value: "30 KG (compact)" },
 ];
 
 const Products = () => (
@@ -209,8 +206,32 @@ const Products = () => (
 
           {/* KCT-11 Technical Specs */}
           <div className="bg-card rounded-xl shadow border border-border p-8 mb-16">
-            <h2 className="text-2xl font-bold mb-2">KCT-11 Automatic LBC Cytology Processor</h2>
-            <p className="text-muted-foreground mb-6">Cell automatic sedimentation method — formaldehyde and xylene free. Fully closed structure with cover plate locking for safe, reliable operation.</p>
+            <h2 className="text-2xl font-bold mb-2">KCT-11 Automatic Liquid Based Cytology Processor</h2>
+            <p className="text-muted-foreground mb-6">
+              Cell automatic sedimentation method — formaldehyde and xylene free. Fully closed structure with cover plate locking for safe, reliable operation.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-8">
+              <div>
+                <h3 className="font-bold text-lg mb-3">Key Features</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Patented automatic preparation & reagent technology — eliminates mucus, red blood cells and cell debris</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Completely collects effective diagnostic ingredients with even cell distribution — no missed diseased cells</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Cell preservation liquid absolutely free of formaldehyde and xylene</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Filter device with absorbing mode ensures integrity of cell structure</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Clear film background, clear cell structure, uniform distribution</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Simultaneous centrifugation & sample production — multi-purpose machine</li>
+                  <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Detects cancer, precancerous degeneration, HPV infection, inflammation, trichomoniasis, mold & more</li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/kct-11-processor.png"
+                  alt="KCT-11 Automatic Liquid Based Cytology Processor"
+                  className="rounded-xl shadow-md max-h-64 object-contain"
+                />
+              </div>
+            </div>
+            <h3 className="font-bold text-lg mb-3">Technical Specifications</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

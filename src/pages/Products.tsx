@@ -155,6 +155,13 @@ const Products = () => (
                   <li className="flex items-start gap-2"><span className="text-vyuhaa-600 font-bold">•</span> Lab processing by CPath Laboratories (NABL Accredited)</li>
                 </ul>
               </div>
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/cerviai-cytology-collection-kit.png" 
+                  alt="CerviAI Cytology Collection Kit - Complete Cytology System for Gynaecologists" 
+                  className="rounded-xl shadow-md max-h-72 object-contain"
+                />
+              </div>
             </div>
           </div>
 

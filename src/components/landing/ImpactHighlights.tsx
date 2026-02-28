@@ -20,7 +20,14 @@ const ImpactHighlights = () => (
           text="Our Impact"
           className="text-xl md:text-3xl font-bold mb-4"
         />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-6">
+          <div className="flex flex-col items-center">
+          <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">
+              <Counter to={26789} duration={2200} />
+              +
+            </span>
+            <span className="text-gray-700 text-sm text-center">Tests Completed</span>
+          </div>
           <div className="flex flex-col items-center">
             <span className="text-2xl md:text-3xl font-extrabold text-vyuhaa-600">
               <Counter to={10000} duration={1800} />

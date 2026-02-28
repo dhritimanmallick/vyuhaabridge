@@ -42,7 +42,7 @@ const DropletDx = () => {
                 <Link to="/partner-contact">Request Information</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/cerviai-platform">See Our Technology</Link>
+                <Link to="/products">See Our Technology</Link>
               </Button>
             </div>
           </div>

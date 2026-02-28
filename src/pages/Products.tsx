@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, ShieldCheck, Brain, ScanLine, Cog, Layers, FileImage, ArrowRight, CheckCircle2, Zap, Shield, Beaker } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Globe, Settings, Wifi } from 'lucide-react';
 import { useState } from 'react';
 
 /* ─── Data ─── */
@@ -324,6 +325,48 @@ const Products = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ━━━ VYUPATH OPENFLEXURE ━━━ */}
+        <section className="section-padding bg-gradient-to-br from-orange-50 to-amber-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-orange-500 mb-2 block">Open-Source Microscopy</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">VyuPath Openflexure</h2>
+                <p className="text-muted-foreground mb-8">
+                  Motorised motion and software control enable automated sample scanning and scripted, repeatable custom experiments.
+                </p>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-orange-100 text-orange-600 shrink-0"><Settings size={22} /></div>
+                    <div>
+                      <h4 className="font-bold mb-1">Take Complete Control</h4>
+                      <p className="text-sm text-muted-foreground">Full motorised automation with scripted experiments and repeatable scanning workflows.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-amber-100 text-amber-600 shrink-0"><Cpu size={22} /></div>
+                    <div>
+                      <h4 className="font-bold mb-1">Customisable</h4>
+                      <p className="text-sm text-muted-foreground">Extend functionality with modular hardware, software plugins, and community-developed extensions.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 rounded-xl bg-emerald-100 text-emerald-600 shrink-0"><Globe size={22} /></div>
+                    <div>
+                      <h4 className="font-bold mb-1">Accessible</h4>
+                      <p className="text-sm text-muted-foreground">An open and affordable microscope platform, built and used in laboratories and field settings in over 60 countries worldwide.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-orange-100/50 to-amber-100/50 rounded-3xl blur-2xl" />
+                <img src="/lovable-uploads/openflexure-setup.jpg" alt="VyuPath Openflexure Microscope in action with cell imaging" className="relative rounded-2xl shadow-lg w-full object-cover" />
               </div>
             </div>
           </div>

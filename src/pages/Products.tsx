@@ -2,9 +2,9 @@
 import AnimatedText from '../components/AnimatedText';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, ShieldCheck, Brain, ScanLine, Cog, Layers, FileImage, ArrowRight, CheckCircle2, Zap, Shield, Beaker } from 'lucide-react';
+import { Microscope, Cpu, Syringe, TestTube, FlaskConical, Dna, ShieldCheck, Brain, ScanLine, Cog, Layers, FileImage, ArrowRight, CheckCircle2, Zap, Shield, Beaker, Monitor, Wifi } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Globe, Settings, Wifi } from 'lucide-react';
+import { Globe, Settings } from 'lucide-react';
 import { useState } from 'react';
 
 /* ─── Data ─── */
@@ -162,16 +162,16 @@ const Products = () => {
               <span>CDSCO Registered Medical Devices</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-foreground">
-              Turnkey Cervical<br />Cytology Platform
+              Turnkey Digital Pathology<br />Platform
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              From sample collection to AI-assisted diagnosis — a complete, integrated cervical cancer screening ecosystem.
+              AI-native, EDGE-based screening — from sample collection to on-device cancer diagnostics.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/partner-contact" className="bg-vyuhaa-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-vyuhaa-700 transition-all shadow-lg hover:shadow-xl">
                 Request Pricing
               </Link>
-              <a href="#processors" className="border border-vyuhaa-200 text-vyuhaa-700 px-8 py-3 rounded-lg hover:bg-vyuhaa-50 transition-all">
+              <a href="#edge" className="border border-vyuhaa-200 text-vyuhaa-700 px-8 py-3 rounded-lg hover:bg-vyuhaa-50 transition-all">
                 View Products ↓
               </a>
             </div>
@@ -199,8 +199,87 @@ const Products = () => {
           </div>
         </section>
 
-        {/* ━━━ COLLECTION KITS ━━━ */}
+        {/* ━━━ VYUPATH EDGE ━━━ */}
+        <section id="edge" className="section-padding bg-gradient-to-b from-vyuhaa-950 to-vyuhaa-800 text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-vyuhaa-300 mb-2 block">AI-Native EDGE Diagnostics</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">VyuPath EDGE</h2>
+                <p className="text-white/70 mb-6 text-lg">
+                  In-situ cancer screening system performing AI-powered slide analysis directly on the device — no browser, no cloud dependency. Diagnostics at the point of care.
+                </p>
+                <div className="space-y-4 mb-8">
+                  {[
+                    { icon: <Monitor size={18} />, title: "On-Device AI Analysis", desc: "Complete slide analysis runs locally on the EDGE device — no internet required." },
+                    { icon: <Zap size={18} />, title: "Real-Time Screening", desc: "Instant cancer diagnostics with AI inference at the point of care." },
+                    { icon: <Shield size={18} />, title: "CDSCO Registered", desc: "Registered medical device meeting Indian regulatory standards." },
+                  ].map(f => (
+                    <div key={f.title} className="flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-white/10 text-vyuhaa-300 shrink-0">{f.icon}</div>
+                      <div>
+                        <h4 className="font-semibold text-sm mb-0.5">{f.title}</h4>
+                        <p className="text-xs text-white/60">{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {["Hamamatsu", "Grundium", "KFBio"].map(s => (
+                    <span key={s} className="px-4 py-2 rounded-lg bg-white/10 text-white/80 text-sm font-medium border border-white/10">{s} Compatible</span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/vyupath-edge-device.png"
+                  alt="VyuPath EDGE — on-device AI cancer diagnostics"
+                  className="rounded-2xl shadow-2xl border border-white/10 w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ━━━ CerviAI PLATFORM ━━━ */}
         <section className="section-padding bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-vyuhaa-500 mb-2 block">Cloud-Native LIMS</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">CerviAI SaaS — Digital Pathology LIMS</h2>
+                <p className="text-muted-foreground mb-8">
+                  Cloud-native Laboratory Information Management System powering the complete diagnostic workflow — from sample accession to AI-assisted reporting.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+                  {["Sample Accession", "Case Management", "AI Screening", "Pathologist Review", "Report Generation", "Role-Based Access"].map(feature => (
+                    <div key={feature} className="bg-vyuhaa-50 rounded-lg p-3 text-center border border-vyuhaa-100">
+                      <div className="text-xs font-medium text-vyuhaa-700">{feature}</div>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://vyupath.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-vyuhaa-600 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-vyuhaa-700 transition-all"
+                >
+                  Visit VyuPath Platform <ArrowRight size={16} />
+                </a>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/lovable-uploads/vyupath-lims-screenshot.png"
+                  alt="VyuPath CerviAI LIMS Platform"
+                  className="rounded-2xl shadow-2xl w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ━━━ COLLECTION KITS ━━━ */}
+        <section className="section-padding bg-muted/30">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs font-semibold uppercase tracking-widest text-vyuhaa-500 mb-2 block">Sample Collection</span>
@@ -247,7 +326,7 @@ const Products = () => {
         </section>
 
         {/* ━━━ KCT PROCESSORS ━━━ */}
-        <section id="processors" className="section-padding bg-muted/30">
+        <section id="processors" className="section-padding bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs font-semibold uppercase tracking-widest text-vyuhaa-500 mb-2 block">Liquid-Based Cytology</span>
@@ -275,7 +354,6 @@ const Products = () => {
             {/* Active Processor Detail */}
             <div className="bg-card rounded-2xl border border-border shadow-lg overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Left — Image + Stats */}
                 <div className="bg-gradient-to-br from-vyuhaa-50 to-muted p-8 lg:p-12 flex flex-col">
                   <div className="flex-1 flex items-center justify-center mb-8">
                     <img
@@ -300,7 +378,6 @@ const Products = () => {
                   </div>
                 </div>
 
-                {/* Right — Info */}
                 <div className="p-8 lg:p-12">
                   <h3 className="text-2xl font-bold mb-1">{proc.name}</h3>
                   <p className="text-muted-foreground mb-6">{proc.tagline}</p>
@@ -372,67 +449,6 @@ const Products = () => {
           </div>
         </section>
 
-        {/* ━━━ SLIDE SCANNING ━━━ */}
-        <section className="section-padding bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-cyan-500 mb-2 block">Digital Imaging</span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Automated Slide Scanning</h2>
-                <p className="text-muted-foreground mb-6">
-                  High-throughput whole slide imaging compatible with Hamamatsu, Grundium, and KFBio digital scanners. Seamless integration into the VyuPath CerviAI diagnostic pipeline.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {["Hamamatsu", "Grundium", "KFBio"].map(s => (
-                    <span key={s} className="px-4 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm font-medium border border-cyan-100">{s}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-cyan-100/50 to-vyuhaa-100/50 rounded-3xl blur-2xl" />
-                <img src="/lovable-uploads/vyupath-edge-device.png" alt="VyuPath Slide Scanner" className="relative rounded-2xl shadow-lg w-full object-contain" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ━━━ CerviAI PLATFORM ━━━ */}
-        <section className="section-padding bg-gradient-to-b from-vyuhaa-950 to-vyuhaa-800 text-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-vyuhaa-300 mb-2 block">AI-Powered Diagnostics</span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">CerviAI SaaS — Digital Pathology LIMS</h2>
-                <p className="text-white/70 mb-8">
-                  Cloud-native Laboratory Information Management System powering the complete diagnostic workflow — from sample accession to AI-assisted reporting.
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                  {["Sample Accession", "Case Management", "AI Screening", "Pathologist Review", "Report Generation", "Role-Based Access"].map(feature => (
-                    <div key={feature} className="bg-white/10 backdrop-blur rounded-lg p-3 text-center border border-white/10">
-                      <div className="text-xs font-medium text-white/90">{feature}</div>
-                    </div>
-                  ))}
-                </div>
-                <a
-                  href="https://vyupath.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-vyuhaa-900 font-semibold px-6 py-2.5 rounded-lg hover:bg-white/90 transition-all"
-                >
-                  Visit VyuPath Platform <ArrowRight size={16} />
-                </a>
-              </div>
-              <div className="flex justify-center">
-                <img
-                  src="/lovable-uploads/vyupath-lims-screenshot.png"
-                  alt="VyuPath CerviAI LIMS Platform"
-                  className="rounded-2xl shadow-2xl border border-white/10 w-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ━━━ SLIDES & HISTOPATHOLOGY ━━━ */}
         <section className="section-padding bg-white">
           <div className="max-w-6xl mx-auto">
@@ -471,8 +487,8 @@ const Products = () => {
                 {[
                   { step: "1", title: "Collection Kits", icon: <Syringe size={20} /> },
                   { step: "2", title: "Adhesive Slides", icon: <Layers size={20} /> },
-                  { step: "3", title: "Slide Scanning", icon: <ScanLine size={20} /> },
-                  { step: "4", title: "AI Diagnostics", icon: <Cpu size={20} /> },
+                  { step: "3", title: "EDGE Analysis", icon: <Cpu size={20} /> },
+                  { step: "4", title: "AI Diagnostics", icon: <ScanLine size={20} /> },
                 ].map(s => (
                   <div key={s.step} className="bg-white rounded-xl p-5 text-center border border-teal-100 hover:shadow-md transition-all">
                     <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal-100 text-teal-700 mb-3">{s.icon}</div>
@@ -567,7 +583,7 @@ const Products = () => {
         </section>
 
         {/* ━━━ NeurOMx ━━━ */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-muted/30">
           <div className="max-w-6xl mx-auto">
             <div className="rounded-2xl bg-gradient-to-br from-slate-900 to-blue-900 text-white p-8 md:p-12 overflow-hidden relative">
               <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />

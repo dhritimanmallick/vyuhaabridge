@@ -154,24 +154,24 @@ const Products = () => {
       <main>
 
         {/* ━━━ HERO ━━━ */}
-        <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-vyuhaa-950 via-vyuhaa-900 to-vyuhaa-800 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%)' }} />
+        <section className="pt-32 pb-20 px-6 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(var(--primary)) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--primary)) 0%, transparent 40%)' }} />
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm mb-6 border border-white/10">
+            <div className="inline-flex items-center gap-2 bg-vyuhaa-50 px-4 py-1.5 rounded-full text-sm mb-6 border border-vyuhaa-100 text-vyuhaa-700">
               <ShieldCheck size={14} />
               <span>CDSCO Registered Medical Devices</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-foreground">
               Turnkey Cervical<br />Cytology Platform
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
               From sample collection to AI-assisted diagnosis — a complete, integrated cervical cancer screening ecosystem.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/partner-contact" className="bg-white text-vyuhaa-900 font-semibold px-8 py-3 rounded-lg hover:bg-white/90 transition-all shadow-lg hover:shadow-xl">
+              <Link to="/partner-contact" className="bg-vyuhaa-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-vyuhaa-700 transition-all shadow-lg hover:shadow-xl">
                 Request Pricing
               </Link>
-              <a href="#processors" className="border border-white/30 text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-all">
+              <a href="#processors" className="border border-vyuhaa-200 text-vyuhaa-700 px-8 py-3 rounded-lg hover:bg-vyuhaa-50 transition-all">
                 View Products ↓
               </a>
             </div>
@@ -499,6 +499,69 @@ const Products = () => {
                   <p className="text-sm text-muted-foreground">{s.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ━━━ DROPLET DX ━━━ */}
+        <section className="section-padding bg-gradient-to-br from-purple-50 to-fuchsia-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="rounded-2xl border border-purple-100 bg-white/80 backdrop-blur p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl" />
+              <div className="relative z-10 max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-purple-200">
+                  <Beaker size={14} /> In Development
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">DropletDx</h2>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  AI-powered microfluidic droplet technology combined with high-speed imaging for next-generation cancer screening.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  {[
+                    { title: "Microfluidic Droplets", sub: "Single-cell encapsulation" },
+                    { title: "High-Speed Imaging", sub: "Real-time cell analysis" },
+                    { title: "AI Classification", sub: "Automated anomaly detection" },
+                  ].map(c => (
+                    <div key={c.title} className="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                      <div className="font-semibold text-sm mb-1">{c.title}</div>
+                      <div className="text-xs text-muted-foreground">{c.sub}</div>
+                    </div>
+                  ))}
+                </div>
+                <Link to="/dropletdx" className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold text-sm transition-colors">
+                  Learn more about DropletDx <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ━━━ PLACENTANET ━━━ */}
+        <section className="section-padding bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="rounded-2xl bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-100 p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute bottom-0 left-0 w-72 h-72 bg-rose-200/20 rounded-full blur-3xl" />
+              <div className="relative z-10 max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-rose-200">
+                  <Beaker size={14} /> In Development
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">PlacentaNet</h2>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  Digital histopathology platform for pre-eclampsia diagnosis and predictive analysis for pregnancy risk assessment.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    { title: "Digital Histopathology", sub: "Placental tissue analysis" },
+                    { title: "Pre-eclampsia Detection", sub: "Early risk identification" },
+                    { title: "Predictive Analytics", sub: "Pregnancy risk scoring" },
+                  ].map(c => (
+                    <div key={c.title} className="bg-white rounded-xl p-4 border border-rose-100">
+                      <div className="font-semibold text-sm mb-1">{c.title}</div>
+                      <div className="text-xs text-muted-foreground">{c.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

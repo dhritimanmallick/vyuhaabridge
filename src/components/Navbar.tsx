@@ -48,6 +48,7 @@ const Navbar = () => {
     { name: 'Team', to: '/team' },
     { name: 'News', to: '/news' },
     { name: 'Careers', to: '/careers' },
+    { name: 'Partner Login', to: '/partner-login' },
     { name: 'Partner/Contact', to: '/partner-contact' },
   ];
 

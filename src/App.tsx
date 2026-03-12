@@ -14,6 +14,8 @@ import News from "./pages/News";
 import PartnerContact from "./pages/PartnerContact";
 import Careers from "./pages/Careers";
 import DropletDx from "./pages/DropletDx";
+import PartnerLogin from "./pages/PartnerLogin";
+import PartnerDashboard from "./pages/PartnerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,8 @@ const App = () => (
           <Route path="/partner-contact" element={<PartnerContact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/dropletdx" element={<DropletDx />} />
+          <Route path="/partner-login" element={<PartnerLogin />} />
+          <Route path="/partner-dashboard" element={<PartnerDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CerviAI Clinical Dashboard &middot; 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --ink:  #0f1117; --ink2: #3a3f4d; --ink3: #7a8299; --ink4: #b0b7c8;
+  --rule: #e8eaef; --bg: #ffffff; --bg2: #f7f8fa; --bg3: #f0f2f6;
+  --blue: #1a5fbe; --blue2: #2b7de9;
+  --teal: #0a8a7a; --amber: #b85c00; --red: #c0392b;
+  --green: #1a7a4a; --purple: #5b4fcf;
+  --r: 8px; --r2: 12px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body { background:#fff; color:var(--ink); font-family:'DM Sans',sans-serif; font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased; }
+
+.page { max-width:1280px; margin:0 auto; padding:40px 32px 80px; }
+
+/* HEADER */
+.header { display:grid; grid-template-columns:1fr auto; align-items:start; gap:24px; padding-bottom:28px; border-bottom:1.5px solid var(--ink); margin-bottom:32px; }
+.wordmark { font-family:'DM Serif Display',serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--blue); margin-bottom:8px; }
+.dash-title { font-family:'DM Serif Display',serif; font-size:clamp(22px,3vw,34px); line-height:1.1; margin-bottom:6px; }
+.dash-title em { font-style:italic; color:var(--blue); }
+.dash-meta { font-size:12px; color:var(--ink3); display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.sep { color:var(--ink4); }
+.header-right { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.pill { display:inline-flex; align-items:center; gap:5px; padding:4px 12px; border-radius:100px; font-size:10.5px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+.pill-blue { background:#dceeff; color:var(--blue); }
+.pill-red  { background:#fde8e6; color:var(--red); }
+.header-ts { font-size:11px; color:var(--ink4); text-align:right; }
+
+/* TABS */
+.tab-row { display:flex; border-bottom:1.5px solid var(--rule); margin-bottom:28px; }
+.tab { padding:10px 24px; font-size:13px; font-weight:500; color:var(--ink3); background:transparent; border:none; cursor:pointer; position:relative; font-family:'DM Sans',sans-serif; transition:color 0.15s; }
+.tab::after { content:''; position:absolute; bottom:-1.5px; left:0; right:0; height:2px; background:transparent; transition:background 0.15s; }
+.tab:hover { color:var(--ink); }
+.tab.active { color:var(--ink); font-weight:600; }
+.tab.active::after { background:var(--ink); }
+.panel { display:none; }
+.panel.active { display:block; animation:up 0.2s ease; }
+@keyframes up { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+
+/* SECTION */
+.sec { font-size:10.5px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink4); margin:4px 0 14px; display:flex; align-items:center; gap:10px; }
+.sec::after { content:''; flex:1; height:1px; background:var(--rule); }
+
+/* KPI STRIP */
+.kpi-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:var(--r2); overflow:hidden; margin-bottom:24px; }
+.kpi { background:#fff; padding:20px 18px; }
+.kpi-lbl { font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink4); margin-bottom:8px; }
+.kpi-val { font-family:'DM Serif Display',serif; font-size:30px; line-height:1; margin-bottom:3px; color:var(--ink); }
+.kpi-val.bl { color:var(--blue); } .kpi-val.gr { color:var(--green); } .kpi-val.rd { color:var(--red); }
+.kpi-val.sm { font-size:17px; margin-top:6px; }
+.kpi-sub { font-size:11.5px; color:var(--ink3); }
+
+/* GRID */
+.g2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+
+/* CARD */
+.card { background:#fff; border:1px solid var(--rule); border-radius:var(--r2); padding:20px 22px; }
+.card-hd { font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink3); margin-bottom:16px; display:flex; align-items:center; gap:7px; }
+.cd { width:5px; height:5px; border-radius:50%; display:inline-block; flex-shrink:0; }
+
+/* INFLAMMATION */
+.infl-trio { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:16px; }
+.ibox { text-align:center; padding:14px 8px; border-radius:var(--r); background:var(--bg2); border:1px solid var(--rule); }
+.ibox-val { font-family:'DM Serif Display',serif; font-size:28px; line-height:1; margin-bottom:4px; }
+.ibox-lbl { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--ink3); }
+.ibox-pct { font-size:11px; color:var(--ink4); margin-top:3px; }
+.c-mild{color:var(--teal);} .c-mod{color:var(--amber);} .c-sev{color:var(--red);}
+
+/* MICRO ROWS */
+.mrow { display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px; padding:9px 0; border-bottom:1px solid var(--rule); }
+.mrow:last-of-type { border-bottom:none; }
+.mrow-lbl { font-size:13px; color:var(--ink); margin-bottom:5px; }
+.mrow-bar { height:4px; background:var(--bg3); border-radius:100px; overflow:hidden; }
+.mrow-fill { height:100%; border-radius:100px; }
+.mrow-right { text-align:right; min-width:52px; }
+.mrow-val { font-size:13px; font-weight:600; color:var(--ink); }
+.mrow-den { font-size:11px; color:var(--ink4); }
+
+/* RESULT BARS */
+.ritem { padding:8px 0; border-bottom:1px solid var(--rule); }
+.ritem:last-child { border-bottom:none; }
+.r-hdr { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+.r-lbl { font-size:12.5px; color:var(--ink2); }
+.r-cnt { font-size:12px; color:var(--ink3); font-weight:500; }
+.r-bar { height:4px; background:var(--bg3); border-radius:100px; overflow:hidden; }
+.r-fill { height:100%; border-radius:100px; }
+
+/* NILM */
+.nilm-hero { display:flex; align-items:center; gap:24px; padding:20px 24px; background:var(--bg2); border:1px solid var(--rule); border-radius:var(--r2); margin-bottom:16px; }
+.nilm-pct { font-family:'DM Serif Display',serif; font-size:56px; line-height:1; color:var(--blue); }
+.nilm-div { width:1px; height:56px; background:var(--rule); }
+.nilm-lbl { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:3px; }
+.nilm-sub { font-size:12px; color:var(--ink3); }
+.nilm-box { display:flex; align-items:center; gap:14px; padding:14px 16px; background:var(--bg2); border-radius:var(--r); border:1px solid var(--rule); margin-bottom:14px; }
+.nilm-box-num { font-family:'DM Serif Display',serif; font-size:34px; line-height:1; color:var(--blue); }
+.nilm-box-txt { font-size:13px; font-weight:500; color:var(--ink2); }
+
+/* AGG STRIP */
+.agg-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:var(--r2); overflow:hidden; margin-bottom:24px; }
+.agg { background:#fff; padding:18px 16px; text-align:center; }
+.agg-val { font-family:'DM Serif Display',serif; font-size:26px; line-height:1; margin-bottom:4px; }
+.agg-lbl { font-size:12px; font-weight:500; color:var(--ink2); margin-bottom:2px; }
+.agg-sub { font-size:11px; color:var(--ink4); }
+
+/* COMPARE */
+.cmp { display:grid; grid-template-columns:1fr 36px 1fr; }
+.cmp-vs { display:flex; flex-direction:column; align-items:center; padding-top:36px; gap:6px; color:var(--ink4); font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
+.cmp-vs::before,.cmp-vs::after { content:''; width:1px; height:28px; background:var(--rule); }
+.cmp-head { font-family:'DM Serif Display',serif; font-size:15px; padding-bottom:12px; margin-bottom:2px; border-bottom:1px solid var(--rule); }
+.cmp-head.kgh{color:var(--blue);} .cmp-head.tip{color:var(--teal);}
+.crow { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--rule); }
+.crow:last-child { border-bottom:none; }
+.clbl { font-size:12px; color:var(--ink3); }
+.cval { font-size:12.5px; font-weight:600; color:var(--ink); }
+
+/* FOOTER */
+.footer { margin-top:52px; padding-top:20px; border-top:1px solid var(--rule); display:flex; justify-content:space-between; font-size:11.5px; color:var(--ink4); }
+
+@media(max-width:900px){
+  .kpi-strip,.agg-strip{grid-template-columns:repeat(2,1fr);}
+  .g2,.cmp{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div>
+      <div class="wordmark">Vyuhaa Med Data &middot; CerviAI Platform</div>
+      <h1 class="dash-title">Clinical Analytics <em>Dashboard</em></h1>
+      <div class="dash-meta">
+        <span>LBC Cervical Cytology</span><span class="sep">|</span>
+        <span>Multi-Centre Observational Study</span><span class="sep">|</span>
+        <span>Andhra Pradesh</span><span class="sep">|</span>
+        <span>17 Feb &ndash; 05 Mar 2026</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="pill pill-blue">Data Snapshot</span>
+      <span class="pill pill-red">Confidential</span>
+      <div class="header-ts">Dr. Sunita Samleti &middot; Reporting Pathologist</div>
+      <div class="header-ts">Bethesda 2014 Classification</div>
+    </div>
+  </header>
+
+  <nav class="tab-row">
+    <button class="tab active" onclick="switchTab('kgh')">KGH Vizag</button>
+    <button class="tab" onclick="switchTab('tip')">GMH Tirupathi</button>
+    <button class="tab" onclick="switchTab('comb')">Multi-Centre Overview</button>
+  </nav>
+
+  <!-- KGH -->
+  <div id="panel-kgh" class="panel active">
+    <div class="sec">Key Indicators</div>
+    <div class="kpi-strip">
+      <div class="kpi"><div class="kpi-lbl">Total Patients</div><div class="kpi-val bl">113</div><div class="kpi-sub">King George's Hospital</div></div>
+      <div class="kpi"><div class="kpi-lbl">NILM Rate</div><div class="kpi-val gr">100%</div><div class="kpi-sub">113 / 113 patients</div></div>
+      <div class="kpi"><div class="kpi-lbl">Average Age</div><div class="kpi-val">41</div><div class="kpi-sub">Range: 17&ndash;80 yrs</div></div>
+      <div class="kpi"><div class="kpi-lbl">Severe Inflammation</div><div class="kpi-val rd">4</div><div class="kpi-sub">4% of cohort</div></div>
+      <div class="kpi"><div class="kpi-lbl">Reporting Period</div><div class="kpi-val sm">Feb&ndash;Mar 2026</div><div class="kpi-sub">17 Feb &ndash; 05 Mar</div></div>
+    </div>
+    <div class="sec">Microscopic Findings</div>
+    <div class="g2">
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--blue)"></span>Age Distribution</div><canvas id="kgh-age" height="200"></canvas></div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--red)"></span>Inflammation Profile</div>
+        <div class="infl-trio">
+          <div class="ibox"><div class="ibox-val c-mild">47</div><div class="ibox-lbl">Mild</div><div class="ibox-pct">42%</div></div>
+          <div class="ibox"><div class="ibox-val c-mod">62</div><div class="ibox-lbl">Moderate</div><div class="ibox-pct">55%</div></div>
+          <div class="ibox"><div class="ibox-val c-sev">4</div><div class="ibox-lbl">Severe</div><div class="ibox-pct">4%</div></div>
+        </div>
+        <canvas id="kgh-infl" height="110"></canvas>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--blue)"></span>Squamous Epithelial Cells</div>
+        <div class="mrow"><div><div class="mrow-lbl">Superficial cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:97%;background:var(--blue)"></div></div></div><div class="mrow-right"><div class="mrow-val">110</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Intermediate cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:100%;background:var(--blue)"></div></div></div><div class="mrow-right"><div class="mrow-val">113</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Parabasal cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:92%;background:var(--blue2)"></div></div></div><div class="mrow-right"><div class="mrow-val">104</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Metaplastic cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:35%;background:var(--purple)"></div></div></div><div class="mrow-right"><div class="mrow-val">40</div><div class="mrow-den">/ 113</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--amber)"></span>Glandular &amp; Other Cells</div>
+        <div class="mrow"><div><div class="mrow-lbl">Endocervical cells present</div><div class="mrow-bar"><div class="mrow-fill" style="width:49%;background:var(--amber)"></div></div></div><div class="mrow-right"><div class="mrow-val">55</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Endocervical cells absent</div><div class="mrow-bar"><div class="mrow-fill" style="width:51%;background:var(--ink4)"></div></div></div><div class="mrow-right"><div class="mrow-val">58</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">RBCs in background</div><div class="mrow-bar"><div class="mrow-fill" style="width:5%;background:var(--red)"></div></div></div><div class="mrow-right"><div class="mrow-val">6</div><div class="mrow-den">/ 113</div></div></div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Organisms Identified</div>
+        <div class="mrow"><div><div class="mrow-lbl">Doderlein bacilli</div><div class="mrow-bar"><div class="mrow-fill" style="width:99%;background:var(--teal)"></div></div></div><div class="mrow-right"><div class="mrow-val">112</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Coccobacilli</div><div class="mrow-bar"><div class="mrow-fill" style="width:4%;background:var(--amber)"></div></div></div><div class="mrow-right"><div class="mrow-val">4</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Candida spp.</div><div class="mrow-bar"><div class="mrow-fill" style="width:1%;background:var(--red)"></div></div></div><div class="mrow-right"><div class="mrow-val">1</div><div class="mrow-den">/ 113</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Trichomonas vaginalis</div><div class="mrow-bar"><div class="mrow-fill" style="width:0.5%;background:var(--ink4)"></div></div></div><div class="mrow-right"><div class="mrow-val">0</div><div class="mrow-den">/ 113</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--purple)"></span>Clinical Results</div>
+        <div class="nilm-box"><div class="nilm-box-num">100%</div><div class="nilm-box-txt">No Intraepithelial Lesion or Malignancy</div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">NILM &mdash; No additional findings</span><span class="r-cnt">106 / 113</span></div><div class="r-bar"><div class="r-fill" style="width:94%;background:var(--blue)"></div></div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">NILM + Change in vaginal flora</span><span class="r-cnt">3 / 113</span></div><div class="r-bar"><div class="r-fill" style="width:3%;background:var(--teal)"></div></div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">NILM + Reactive (Inflammation)</span><span class="r-cnt">2 / 113</span></div><div class="r-bar"><div class="r-fill" style="width:2%;background:var(--amber)"></div></div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">NILM + Reactive (Atrophy)</span><span class="r-cnt">2 / 113</span></div><div class="r-bar"><div class="r-fill" style="width:2%;background:var(--purple)"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIRUPATHI -->
+  <div id="panel-tip" class="panel">
+    <div class="sec">Key Indicators</div>
+    <div class="kpi-strip">
+      <div class="kpi"><div class="kpi-lbl">Total Patients</div><div class="kpi-val bl">49</div><div class="kpi-sub">GMH Tirupathi</div></div>
+      <div class="kpi"><div class="kpi-lbl">NILM Rate</div><div class="kpi-val gr">98%</div><div class="kpi-sub">48 / 49 patients</div></div>
+      <div class="kpi"><div class="kpi-lbl">Average Age</div><div class="kpi-val">40</div><div class="kpi-sub">Range: 22&ndash;71 yrs</div></div>
+      <div class="kpi"><div class="kpi-lbl">Severe Inflammation</div><div class="kpi-val rd">3</div><div class="kpi-sub">6% of cohort</div></div>
+      <div class="kpi"><div class="kpi-lbl">Reporting Period</div><div class="kpi-val sm">Feb&ndash;Mar 2026</div><div class="kpi-sub">17 Feb &ndash; 05 Mar</div></div>
+    </div>
+    <div class="sec">Microscopic Findings</div>
+    <div class="g2">
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Age Distribution</div><canvas id="tip-age" height="200"></canvas></div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--red)"></span>Inflammation Profile</div>
+        <div class="infl-trio">
+          <div class="ibox"><div class="ibox-val c-mild">25</div><div class="ibox-lbl">Mild</div><div class="ibox-pct">51%</div></div>
+          <div class="ibox"><div class="ibox-val c-mod">20</div><div class="ibox-lbl">Moderate</div><div class="ibox-pct">41%</div></div>
+          <div class="ibox"><div class="ibox-val c-sev">3</div><div class="ibox-lbl">Severe</div><div class="ibox-pct">6%</div></div>
+        </div>
+        <canvas id="tip-infl" height="110"></canvas>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Squamous Epithelial Cells</div>
+        <div class="mrow"><div><div class="mrow-lbl">Superficial cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:98%;background:var(--teal)"></div></div></div><div class="mrow-right"><div class="mrow-val">48</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Intermediate cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:98%;background:var(--teal)"></div></div></div><div class="mrow-right"><div class="mrow-val">48</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Parabasal cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:90%;background:var(--blue2)"></div></div></div><div class="mrow-right"><div class="mrow-val">44</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Metaplastic cells</div><div class="mrow-bar"><div class="mrow-fill" style="width:24%;background:var(--purple)"></div></div></div><div class="mrow-right"><div class="mrow-val">12</div><div class="mrow-den">/ 49</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--amber)"></span>Glandular &amp; Other Cells</div>
+        <div class="mrow"><div><div class="mrow-lbl">Endocervical cells present</div><div class="mrow-bar"><div class="mrow-fill" style="width:71%;background:var(--amber)"></div></div></div><div class="mrow-right"><div class="mrow-val">35</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Endocervical cells absent</div><div class="mrow-bar"><div class="mrow-fill" style="width:29%;background:var(--ink4)"></div></div></div><div class="mrow-right"><div class="mrow-val">14</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">RBCs in background</div><div class="mrow-bar"><div class="mrow-fill" style="width:16%;background:var(--red)"></div></div></div><div class="mrow-right"><div class="mrow-val">8</div><div class="mrow-den">/ 49</div></div></div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Organisms Identified</div>
+        <div class="mrow"><div><div class="mrow-lbl">Doderlein bacilli</div><div class="mrow-bar"><div class="mrow-fill" style="width:98%;background:var(--teal)"></div></div></div><div class="mrow-right"><div class="mrow-val">48</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Coccobacilli</div><div class="mrow-bar"><div class="mrow-fill" style="width:0.5%;background:var(--amber)"></div></div></div><div class="mrow-right"><div class="mrow-val">0</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Candida spp.</div><div class="mrow-bar"><div class="mrow-fill" style="width:2%;background:var(--red)"></div></div></div><div class="mrow-right"><div class="mrow-val">1</div><div class="mrow-den">/ 49</div></div></div>
+        <div class="mrow"><div><div class="mrow-lbl">Trichomonas vaginalis</div><div class="mrow-bar"><div class="mrow-fill" style="width:0.5%;background:var(--ink4)"></div></div></div><div class="mrow-right"><div class="mrow-val">0</div><div class="mrow-den">/ 49</div></div></div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><span class="cd" style="background:var(--purple)"></span>Clinical Results</div>
+        <div class="nilm-box"><div class="nilm-box-num">98%</div><div class="nilm-box-txt">No Intraepithelial Lesion or Malignancy</div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">NILM &mdash; No additional findings</span><span class="r-cnt">48 / 49</span></div><div class="r-bar"><div class="r-fill" style="width:98%;background:var(--teal)"></div></div></div>
+        <div class="ritem"><div class="r-hdr"><span class="r-lbl">Excluded / Incomplete</span><span class="r-cnt">1 / 49</span></div><div class="r-bar"><div class="r-fill" style="width:2%;background:var(--ink4)"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBINED -->
+  <div id="panel-comb" class="panel">
+    <div class="sec">Study Summary</div>
+    <div class="nilm-hero">
+      <div class="nilm-pct">99%</div>
+      <div class="nilm-div"></div>
+      <div>
+        <div class="nilm-lbl">NILM Rate &mdash; Pooled (161 / 162)</div>
+        <div class="nilm-sub">162 patients &middot; 2 government hospitals &middot; LBC with CerviAI &middot; Bethesda 2014</div>
+      </div>
+    </div>
+    <div class="agg-strip">
+      <div class="agg"><div class="agg-val" style="color:var(--blue)">162</div><div class="agg-lbl">Total Screened</div><div class="agg-sub">2 sites</div></div>
+      <div class="agg"><div class="agg-val">41</div><div class="agg-lbl">Avg Age (yrs)</div><div class="agg-sub">Range 17&ndash;80</div></div>
+      <div class="agg"><div class="agg-val" style="color:var(--teal)">72</div><div class="agg-lbl">Mild Inflammation</div><div class="agg-sub">44% of cohort</div></div>
+      <div class="agg"><div class="agg-val" style="color:var(--amber)">82</div><div class="agg-lbl">Moderate Inflammation</div><div class="agg-sub">51% of cohort</div></div>
+      <div class="agg"><div class="agg-val" style="color:var(--red)">7</div><div class="agg-lbl">Severe Inflammation</div><div class="agg-sub">4% of cohort</div></div>
+    </div>
+    <div class="sec">Aggregate Findings</div>
+    <div class="g2">
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--blue)"></span>Pooled Age Distribution</div><canvas id="c-age" height="200"></canvas></div>
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Squamous Cell Types &mdash; Pooled</div><canvas id="c-sq" height="200"></canvas></div>
+    </div>
+    <div class="g2">
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--red)"></span>Inflammation &mdash; Pooled</div><canvas id="c-infl" height="210"></canvas></div>
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--teal)"></span>Microbial Flora &mdash; Pooled</div><canvas id="c-org" height="210"></canvas></div>
+    </div>
+    <div class="g2">
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--amber)"></span>Glandular Cell Representation</div><canvas id="c-gl" height="200"></canvas></div>
+      <div class="card"><div class="card-hd"><span class="cd" style="background:var(--purple)"></span>NILM Sub-classification &mdash; Pooled</div><canvas id="c-nilm" height="200"></canvas></div>
+    </div>
+    <div class="sec">Site Comparison</div>
+    <div class="card">
+      <div class="card-hd"><span class="cd" style="background:var(--ink)"></span>Enrollment Summary</div>
+      <div class="cmp">
+        <div>
+          <div class="cmp-head kgh">King George's Hospital &middot; Vizag</div>
+          <div class="crow"><span class="clbl">Patients Enrolled</span><span class="cval">113</span></div>
+          <div class="crow"><span class="clbl">Avg Age</span><span class="cval">41 yrs (17&ndash;80)</span></div>
+          <div class="crow"><span class="clbl">NILM Rate</span><span class="cval">100%</span></div>
+          <div class="crow"><span class="clbl">Mild Inflammation</span><span class="cval">47 (42%)</span></div>
+          <div class="crow"><span class="clbl">Moderate Inflammation</span><span class="cval">62 (55%)</span></div>
+          <div class="crow"><span class="clbl">Severe Inflammation</span><span class="cval">4 (4%)</span></div>
+          <div class="crow"><span class="clbl">Coccobacilli</span><span class="cval">4</span></div>
+          <div class="crow"><span class="clbl">Candida spp.</span><span class="cval">1</span></div>
+          <div class="crow"><span class="clbl">Period</span><span class="cval">17 Feb &ndash; 05 Mar 2026</span></div>
+        </div>
+        <div class="cmp-vs">vs</div>
+        <div>
+          <div class="cmp-head tip">GMH Tirupathi</div>
+          <div class="crow"><span class="clbl">Patients Enrolled</span><span class="cval">49</span></div>
+          <div class="crow"><span class="clbl">Avg Age</span><span class="cval">40 yrs (22&ndash;71)</span></div>
+          <div class="crow"><span class="clbl">NILM Rate</span><span class="cval">98%</span></div>
+          <div class="crow"><span class="clbl">Mild Inflammation</span><span class="cval">25 (51%)</span></div>
+          <div class="crow"><span class="clbl">Moderate Inflammation</span><span class="cval">20 (41%)</span></div>
+          <div class="crow"><span class="clbl">Severe Inflammation</span><span class="cval">3 (6%)</span></div>
+          <div class="crow"><span class="clbl">Coccobacilli</span><span class="cval">0</span></div>
+          <div class="crow"><span class="clbl">Candida spp.</span><span class="cval">1</span></div>
+          <div class="crow"><span class="clbl">Period</span><span class="cval">17 Feb &ndash; 05 Mar 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Vyuhaa Med Data Pvt. Ltd. &middot; CerviAI Clinical Dashboard &middot; Confidential</span>
+    <span>Dr. Sunita Samleti &middot; Reporting Pathologist &middot; LBC Cervical Cytology</span>
+  </footer>
+</div>
+
+<script>
+Chart.defaults.color = '#7a8299';
+Chart.defaults.font.family = "'DM Sans', sans-serif";
+Chart.defaults.font.size = 11.5;
+
+const BL='#1a5fbe', BL2='#2b7de9', TL='#0a8a7a', AM='#b85c00', RD='#c0392b', PR='#5b4fcf';
+const grid = {color:'#e8eaef'}, ticks = {color:'#7a8299'};
+const SO = s => ({ x:{stacked:s,grid,ticks}, y:{stacked:s,grid,ticks} });
+
+new Chart('kgh-age',{type:'bar',data:{labels:['< 30','30–39','40–49','50–59','60+'],datasets:[{data:[14,37,41,14,7],backgroundColor:[BL+'22',BL+'44',BL+'88',BL+'66',BL+'33'],borderColor:BL,borderWidth:1.5,borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:SO(false)}});
+
+new Chart('kgh-infl',{type:'bar',data:{labels:['Mild','Moderate','Severe'],datasets:[{data:[47,62,4],backgroundColor:[TL+'33',AM+'33',RD+'33'],borderColor:[TL,AM,RD],borderWidth:1.5,borderRadius:5}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:SO(false)}});
+
+new Chart('tip-age',{type:'bar',data:{labels:['< 30','30–39','40–49','50–59','60+'],datasets:[{data:[8,14,16,2,5],backgroundColor:[TL+'22',TL+'44',TL+'88',TL+'66',TL+'33'],borderColor:TL,borderWidth:1.5,borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:SO(false)}});
+
+new Chart('tip-infl',{type:'bar',data:{labels:['Mild','Moderate','Severe'],datasets:[{data:[25,20,3],backgroundColor:[TL+'33',AM+'33',RD+'33'],borderColor:[TL,AM,RD],borderWidth:1.5,borderRadius:5}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:SO(false)}});
+
+new Chart('c-age',{type:'bar',data:{labels:['< 30','30–39','40–49','50–59','60+'],datasets:[{label:'KGH Vizag',data:[14,37,41,14,7],backgroundColor:BL+'99',borderColor:BL,borderWidth:1.5,borderRadius:0},{label:'GMH Tirupathi',data:[8,14,16,2,5],backgroundColor:TL+'99',borderColor:TL,borderWidth:1.5,borderRadius:4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#7a8299',boxWidth:10,padding:14}}},scales:SO(true)}});
+
+new Chart('c-sq',{type:'bar',data:{labels:['Superficial','Intermediate','Parabasal','Metaplastic'],datasets:[{data:[158,161,148,52],backgroundColor:[BL+'44',BL+'66',TL+'55',PR+'44'],borderColor:[BL,BL,TL,PR],borderWidth:1.5,borderRadius:5}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{max:162,grid,ticks},y:{grid:{display:false},ticks}}}});
+
+new Chart('c-infl',{type:'doughnut',data:{labels:['Mild (44%)','Moderate (51%)','Severe (4%)'],datasets:[{data:[72,82,7],backgroundColor:[TL+'55',AM+'55',RD+'55'],borderColor:[TL,AM,RD],borderWidth:2,hoverOffset:6}]},options:{responsive:true,cutout:'64%',plugins:{legend:{position:'bottom',labels:{color:'#7a8299',padding:14,boxWidth:10}}}}});
+
+new Chart('c-org',{type:'bar',data:{labels:['Doderlein Bacilli','Coccobacilli','Candida spp.','Trichomonas'],datasets:[{data:[160,4,2,0],backgroundColor:[TL+'55',AM+'55',RD+'55','#b0b7c855'],borderColor:[TL,AM,RD,'#b0b7c8'],borderWidth:1.5,borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:SO(false)}});
+
+new Chart('c-gl',{type:'bar',data:{labels:['Endocervical Present','Endocervical Absent','RBCs Background'],datasets:[{label:'KGH Vizag',data:[55,58,6],backgroundColor:BL+'55',borderColor:BL,borderWidth:1.5,borderRadius:4},{label:'GMH Tirupathi',data:[35,14,8],backgroundColor:TL+'55',borderColor:TL,borderWidth:1.5,borderRadius:4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#7a8299',boxWidth:10,padding:14}}},scales:SO(false)}});
+
+new Chart('c-nilm',{type:'doughnut',data:{labels:['NILM Standard (95%)','NILM + Flora shift (2%)','NILM + Reactive/Inflam (1%)','NILM + Atrophy (1%)','Excluded (1%)'],datasets:[{data:[154,3,2,2,1],backgroundColor:[BL+'55',TL+'55',AM+'55',PR+'55','#b0b7c855'],borderColor:[BL,TL,AM,PR,'#b0b7c8'],borderWidth:2,hoverOffset:6}]},options:{responsive:true,cutout:'60%',plugins:{legend:{position:'bottom',labels:{color:'#7a8299',padding:10,boxWidth:10,font:{size:11}}}}}});
+
+function switchTab(t) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-'+t).classList.add('active');
+  document.querySelectorAll('.tab')[t==='kgh'?0:t==='tip'?1:2].classList.add('active');
+}
+</script>
+</body>
+</html>

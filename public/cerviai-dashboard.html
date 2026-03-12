@@ -374,6 +374,12 @@ function switchTab(t) {
   document.getElementById('panel-'+t).classList.add('active');
   document.querySelectorAll('.tab')[t==='kgh'?0:t==='tip'?1:2].classList.add('active');
 }
+
+// Set current date
+const now = new Date();
+const opts = { day: 'numeric', month: 'short', year: 'numeric' };
+const dateStr = now.toLocaleDateString('en-GB', opts);
+document.getElementById('dash-date').textContent = 'Dashboard accessed: ' + dateStr;
 </script>
 </body>
 </html>

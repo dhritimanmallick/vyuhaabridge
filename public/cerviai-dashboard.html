@@ -375,11 +375,18 @@ function switchTab(t) {
   document.querySelectorAll('.tab')[t==='kgh'?0:t==='tip'?1:2].classList.add('active');
 }
 
-// Set current date
+// Set dynamic reporting period: 17 Feb – today's date
 const now = new Date();
-const opts = { day: 'numeric', month: 'short', year: 'numeric' };
-const dateStr = now.toLocaleDateString('en-GB', opts);
-document.getElementById('dash-date').textContent = 'Dashboard accessed: ' + dateStr;
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const todayDay = now.getDate();
+const todayMon = months[now.getMonth()];
+const todayYear = now.getFullYear();
+const periodLong = '17 Feb \u2013 ' + todayDay + ' ' + todayMon + ' ' + todayYear;
+const startMon = 'Feb';
+const periodShort = startMon + '\u2013' + todayMon + ' ' + todayYear;
+
+document.querySelectorAll('.dynamic-period-long').forEach(el => el.textContent = periodLong);
+document.querySelectorAll('.dynamic-period-short').forEach(el => el.textContent = periodShort);
 </script>
 </body>
 </html>

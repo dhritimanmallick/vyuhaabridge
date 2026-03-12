@@ -14,6 +14,8 @@ import News from "./pages/News";
 import PartnerContact from "./pages/PartnerContact";
 import Careers from "./pages/Careers";
 import DropletDx from "./pages/DropletDx";
+import PartnerLogin from "./pages/PartnerLogin";
+import PartnerDashboard from "./pages/PartnerDashboard";
 
 const queryClient = new QueryClient();
 

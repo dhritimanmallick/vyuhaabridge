@@ -365,6 +365,31 @@ function switchTab(t) {
   document.getElementById('panel-'+t).classList.add('active');
   document.querySelectorAll('.tab')[t==='kgh'?0:t==='tip'?1:2].classList.add('active');
 }
+
+// Dynamic date: replace all end-dates with today
+(function(){
+  const now = new Date();
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const dd = String(now.getDate()).padStart(2,'0');
+  const mmm = months[now.getMonth()];
+  const yyyy = now.getFullYear();
+  const today = dd + ' ' + mmm;
+  const todayFull = dd + ' ' + mmm + ' ' + yyyy;
+
+  // Walk all text nodes and replace dates
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()) {
+    const node = walker.currentNode;
+    // Replace "13 Mar 2026" with today's full date
+    if(node.textContent.includes('13 Mar 2026')) {
+      node.textContent = node.textContent.replace(/13 Mar 2026/g, todayFull);
+    }
+    // Replace standalone "13 Mar" (with ndash patterns)
+    if(node.textContent.includes('13 Mar')) {
+      node.textContent = node.textContent.replace(/13 Mar/g, today);
+    }
+  }
+})();
 </script>
 </body>
 </html>

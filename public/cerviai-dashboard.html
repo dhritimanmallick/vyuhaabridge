@@ -376,5 +376,22 @@ function switchTab(t){
   document.querySelectorAll('.tab')[t==='kgh'?0:t==='tip'?1:2].classList.add('active');
 }
 </script>
+<script>
+(function(){
+  var now=new Date(),d=now.getDate(),months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],m=months[now.getMonth()],y=now.getFullYear();
+  var today=d+' '+m,todayFull=d+' '+m+' '+y;
+  var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()){
+    var n=walker.currentNode;
+    n.textContent=n.textContent
+      .replace(/20 Mar 2026/g,todayFull)
+      .replace(/13 Mar 2026/g,todayFull)
+      .replace(/20 Mar/g,today)
+      .replace(/13 Mar/g,today)
+      .replace(/Feb\u2013Mar 2026/g,'Feb\u2013'+m+' '+y)
+      .replace(/Mar 2026/g,m+' '+y);
+  }
+})();
+</script>
 </body>
 </html>

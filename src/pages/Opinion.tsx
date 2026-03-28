@@ -4,6 +4,14 @@ import Footer from '../components/Footer';
 
 const articles = [
   {
+    slug: 'cervical-cancer-screening-india',
+    title: 'Cervical Cancer Screening in India: Why Mandatory Screening Is a Game Changer',
+    subtitle: 'How policy-driven screening can transform early detection and save millions of lives',
+    date: 'March 2026',
+    readTime: '10 min read',
+    tag: 'Public Health',
+  },
+  {
     slug: 'the-case-for-the-vertical-stack',
     title: 'The Case for the Vertical Stack',
     subtitle: 'Why owning hardware + software + AI is the winning play in diagnostics',

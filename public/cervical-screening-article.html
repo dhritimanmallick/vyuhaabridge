@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #1a1a2e;
+  line-height: 1.8;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 30%, #f3e5f5 60%, #e8eaf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(233,30,99,0.08) 0%, transparent 70%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(63,81,181,0.06) 0%, transparent 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 60px 32px;
+  text-align: center;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(233,30,99,0.15);
+  color: #c2185b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #1a237e;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #c2185b;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+.hero-authors {
+  font-size: 13px;
+  color: #777;
+  font-weight: 400;
+}
+
+.hero-authors strong {
+  color: #333;
+  font-weight: 500;
+}
+
+article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.lead {
+  font-size: 19px;
+  line-height: 1.85;
+  color: #2c2c54;
+  font-weight: 400;
+  margin-bottom: 36px;
+  border-left: 3px solid #e91e63;
+  padding-left: 24px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a237e;
+  margin: 48px 0 18px;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 36px 0;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-top: 3px solid #e91e63;
+}
+
+.stat-card .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #e91e63;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-card .label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.compare-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 36px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.compare-col {
+  padding: 28px 24px;
+}
+
+.compare-col.india {
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+.compare-col.us {
+  background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+}
+
+.compare-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1a1a2e;
+}
+
+.compare-col .c-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px;
+  color: #444;
+}
+
+.compare-col .c-stat .c-val {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a2e;
+}
+
+.pullquote {
+  margin: 44px 0;
+  padding: 32px 28px;
+  background: linear-gradient(135deg, #e8eaf6, #ede7f6);
+  border-radius: 12px;
+  border-left: 4px solid #1a237e;
+  text-align: left;
+}
+
+.pullquote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #1a237e;
+  font-weight: 400;
+  margin: 0;
+}
+
+.pullquote .attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgba(26,35,126,0.5);
+  margin-top: 12px;
+  display: block;
+}
+
+.chart-section {
+  margin: 40px 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.chart-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #1a237e;
+  margin-bottom: 4px;
+}
+
+.chart-section .chart-sub {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  min-width: 70px;
+  text-align: right;
+}
+
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: #f0f0f5;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e91e63, #f06292);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  min-width: 40px;
+}
+
+.timeline {
+  margin: 36px 0;
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e91e63, #7986cb);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 12px;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e91e63;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #e91e63;
+}
+
+.tl-year {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e91e63;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tl-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Ayushman Bharat section */
+.ab-section {
+  margin: 40px 0;
+  background: linear-gradient(135deg, #fff3e0, #fff8e1);
+  border-radius: 12px;
+  padding: 32px 28px;
+  border-left: 4px solid #ff9800;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.ab-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #e65100;
+  margin-bottom: 16px;
+}
+
+.ab-section p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.ab-section p:last-child { margin-bottom: 0; }
+
+.ab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.ab-card {
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  padding: 18px 16px;
+}
+
+.ab-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e65100;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ab-card p {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.cost-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.cost-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background: #fff3e0;
+  color: #e65100;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ffcc80;
+}
+
+.cost-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0e6d6;
+  color: #444;
+}
+
+.cost-table tr:last-child td {
+  font-weight: 600;
+  color: #e65100;
+  border-bottom: 2px solid #ffcc80;
+}
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.rec-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-left: 3px solid;
+}
+
+.rec-card:nth-child(1) { border-color: #e91e63; }
+.rec-card:nth-child(2) { border-color: #1a237e; }
+.rec-card:nth-child(3) { border-color: #00bcd4; }
+.rec-card:nth-child(4) { border-color: #ff9800; }
+.rec-card:nth-child(5) { border-color: #4caf50; }
+.rec-card:nth-child(6) { border-color: #9c27b0; }
+
+.rec-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.rec-card p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.article-footer {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.article-footer .company {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.article-footer .company strong {
+  color: #1a237e;
+}
+
+.closing-line {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #1a237e;
+  text-align: center;
+  margin: 48px 0 0;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 40px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.info-cell {
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.info-cell:nth-child(1) { background: #e8eaf6; color: #1a237e; }
+.info-cell:nth-child(2) { background: #fce4ec; color: #c2185b; }
+.info-cell:nth-child(3) { background: #e8eaf6; color: #1a237e; }
+
+.info-cell .ic-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  display: block;
+}
+
+.info-cell .ic-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .compare-box { grid-template-columns: 1fr; }
+  .rec-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .info-strip { grid-template-columns: 1fr; }
+  .ab-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-label">Opinion &middot; Public Health</span>
+    <h1>Cervical Cancer Screening in India:<br><em>Why Mandatory Screening Is a Game Changer</em></h1>
+    <p class="hero-sub">Understanding the crisis, the evidence, and the case for integrating HPV and Pap screening into Ayushman Bharat</p>
+    <p class="hero-authors"><strong>Dr. Manideep R. &middot; Sujitha P. &middot; Dhritiman Mallick &middot; Diya Agarwal</strong><br>Vyuhaa Med Data Private Limited</p>
+  </div>
+</div>
+
+<article>
+
+  <!-- LEAD -->
+  <p class="lead">Every year, India loses over 80,000 women to cervical cancer. Another 125,000 are newly diagnosed. These are not statistics about a rare or untreatable disease — cervical cancer is one of the most preventable cancers known to medicine. With regular screening, 90% of these women could be saved. Yet only about 3% of Indian women aged 30–49 have ever been screened.</p>
+
+  <p>This is not a failure of science. It is a failure of systems. And it is one we can fix — starting with the single largest healthcare entitlement programme in the world: Ayushman Bharat.</p>
+
+  <!-- STAT STRIP -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <span class="num">1,25,000</span>
+      <span class="label">New cases<br>per year</span>
+    </div>
+    <div class="stat-card">
+      <span class="num">80,000+</span>
+      <span class="label">Deaths<br>per year</span>
+    </div>
+    <div class="stat-card">
+      <span class="num">~3%</span>
+      <span class="label">Women ever<br>screened</span>
+    </div>
+    <div class="stat-card">
+      <span class="num">90%</span>
+      <span class="label">Preventable<br>with screening</span>
+    </div>
+  </div>
+
+  <!-- SECTION: UNDERSTANDING -->
+  <h2>Understanding the Disease</h2>
+  <p>Cervical cancer begins when abnormal cells in the cervix — the narrow lower end of the uterus — grow uncontrollably, driven by persistent infection with the Human Papillomavirus (HPV). HPV is remarkably common; most sexually active women will contract it at least once in their lifetime. What makes it dangerous is its long gestation period of 8–10 years. By the time symptoms appear, the cancer is often at an advanced stage, when treatment options are limited and survival rates drop sharply.</p>
+  <p>The window between HPV infection and cancer, however, is precisely what makes this disease so preventable. A simple screening test — particularly liquid-based cytology (LBC), which examines cervical cells for abnormalities — can catch precancerous changes years before they turn malignant. That window of opportunity is enormous, but only if we use it.</p>
+
+  <!-- SECTION: GLOBAL EVIDENCE -->
+  <h2>What the World Has Learned</h2>
+  <p>The countries that invested early in organized screening have reaped extraordinary returns. In Europe, North America, and Australia, cytology-based cervical screening programs over the past five decades have driven incidence rates down dramatically. The formula was not complicated: repeated testing at regular intervals, high population coverage, and rigorous quality control.</p>
+
+  <div class="compare-box">
+    <div class="compare-col india">
+      <h3>🇮🇳 India</h3>
+      <div class="c-stat"><span>Incidence rate</span><span class="c-val">14.7 / 100K</span></div>
+      <div class="c-stat"><span>Mortality rate</span><span class="c-val">9.2 / 100K</span></div>
+      <div class="c-stat"><span>New cases / year</span><span class="c-val">1,25,000</span></div>
+      <div class="c-stat"><span>Deaths / year</span><span class="c-val">80,000+</span></div>
+      <div class="c-stat"><span>Screening coverage</span><span class="c-val">~3%</span></div>
+    </div>
+    <div class="compare-col us">
+      <h3>🇺🇸 United States</h3>
+      <div class="c-stat"><span>Incidence rate</span><span class="c-val">7.6 / 100K</span></div>
+      <div class="c-stat"><span>Mortality rate</span><span class="c-val">2.2 / 100K</span></div>
+      <div class="c-stat"><span>New cases (2025 est.)</span><span class="c-val">13,360</span></div>
+      <div class="c-stat"><span>Deaths (2025 est.)</span><span class="c-val">4,320</span></div>
+      <div class="c-stat"><span>Screening coverage</span><span class="c-val">72.4%</span></div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:#999;text-align:center;margin-top:-20px;">Source: American Cancer Society 2025, WHO &amp; ICMR Data</p>
+
+  <p>The difference is not genetics, geography, or luck. It is screening.</p>
+
+  <!-- SECTION: SCALE -->
+  <h2>The Scale of What India Faces</h2>
+
+  <div class="info-strip">
+    <div class="info-cell">
+      <span class="ic-num">12 Cr</span>
+      <span class="ic-label">Women need<br>screening (30–55 age)</span>
+    </div>
+    <div class="info-cell">
+      <span class="ic-num">6×</span>
+      <span class="ic-label">The population<br>of Mumbai</span>
+    </div>
+    <div class="info-cell">
+      <span class="ic-num">40,000</span>
+      <span class="ic-label">Pathologists<br>in all of India</span>
+    </div>
+  </div>
+
+  <p>The primary screening population — women aged 30 to 55 — numbers approximately 12 crore (120 million), requiring testing every 3–5 years on a rolling basis. India's female population splits roughly 68–31 between rural and urban areas, with about 39 crore women in rural India and 18 crore in urban centres.</p>
+  <p>Rural women bear a disproportionate burden: less access to healthcare facilities, lower awareness of screening, and stronger social taboos around gynaecological examinations. Less than 30% of eligible women anywhere in the country undergo regular cervical screening, and the majority of cases are diagnosed at advanced stages.</p>
+  <p>Compounding the problem is a severe shortage of pathologists. India has approximately 40,000 pathologists — less than 3% of all practising doctors. Even if every woman walked into a screening centre tomorrow, the system would not have the human capacity to read the slides.</p>
+
+  <!-- PULLQUOTE -->
+  <div class="pullquote">
+    <p>"India has 40,000 pathologists for 1.4 billion people. AI-assisted screening is not a luxury — it is a necessity."</p>
+  </div>
+
+  <!-- SECTION: POLICY -->
+  <h2>India's Policy Response</h2>
+  <p>To its credit, India has not been idle. The policy architecture has been built over decades, with a significant acceleration post-2017.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1988</div>
+      <div class="tl-text">First cervical cancer vaccine developed</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2006</div>
+      <div class="tl-text">First HPV vaccine licensed for use in India</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2012</div>
+      <div class="tl-text">National Cancer Grid (NCG) formed with Government of India funding</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2017</div>
+      <div class="tl-text">National Cervical Cancer Program launched</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2018</div>
+      <div class="tl-text">National Cancer Screening Program launched; Ayushman Bharat mandates cervical screening at 150,000 Health &amp; Wellness Centres</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2023</div>
+      <div class="tl-text">Cervavac — India's first indigenous HPV vaccine — approved</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2030</div>
+      <div class="tl-text">WHO target: 70% of women screened by age 35 and again by 45; at least 8.4 crore women must be reached</div>
+    </div>
+  </div>
+
+  <p>The policy architecture exists. The execution gap remains vast. And nowhere is that gap more consequential — or more fixable — than in the way Ayushman Bharat handles cervical screening.</p>
+
+  <!-- SECTION: AYUSHMAN BHARAT CASE -->
+  <h2>The Case for Integrating HPV &amp; Pap Screening Into Ayushman Bharat</h2>
+
+  <p>Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (AB-PMJAY) is the world's largest government-sponsored health assurance scheme, covering over 55 crore beneficiaries across 12.7 crore families. It already lists cancer treatment packages. What it does not yet do, with sufficient scale or specificity, is mandate and reimburse the two screening tests that could prevent the need for that treatment in the first place: the HPV test and the Pap (liquid-based cytology) test.</p>
+  <p>This is the single highest-impact intervention available to India's public health system today. Here is why.</p>
+
+  <div class="ab-section">
+    <h3>Why Both HPV and Pap Testing Belong in AB-PMJAY</h3>
+    <p>HPV testing and Pap/LBC testing are complementary, not interchangeable. HPV testing identifies whether a woman carries the high-risk virus strains that cause cervical cancer — it answers the question "is she at risk?" Pap/LBC testing examines actual cervical cells for abnormalities — it answers "is disease already developing?" Used together (co-testing), they provide the most complete picture: a negative result on both tests gives a woman a near-zero risk of developing cervical cancer for the next five years.</p>
+
+    <div class="ab-grid">
+      <div class="ab-card">
+        <h4>HPV Test</h4>
+        <p>Detects high-risk HPV strains (16, 18, etc.) that cause &gt;95% of cervical cancers. High sensitivity. Identifies women at risk <em>before</em> cellular changes begin. Ideal for primary screening at population scale.</p>
+      </div>
+      <div class="ab-card">
+        <h4>Pap / LBC Test</h4>
+        <p>Examines cervical cells for morphological abnormalities (ASCUS, LSIL, HSIL). High specificity. Catches precancerous changes that require immediate follow-up. Ideal for triage and confirmatory screening.</p>
+      </div>
+      <div class="ab-card">
+        <h4>Co-Testing</h4>
+        <p>HPV + Pap together provide the highest negative predictive value (&gt;99%). A double-negative result safely extends the screening interval to 5 years, reducing long-term system costs.</p>
+      </div>
+      <div class="ab-card">
+        <h4>AI-Assisted LBC</h4>
+        <p>AI-enabled Pap analysis overcomes the pathologist shortage, enabling &gt;200 slides/day per device with 99%+ sensitivity. Makes LBC viable even in district hospitals without specialist staff.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Currently, Ayushman Bharat's Health and Wellness Centres primarily rely on Visual Inspection with Acetic Acid (VIA) for cervical screening — a low-sensitivity method that misses a significant proportion of precancerous lesions and is heavily dependent on provider training and subjective interpretation. VIA has its place in resource-constrained settings as a point-of-care tool, but it was never intended to be the backbone of a national screening programme for 120 million women. The WHO itself recommends transitioning to HPV-based screening as the primary method, with cytology for triage.</p>
+
+  <p>Integrating HPV and Pap/LBC testing into AB-PMJAY's reimbursable package list would achieve several things simultaneously.</p>
+
+  <p><strong>First, it creates demand-side incentive.</strong> When a test is covered under PMJAY, it signals to women and their families that this is a genuine entitlement — not an optional add-on. Behavioural evidence from India's own PMJAY rollout shows that inclusion in the package list is one of the strongest drivers of uptake at Health and Wellness Centres and empanelled hospitals.</p>
+
+  <p><strong>Second, it mobilises the private sector.</strong> AB-PMJAY's empanelled hospital network includes over 28,000 facilities. If HPV and Pap tests are reimbursable, private labs and hospitals have a direct financial incentive to offer them, invest in equipment (including AI-assisted cytology devices), and train staff. This is exactly the kind of public-private alignment that has worked for dialysis, cardiac surgery, and cataract operations under the scheme.</p>
+
+  <p><strong>Third, it is financially viable.</strong> The cost arithmetic is compelling.</p>
+
+  <table class="cost-table">
+    <tr><th>Item</th><th>Estimated Cost</th></tr>
+    <tr><td>HPV test (self-collection kit + lab processing)</td><td>₹250–400</td></tr>
+    <tr><td>LBC / Pap test (sample collection + processing)</td><td>₹200–370</td></tr>
+    <tr><td>AI-assisted LBC analysis (per slide, at scale)</td><td>₹50–100</td></tr>
+    <tr><td>Co-test (HPV + AI-assisted LBC)</td><td>₹500–700</td></tr>
+    <tr><td>Late-stage cervical cancer treatment (surgery + chemo + radiation)</td><td>₹2,00,000–5,00,000+</td></tr>
+  </table>
+
+  <p>A co-test costing ₹500–700 per woman, done once every five years, is a fraction of the ₹2–5 lakh treatment cost that PMJAY already reimburses for advanced cervical cancer. For every 100 women screened and treated early, the system avoids roughly 2 late-stage cancer cases — saving both lives and money. At a budgetary allocation of approximately ₹370 per test for Pap/LBC alone, large-scale screening becomes immediately actionable.</p>
+
+  <p><strong>Fourth, it makes the 2030 WHO target achievable.</strong> India needs to screen 8.4 crore women by 2030 to reach the 70% target. The only existing infrastructure with the reach, the reimbursement machinery, and the beneficiary base to deliver at that scale is Ayushman Bharat. Its 150,000 Health and Wellness Centres, combined with 28,000+ empanelled hospitals, already serve a footfall of 1.35 billion. The pipes exist. We need to run the right tests through them.</p>
+
+  <p><strong>Fifth, it enables a data backbone for population health.</strong> Every PMJAY transaction generates a digital record. If HPV and Pap screening are integrated as trackable, reimbursable procedures, India automatically builds a national cervical screening registry — linked to Aadhaar and ABHA IDs — that can power follow-up reminders, district-level dashboards, and epidemiological research. This is the "Digitization and IT platforms" that Ayushman Bharat's own operational guidelines already recommend.</p>
+
+  <div class="pullquote">
+    <p>"A ₹500 co-test today prevents a ₹5 lakh cancer treatment tomorrow. Ayushman Bharat already reimburses the treatment. It is time to reimburse the prevention."</p>
+  </div>
+
+  <!-- SECTION: STUDY -->
+  <h2>Evidence From the Field</h2>
+  <p>At Vyuhaa Med Data, we have examined this challenge up close. Between 2018 and 2024, our team conducted a retrospective study analysing screening data from <strong>45,901 women</strong> across Telangana and Andhra Pradesh using liquid-based Pap cytology. Of these, 45,760 samples (99.69%) were successfully evaluated. The age range spanned 21 to 85+, with 70% of women falling in the 31–50 age group.</p>
+
+  <div class="chart-section">
+    <h3>Abnormality Rate by Age Group</h3>
+    <p class="chart-sub">Retrospective study, 45,760 samples, 2018–2024 &middot; Vyuhaa Med Data</p>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">21–30</span>
+        <div class="bar-track"><div class="bar-fill" style="width:55%">2.0%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">31–40</span>
+        <div class="bar-track"><div class="bar-fill" style="width:53%">1.9%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">41–50</span>
+        <div class="bar-track"><div class="bar-fill" style="width:58%">2.1%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">51–60</span>
+        <div class="bar-track"><div class="bar-fill" style="width:78%">2.8%</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">&gt;60</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%">3.6%</div></div>
+      </div>
+    </div>
+  </div>
+
+  <p>Across the entire study period, approximately <strong>2% of samples showed abnormalities</strong> requiring further assessment. Of the 936 abnormal samples, 56% were in the 31–50 age range — the very population that screening programmes target. Yearly abnormal case rates held steady around 2%, with 2020 being a notable exception at roughly 3.5%, likely influenced by pandemic-related disruptions.</p>
+  <p>The abnormality rate rose with age, climbing from 2.0% in the 21–30 cohort to 3.6% for women over 60. Crucially, an abnormality does not necessarily mean cancer — it indicates cells that may or may not progress. But without screening, these women would never know until it was too late.</p>
+  <p>Extrapolating the 2% rate to India's screening-eligible population means approximately <strong>24 lakh (2.4 million) women</strong> are currently living with cervical abnormalities that could be caught, monitored, and treated — if only they were screened.</p>
+
+  <!-- SECTION: RECOMMENDATIONS -->
+  <h2>What Needs to Happen</h2>
+
+  <div class="rec-grid">
+    <div class="rec-card">
+      <h4>1. Mandate Screening Under PMJAY</h4>
+      <p>List HPV testing and Pap/LBC as reimbursable procedures under AB-PMJAY. Make screening compulsory for women aged 30–55 at empanelled facilities and HWCs. A ₹370–700 per-test allocation makes this viable at national scale.</p>
+    </div>
+    <div class="rec-card">
+      <h4>2. Increase Awareness</h4>
+      <p>Sustained nationwide campaigns to destigmatise screening and educate women — particularly in rural areas — on availability and importance under their PMJAY entitlement.</p>
+    </div>
+    <div class="rec-card">
+      <h4>3. Strengthen Infrastructure</h4>
+      <p>Expand primary and community health centre capacity with LBC and HPV testing equipment, prioritising the 150,000 HWCs and district hospitals in underserved regions.</p>
+    </div>
+    <div class="rec-card">
+      <h4>4. Leverage AI Technology</h4>
+      <p>Deploy AI-enabled cytology tools to address the pathologist shortage. At &gt;200 slides/day per device with 99%+ sensitivity, AI makes high-quality LBC screening viable even in Tier-3 towns.</p>
+    </div>
+    <div class="rec-card">
+      <h4>5. Build a National Registry</h4>
+      <p>Link screening data to ABHA/Aadhaar IDs to create a population-level cervical screening registry for follow-up reminders, district dashboards, and epidemiological tracking.</p>
+    </div>
+    <div class="rec-card">
+      <h4>6. Affordable Vaccination</h4>
+      <p>Promote indigenous HPV vaccines like Cervavac through subsidies and UIP inclusion. Vaccination prevents; screening catches what vaccination misses. Both are needed.</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2>Closing the Gap</h2>
+  <p>India's cervical cancer crisis is not a problem without solutions. The science is settled: screening works. The policy scaffolding is in place. The technology to screen at scale — including AI-assisted cytology that can compensate for the pathologist shortage — exists today. And the delivery infrastructure, through Ayushman Bharat's 150,000 HWCs and 28,000+ empanelled hospitals, already reaches the women who need it most.</p>
+  <p>What remains is a policy decision: to add HPV and Pap/LBC testing to the reimbursable procedures under AB-PMJAY, and to track screening as a district-level performance metric with the same rigour we apply to immunisation rates. The cost is modest — a few hundred rupees per woman, once every five years. The cost of inaction is 80,000 lives lost every year to a disease we know how to prevent.</p>
+
+  <p class="closing-line">The question is no longer whether India should mandate cervical cancer screening under Ayushman Bharat. It is whether we can afford not to.</p>
+
+  <!-- FOOTER -->
+  <div class="article-footer">
+    <p class="company"><strong>Vyuhaa Med Data Private Limited</strong><br>Healthcare AI &middot; Edge Diagnostics &middot; Cancer Screening<br>AMTZ Campus, Visakhapatnam, Andhra Pradesh<br><br>dhritiman@vyuhaadata.com</p>
+  </div>
+
+</article>
+</body>
+</html>

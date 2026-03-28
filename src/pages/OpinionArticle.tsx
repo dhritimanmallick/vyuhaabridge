@@ -3,6 +3,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const articleMap: Record<string, { src: string; title: string }> = {
+  'cervical-cancer-screening-india': {
+    src: '/cervical-screening-article.html',
+    title: 'Cervical Cancer Screening in India',
+  },
   'the-case-for-the-vertical-stack': {
     src: '/hardware-software-play.html',
     title: 'The Case for the Vertical Stack',

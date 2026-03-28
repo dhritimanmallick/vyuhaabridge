@@ -16,7 +16,7 @@ const articles = [
 const Opinion = () => (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Navbar />
-    <main className="flex-1 bg-white pt-32">
+    <main className="flex-1 bg-white pt-40">
       {/* Header */}
       <section className="bg-white pb-8">
         <div className="container mx-auto px-6 max-w-4xl">

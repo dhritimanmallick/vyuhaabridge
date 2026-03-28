@@ -18,11 +18,11 @@ const Opinion = () => (
     <Navbar />
     <main className="flex-1 bg-white">
       {/* Header */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+      <section className="bg-white py-20 border-b border-slate-100">
         <div className="container mx-auto px-6 max-w-4xl">
-          <p className="text-teal-400 font-semibold tracking-widest uppercase text-sm mb-3">Perspectives</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Opinion</h1>
-          <p className="text-slate-300 text-lg max-w-2xl">
+          <p className="text-teal-600 font-semibold tracking-widest uppercase text-sm mb-3">Perspectives</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Opinion</h1>
+          <p className="text-slate-500 text-lg max-w-2xl">
             Insights on diagnostics, deep-tech, and building at the intersection of hardware, software, and AI.
           </p>
         </div>

@@ -16,28 +16,28 @@ const articles = [
 const Opinion = () => (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Navbar />
-    <main className="flex-1 bg-white">
+    <main className="flex-1 bg-white pt-32">
       {/* Header */}
-      <section className="bg-white py-20 border-b border-slate-100">
+      <section className="bg-white pb-8">
         <div className="container mx-auto px-6 max-w-4xl">
-          <p className="text-teal-600 font-semibold tracking-widest uppercase text-sm mb-3">Perspectives</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Opinion</h1>
-          <p className="text-slate-500 text-lg max-w-2xl">
+          <p className="text-teal-600 font-semibold tracking-widest uppercase text-sm mb-2">Perspectives</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Opinion</h1>
+          <p className="text-slate-500 text-base max-w-2xl">
             Insights on diagnostics, deep-tech, and building at the intersection of hardware, software, and AI.
           </p>
         </div>
       </section>
 
       {/* Articles */}
-      <section className="container mx-auto px-6 max-w-4xl py-16">
-        <div className="space-y-6">
+      <section className="container mx-auto px-6 max-w-4xl py-8">
+        <div className="space-y-5">
           {articles.map((a) => (
             <Link
               key={a.slug}
               to={`/opinion/${a.slug}`}
-              className="block group border border-slate-200 rounded-2xl p-8 hover:shadow-lg hover:border-teal-300 transition-all duration-300"
+              className="block group border border-slate-200 rounded-xl p-6 hover:shadow-md hover:border-teal-300 transition-all duration-300"
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <span className="text-xs font-semibold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1 rounded-full">
                   {a.tag}
                 </span>
@@ -45,11 +45,11 @@ const Opinion = () => (
                 <span className="text-sm text-slate-400">·</span>
                 <span className="text-sm text-slate-400">{a.readTime}</span>
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 group-hover:text-teal-700 transition-colors mb-2">
+              <h2 className="text-xl font-bold text-slate-900 group-hover:text-teal-700 transition-colors mb-1">
                 {a.title}
               </h2>
-              <p className="text-slate-500">{a.subtitle}</p>
-              <span className="inline-block mt-4 text-teal-600 font-medium text-sm group-hover:underline">
+              <p className="text-slate-500 text-sm">{a.subtitle}</p>
+              <span className="inline-block mt-3 text-teal-600 font-medium text-sm group-hover:underline">
                 Read article →
               </span>
             </Link>
